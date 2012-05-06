@@ -2,6 +2,7 @@
 <html>
 <head>
     <title>Dibujando logo HTML5</title>
+    
 <script language="javascript">
     /*seleccionando la fuente principal y auxiliar junto con el valor del tamaño inicial */
     var fontfamily = "65px 'Gill Sans Ultra Bold', sans-serif";
@@ -112,12 +113,21 @@
         spot.closePath();
         spot.fill();     
     }
+    //funcion para dar escala al logo
+    function changescale(val){
+        factorvalue = val/100;
+        drawLogo();
+    }
     </script>
 </head>
 
 <body onload="initiate();">
-<canvas id="canvas" width="600" height="400">
+<canvas id="canvas" width="1000" height="400">
     su browser no soporta la vaina
-</canvas>
+</canvas><br />
+<div>
+    <h3>Porcentaje de Transformación de coordenadas</h3>
+    <input id="slide" type="range" min="0" max="100" value="100" onChange="changescale(this.value)" step="10" />
+</div>
 </body>
 </html>
