@@ -2,9 +2,9 @@
 <html>
 <head>
     <title>Page Title</title>
-    <script src =./jquery/js/jquery-1.7.1.min.js></script>
-    <script src =./jquery/js/jquery-ui-1.8.18.custom.min.js></script>
-    <link rel=stylesheet type=text/css href=./jquery/css/smoothness/jquery-ui-1.8.18.custom.css />
+    <script src =./js/jquery-1.7.1.min.js></script>
+    <script src =./js/jquery-ui-1.8.18.custom.min.js></script>
+    <link rel=stylesheet type=text/css href=./css/smoothness/jquery-ui-1.8.18.custom.css />
     <style type="text/css">
         li.ui-state-default{ 
             font-size : 10px;
@@ -15,6 +15,7 @@
             font-style : italic;
         }
     </style>
+    
 </head>
 <body>
 <div id="tabs">
@@ -30,5 +31,11 @@
     <div id="tab4">Contenido pestaña 4</div>
 </div>
 <script> $("#tabs").tabs (); </script>
+<script>
+    $("#tabs").tabs({
+        fx : { opacity : "toggle" },
+    }).tabs ("add", "#tab5", "Tab 5"); 
+    $("<i>Tabs din&aacute;micos</i>").appendTo("#tab5");
+</script>
 </body>
 </html>
