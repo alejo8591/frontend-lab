@@ -32,10 +32,9 @@
 </div>
 <script> $("#tabs").tabs (); </script>
 <script>
-    $("#tabs").tabs({
-        fx : { opacity : "toggle" },
-    }).tabs ("add", "#tab5", "Tab 5"); 
-    $("<i>Tabs din&aacute;micos</i>").appendTo("#tab5");
+    $("#tabs").tabs(
+        {fx : { opacity : "toggle" },
+        }).tabs("url",0, "./lab.php").tabs("load", 0);
 </script>
 </body>
 </html>
