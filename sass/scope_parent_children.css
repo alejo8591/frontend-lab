@@ -1,0 +1,23 @@
+/* line 1, scope_parent_children.scss */
+.boxman > {
+  width: 200px;
+}
+/* line 3, scope_parent_children.scss */
+.boxman > .messageBox {
+  border: 1px solid yellow;
+}
+/* line 5, scope_parent_children.scss */
+.boxman > .messageBox > .titleBox {
+  color: blue;
+}
+/* line 9, scope_parent_children.scss */
+.boxman > .userBox {
+  border: 10px solid gray;
+  font-size: 2em;
+  font-color: white;
+}
+/* line 13, scope_parent_children.scss */
+.boxman > .userBox > .titleBox {
+  color: white;
+  font-color: red;
+}
