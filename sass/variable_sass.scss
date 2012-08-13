@@ -1,0 +1,39 @@
+$primary_color: #222;
+$secondary_color: #567654;
+$page_width: 965px;
+
+body{
+	#contentMan{
+		width: $page_width;
+		background: white;
+		font-color: $primary_color;
+		margin: 5px 5px 10px 20px;
+		h1{
+			font-color: $secondary_color;
+		}
+	}
+}
+// With calculus
+$width: 300px;
+$double_width:$width * 2;
+$half_width: $width / 2;
+$width_plus_3:$width + 3;
+$width_minus_1:$width - 1;
+$percent: 0.3;
+
+.cornerMan{
+	width: $double_width;
+	margin: 5px 5px 10px 20px;
+	.cornerManBox{
+		width: $half_width; 
+	}
+} 
+
+// calculus in line
+
+.boxMan{
+	width: $half_width * 3;
+	#contentGirl{
+		width: $half_width - $percent;
+	}
+}

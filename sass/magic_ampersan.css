@@ -1,0 +1,54 @@
+/* line 1, magic_ampersan.scss */
+.comandBox {
+  color: yellow;
+}
+/* line 3, magic_ampersan.scss */
+.userMan .comandBox {
+  color: gray;
+  font-color: red;
+  font-style: oblique;
+}
+
+/* line 9, magic_ampersan.scss */
+.colorBox {
+  color: blue;
+  font-style: oblique;
+}
+/* line 12, magic_ampersan.scss */
+.colorBox.newBox {
+  color: white;
+  font-color: black;
+}
+
+/* line 18, magic_ampersan.scss */
+.newBox .comandBox .userMan {
+  content: "Selector is '.comandBox .userMan .newBox'";
+}
+
+/* line 22, magic_ampersan.scss */
+.element {
+  border-top-style: solid;
+  border-right-style: solid;
+  border-bottom-style: solid;
+  border-left-style: solid;
+  border-top-width: 2px;
+  border-right-width: 1px;
+  border-bottom-width: 2px;
+  border-left-width: 1px;
+}
+/* line 31, magic_ampersan.scss */
+.element.boxMan {
+  border-top-color: blue;
+  border-right-color: red;
+  border-bottom-color: blue;
+  border-left-color: red;
+}
+/* line 37, magic_ampersan.scss */
+.yopoMan .element {
+  border: solid 2px #333;
+}
+
+/* line 42, magic_ampersan.scss */
+.yopoMan .element .boxMan {
+  content: "Selector is '.comandBox .userMan .newBox'";
+}

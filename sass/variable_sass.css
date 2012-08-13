@@ -1,0 +1,30 @@
+/* line 6, variable_sass.scss */
+body #contentMan {
+  width: 965px;
+  background: white;
+  font-color: #222222;
+  margin: 5px 5px 10px 20px;
+}
+/* line 11, variable_sass.scss */
+body #contentMan h1 {
+  font-color: #567654;
+}
+
+/* line 24, variable_sass.scss */
+.cornerMan {
+  width: 600px;
+  margin: 5px 5px 10px 20px;
+}
+/* line 27, variable_sass.scss */
+.cornerMan .cornerManBox {
+  width: 150px;
+}
+
+/* line 34, variable_sass.scss */
+.boxMan {
+  width: 450px;
+}
+/* line 36, variable_sass.scss */
+.boxMan #contentGirl {
+  width: 149.7px;
+}
