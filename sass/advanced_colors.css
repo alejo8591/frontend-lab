@@ -1,0 +1,38 @@
+/* line 2, advanced_colors.scss */
+#ajaxMan {
+  color: Lighten(#699ccc, 20%);
+}
+
+/* line 7, advanced_colors.scss */
+#ajaxManBox {
+  font-color: Lighten(#333333, 52%);
+}
+
+/* line 12, advanced_colors.scss */
+#pageMan {
+  color: Saturate(#336699, 15%);
+}
+
+/* line 17, advanced_colors.scss */
+#ajaxBoy {
+  color: #454545;
+}
+/* line 19, advanced_colors.scss */
+#ajaxBoy > .ajaxChild {
+  color: #454545;
+}
+
+/* line 24, advanced_colors.scss */
+#ajaxGirl {
+  color: #454545;
+}
+
+/* line 28, advanced_colors.scss */
+#ajaxPet {
+  color: Desaturate(#454545, 100%);
+}
+
+/* line 32, advanced_colors.scss */
+#PageGirl {
+  color: #5d2a2a;
+}

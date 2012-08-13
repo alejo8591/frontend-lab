@@ -1,0 +1,34 @@
+// Lighten/Darken
+#ajaxMan{
+	color: Lighten(#699CCC, 20%);
+}
+// Advanced Lighten/Darken
+$color: Lighten(#333, 52%); 
+#ajaxManBox{
+	font-color: $color;
+} 
+// Saturate/Desaturate
+$colorMan: #336699;
+#pageMan{
+	color: Saturate($colorMan, 15%);
+}
+// change Hue
+$colorGirl: #454545;
+#ajaxBoy{
+	color: adjust-hue($colorGirl, 180);
+	> .ajaxChild{
+		color: adjust-hue(desaturate($colorGirl, 82%), 75);
+	} 
+}
+// Desaturate 100% with grayscale
+#ajaxGirl{
+	color: grayscale($colorGirl);
+}
+// Or
+#ajaxPet{
+	color: Desaturate($colorGirl, 100%);
+}
+// Mixcolor => Sancocholoco
+#PageGirl{
+	color: mix(#222, #993233);
+}

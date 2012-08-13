@@ -1,0 +1,11 @@
+@import "colors";
+@import "width";
+
+#page{
+	background: $background;
+	width: $total;
+}
+#sideBar{
+	color: $colorMan;
+	width: $half_total * 0.2;	
+}

@@ -1,0 +1,11 @@
+/* line 4, build_page.scss */
+#page {
+  background: #ffff7f;
+  width: 960px;
+}
+
+/* line 8, build_page.scss */
+#sideBar {
+  color: #333333;
+  width: 96px;
+}
