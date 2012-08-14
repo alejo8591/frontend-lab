@@ -1,0 +1,17 @@
+$value_padding: 10px;
+$new_yellow: adjust-hue(lighten(red, 30%), 120);
+.sold_button{
+	background: adjust-hue(desaturate(red, 30%), 120);
+	font-weight: bold;
+	color: $new_yellow;
+	padding: $value_padding;
+}
+// use extend a characteristics
+.check_button{
+	@extend .sold_button;
+}
+
+.check_button_white {
+	@extend .sold_button;
+	color: darken($new_yellow, 2%);
+}

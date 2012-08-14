@@ -1,0 +1,12 @@
+/* line 3, use_extend.scss */
+.sold_button, .check_button, .check_button_white {
+  background: #26d926;
+  font-weight: bold;
+  color: #99ff99;
+  padding: 10px;
+}
+
+/* line 14, use_extend.scss */
+.check_button_white {
+  color: #8fff8f;
+}
