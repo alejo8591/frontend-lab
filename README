@@ -3,21 +3,5 @@ Labs with the following technologies:
 HTML5
 CSS 2 and 3
 JavaScript
-....
--------------------------------------------------- ----------------
-
-Understanding HTML5 Labs folder:
-
-it is expected that each of the labs are properly documented
-if not and you want to do with taste request to add
-so you can modify
-
-Logo_html5.html: En este se implementa la API canvas de HTML5
-                 para dibujar el logo de HTML5 ---> Enjoying
-
-ApiGeoSupport.html: Un Sencillo script para comprobar si el 
-                    navegador es compatible con la API de 
-                    gelocation en HTML5.
-
-coord.html: Simple script que arroja informacion sobre la ubicacion
-            solicitada por el usuario.
+SaSS
+-------------------------------------------------- ---------------
