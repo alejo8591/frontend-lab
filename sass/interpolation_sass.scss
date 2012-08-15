@@ -1,0 +1,30 @@
+@import "font_family";
+@mixin blog_post($blog, $background_color, $font_color){
+	.post .#{$blog}_post{
+		color: $background_color;
+		font-color: font_color;
+		width: 200px;
+	}
+}
+@include blog_post("start", "green", "white");
+@include blog_post("new", "black", "white");
+@include blog_post("rank", "red", "white");
+
+// application to images
+@mixin musicMan($music_genre, $color_background){
+	.music .#{$music_genre}_music{
+		color: $color_background;
+		font-color: white;
+		font-family: $verdana;
+		.image{
+			background: url("img/#{$music_genre}.png");
+		}
+	}
+}
+@include musicMan("salsa", "red");
+@include musicMan("jazz", "blue");
+@include musicMan("gospel", "green");
+@include musicMan("reggae", "yellow");
+@include musicMan("rock", "black");
+@include musicMan("blues", "gray");
+@include musicMan("rap", #333);

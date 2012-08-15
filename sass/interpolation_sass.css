@@ -1,0 +1,97 @@
+/* line 3, interpolation_sass.scss */
+.post .start_post {
+  color: "green";
+  font-color: font_color;
+  width: 200px;
+}
+
+/* line 3, interpolation_sass.scss */
+.post .new_post {
+  color: "black";
+  font-color: font_color;
+  width: 200px;
+}
+
+/* line 3, interpolation_sass.scss */
+.post .rank_post {
+  color: "red";
+  font-color: font_color;
+  width: 200px;
+}
+
+/* line 15, interpolation_sass.scss */
+.music .salsa_music {
+  color: "red";
+  font-color: white;
+  font-family: verdana, "bitstream vera sans", "dejavu sans", "liberation sans", geneva, sans-serif;
+}
+/* line 19, interpolation_sass.scss */
+.music .salsa_music .image {
+  background: url("img/salsa.png");
+}
+
+/* line 15, interpolation_sass.scss */
+.music .jazz_music {
+  color: "blue";
+  font-color: white;
+  font-family: verdana, "bitstream vera sans", "dejavu sans", "liberation sans", geneva, sans-serif;
+}
+/* line 19, interpolation_sass.scss */
+.music .jazz_music .image {
+  background: url("img/jazz.png");
+}
+
+/* line 15, interpolation_sass.scss */
+.music .gospel_music {
+  color: "green";
+  font-color: white;
+  font-family: verdana, "bitstream vera sans", "dejavu sans", "liberation sans", geneva, sans-serif;
+}
+/* line 19, interpolation_sass.scss */
+.music .gospel_music .image {
+  background: url("img/gospel.png");
+}
+
+/* line 15, interpolation_sass.scss */
+.music .reggae_music {
+  color: "yellow";
+  font-color: white;
+  font-family: verdana, "bitstream vera sans", "dejavu sans", "liberation sans", geneva, sans-serif;
+}
+/* line 19, interpolation_sass.scss */
+.music .reggae_music .image {
+  background: url("img/reggae.png");
+}
+
+/* line 15, interpolation_sass.scss */
+.music .rock_music {
+  color: "black";
+  font-color: white;
+  font-family: verdana, "bitstream vera sans", "dejavu sans", "liberation sans", geneva, sans-serif;
+}
+/* line 19, interpolation_sass.scss */
+.music .rock_music .image {
+  background: url("img/rock.png");
+}
+
+/* line 15, interpolation_sass.scss */
+.music .blues_music {
+  color: "gray";
+  font-color: white;
+  font-family: verdana, "bitstream vera sans", "dejavu sans", "liberation sans", geneva, sans-serif;
+}
+/* line 19, interpolation_sass.scss */
+.music .blues_music .image {
+  background: url("img/blues.png");
+}
+
+/* line 15, interpolation_sass.scss */
+.music .rap_music {
+  color: #333333;
+  font-color: white;
+  font-family: verdana, "bitstream vera sans", "dejavu sans", "liberation sans", geneva, sans-serif;
+}
+/* line 19, interpolation_sass.scss */
+.music .rap_music .image {
+  background: url("img/rap.png");
+}
