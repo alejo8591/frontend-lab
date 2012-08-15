@@ -1,0 +1,13 @@
+// 0-100 scale
+@mixin opacity_a($opacitya){
+	opacity: $opacitya * 0.01;
+	// IE 5-9+
+	filter: alpha(opacity=#{$opacitya});
+}
+
+// with change to 0-1
+@mixin opacity_b($opacityb:5){
+	opacity: $opacityb;
+	// IE 5-9+
+	filter: alpha(opacity=#{$opacityb*100});
+}
