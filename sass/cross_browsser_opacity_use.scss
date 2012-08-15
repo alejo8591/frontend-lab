@@ -1,0 +1,9 @@
+@import "cross_browsser_opacity";
+
+h2 h3{
+	@include opacity_a(20);
+}
+
+h4 h5 h6{
+	@include opacity_b(25);
+}
