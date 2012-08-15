@@ -1,0 +1,7 @@
+@import "font_family";
+@mixin red_text {
+	color: Lighten(#699ccc, 20%);
+	font-family: $helvetica;
+	font-size: 40px;
+	font-variant: small-caps;
+}
