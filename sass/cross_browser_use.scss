@@ -1,0 +1,4 @@
+@import "cross_browser";
+header{
+	@include rounded_borders(#333, 4px)
+}

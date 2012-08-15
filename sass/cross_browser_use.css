@@ -1,0 +1,11 @@
+/* line 2, cross_browser_use.scss */
+header {
+  -moz-border-radius: 4px 4px;
+  -webkit-border-radius: 4px 4px;
+  -khtml-border-radius: 4px 4px;
+  -o-border-radius: 4px 4px;
+  border-radius: 4px 4px;
+  border: 4px 4px;
+  color: #333333;
+  width: 4px;
+}
