@@ -1,0 +1,14 @@
+/* line 2, this_each.scss */
+.portal_web {
+  background-image: url("/img/portal.png");
+}
+
+/* line 2, this_each.scss */
+.blog_web {
+  background-image: url("/img/blog.png");
+}
+
+/* line 2, this_each.scss */
+.job_web {
+  background-image: url("/img/job.png");
+}

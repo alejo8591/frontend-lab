@@ -1,0 +1,5 @@
+@each $typePortal in portal, blog, job {
+	.#{$typePortal}_web{
+		background-image: url("/img/#{$typePortal}.png")
+	}
+}
