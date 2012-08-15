@@ -1,0 +1,11 @@
+/* line 2, this_media.scss */
+.initMan {
+  color: #224466;
+  font-size: 16px;
+}
+@media print {
+  /* line 2, this_media.scss */
+  .initMan {
+    font-size: 10px;
+  }
+}
