@@ -1,0 +1,12 @@
+@import "mixin_arg";
+.titleMan{
+	@include red_text(16px);
+}
+
+.titleGirl{
+	@include green_text;
+}
+
+.titleBoy{
+	@include green_text(25px);
+}

@@ -1,0 +1,23 @@
+/* line 2, mixin_arg_use.scss */
+.titleMan {
+  color: #b5cee6;
+  font-family: "helvetica neue", arial, helvetica, freesans, "liberation sans", "numbus sans l", sans-serif;
+  font-size: 16px;
+  font-variant: small-caps;
+}
+
+/* line 6, mixin_arg_use.scss */
+.titleGirl {
+  color: #334488;
+  font-family: "palatino linotype", palatino, palladio, "urw palladio l", "book antiqua", "liberation serif", times, serif;
+  font-size: 20px;
+  font-variant: small-caps;
+}
+
+/* line 10, mixin_arg_use.scss */
+.titleBoy {
+  color: #334488;
+  font-family: "palatino linotype", palatino, palladio, "urw palladio l", "book antiqua", "liberation serif", times, serif;
+  font-size: 25px;
+  font-variant: small-caps;
+}
