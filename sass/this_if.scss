@@ -1,0 +1,21 @@
+@mixin type_post($option){
+	@if $option == start{
+		color: white;
+	}
+	@else if $option == new{
+		color: black;
+	}
+	@else if $option == rank{
+		color: yellow;
+	}
+}
+
+.new{
+	@include type_post(new);
+}
+.start{
+	@include type_post(start);
+}
+.rank{
+	@include type_post(rank);
+}
