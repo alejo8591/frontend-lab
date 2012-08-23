@@ -1,7 +1,14 @@
 @import "font_family";
-@mixin red_text {
-	color: Lighten(#699ccc, 20%);
+@mixin red_text($size_font) {
+	color: lighten(#699CCC, 20%);
 	font-family: $helvetica;
-	font-size: 40px;
+	font-size: $size_font;
+	font-variant: small-caps;
+}
+// default value
+@mixin green_text($size_fontB: 20px){
+	color: #334488;
+	font-family: $palatino;
+	font-size: $size_fontB;
 	font-variant: small-caps;
 }
