@@ -1,6 +1,6 @@
 /* line 2, mixin_use.scss */
 .productMan {
-  color: Lighten(#699ccc, 20%);
+  color: #b5cee6;
   font-family: cambria, georgia, "bitstream charter", "century schoolbook l", "liberation serif", times, serif;
   font-size: 40px;
   font-variant: small-caps;
