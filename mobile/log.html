@@ -1,0 +1,88 @@
+<!DOCTYPE HTML>
+<html lang="es-ES">
+<head>
+	<meta charset="UTF-8">
+	<title>Mobile</title>
+	<link rel="stylesheet" href="css/jquery.mobile-1.1.1.css">
+	<script type="text/javascript" src="js/jquery-1.7.1.min.js"></script>
+	<script type="text/javascript">
+			$(document).bind("mobileinit", function() {
+			// Our initialization code here
+				}); 
+	</script>
+	<script type="text/javascript" src="js/jquery.mobile-1.1.1.min.js"></script>
+	<script type="text/javascript">
+		if (navigator.standalone!=undefined) {
+		// It's iOS
+			if (!navigator.standalone) {
+			// It's in Safari
+				$.mobile.changePage($("#loginPage"), $("#help"),{transition: "none"}); }
+		}
+		$(document).ready(function(){
+			$("#chatButton").click(function(){
+				var form_data = {
+					username: $("#chatNameText").val(),
+					password: $("#chatPasswordText").val(),
+					is_ajax:1
+				}
+				$.ajax({
+					type: "post",
+					url: "dolog.php",
+					data:form_data,
+					success: function(response){
+						if(response === 'success'){
+							$(location).attr('href',"#help");;
+						}
+						else alert("mal");
+						
+					}
+				});
+		});
+		});
+	</script>
+	<!--
+	specify its width and height, and it can be larger or smaller than the total visible area of the screen. This is where the scale and zoom features of the mobile browser come into play. 
+    -->
+	<meta name="viewport" content="width=device-width, initial-scale=1"/>
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+</head>
+<body>
+	<div data-role="page" id="loginPage" data-theme="a" data-transition="fade">
+		<div data-role="header" data-position="fixed">
+			<h1>Yeah! App</h1>
+		</div>
+		<div data-role="content" data-fullscreen="true">
+			<div data-role="fieldcontain">
+				<label for="chatNameText">User:</label>
+				<input type="text" name="chatNameText" id="chatNameText" autofocus="autofocus" placeholder="Nombre de Usuario"></input>
+				<label for="chatNameText">Password:</label>
+				<input type="password" name="chatPasswordText" id="chatPasswordText" placeholder="Contraseña de Usuario"></input>
+				<button id="chatButton">Ok</button></div>
+		</div>
+		<div data-role="footer" data-id="main" position="fixed">
+			<div data-role="navbar"> <ul>
+				<li><a href="#loginPage" data-icon="home" class="ui-btn-active ui-state-persist">Home</a>
+				<li><a href="#help" data-icon="alert">Help</a> 
+			</ul>
+			</div>
+		</div>
+        </div>
+	<!-- Help Page -->
+	<div data-role="page" id="help" data-theme="a" data-transition="fade">
+		<div data-role="header">
+			<h1>help</h1>
+		</div>
+		<div data-role="content">
+			<p>Here is there</p>
+		</div>
+		<div data-role="footer" data-id="main" position="fixed">
+			<div data-role="navbar">
+				<ul>
+					<li><a href="#loginPage" data-icon="home">Home</a></li>
+					<li><a data-icon="alert" class="ui-btn-active ui-state-persist">Help</a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
