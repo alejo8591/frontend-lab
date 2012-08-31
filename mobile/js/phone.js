@@ -13,11 +13,11 @@ var Aes = {};  // Aes namespace
  * @param {Number[][]} w   Key schedule as 2D byte-array (Nr+1 x Nb bytes)
  * @returns {Number[]}     Encrypted output state array
  */
-Aes.cipher = function(input, w) {    // main Cipher function [¤5.1]
+Aes.cipher = function(input, w) {    // main Cipher function [Â¤5.1]
   var Nb = 4;               // block size (in words): no of columns in state (fixed at 4 for AES)
   var Nr = w.length/Nb - 1; // no of rounds: 10/12/14 for 128/192/256-bit keys
 
-  var state = [[],[],[],[]];  // initialise 4xNb byte-array 'state' with input [¤3.4]
+  var state = [[],[],[],[]];  // initialise 4xNb byte-array 'state' with input [Â¤3.4]
   for (var i=0; i<4*Nb; i++) state[i%4][Math.floor(i/4)] = input[i];
 
   state = Aes.addRoundKey(state, w, 0, Nb);
@@ -33,7 +33,7 @@ Aes.cipher = function(input, w) {    // main Cipher function [¤5.1]
   state = Aes.shiftRows(state, Nb);
   state = Aes.addRoundKey(state, w, Nr, Nb);
 
-  var output = new Array(4*Nb);  // convert state to 1-d array before returning [¤3.4]
+  var output = new Array(4*Nb);  // convert state to 1-d array before returning [Â¤3.4]
   for (var i=0; i<4*Nb; i++) output[i] = state[i%4][Math.floor(i/4)];
   return output;
 }
@@ -44,7 +44,7 @@ Aes.cipher = function(input, w) {    // main Cipher function [¤5.1]
  * @param {Number[]} key Key as 16/24/32-byte array
  * @returns {Number[][]} Expanded key schedule as 2D byte-array (Nr+1 x Nb bytes)
  */
-Aes.keyExpansion = function(key) {  // generate Key Schedule (byte-array Nr+1 x Nb) from Key [¤5.2]
+Aes.keyExpansion = function(key) {  // generate Key Schedule (byte-array Nr+1 x Nb) from Key [Â¤5.2]
   var Nb = 4;            // block size (in words): no of columns in state (fixed at 4 for AES)
   var Nk = key.length/4  // key length (in words): 4/6/8 for 128/192/256-bit keys
   var Nr = Nk + 6;       // no of rounds: 10/12/14 for 128/192/256-bit keys
@@ -76,14 +76,14 @@ Aes.keyExpansion = function(key) {  // generate Key Schedule (byte-array Nr+1 x 
  * ---- remaining routines are private, not called externally ----
  */
  
-Aes.subBytes = function(s, Nb) {    // apply SBox to state S [¤5.1.1]
+Aes.subBytes = function(s, Nb) {    // apply SBox to state S [Â¤5.1.1]
   for (var r=0; r<4; r++) {
     for (var c=0; c<Nb; c++) s[r][c] = Aes.sBox[s[r][c]];
   }
   return s;
 }
 
-Aes.shiftRows = function(s, Nb) {    // shift row r of state S left by r bytes [¤5.1.2]
+Aes.shiftRows = function(s, Nb) {    // shift row r of state S left by r bytes [Â¤5.1.2]
   var t = new Array(4);
   for (var r=1; r<4; r++) {
     for (var c=0; c<4; c++) t[c] = s[r][(c+r)%Nb];  // shift into temp copy
@@ -92,16 +92,16 @@ Aes.shiftRows = function(s, Nb) {    // shift row r of state S left by r bytes [
   return s;  // see asmaes.sourceforge.net/rijndael/rijndaelImplementation.pdf
 }
 
-Aes.mixColumns = function(s, Nb) {   // combine bytes of each col of state S [¤5.1.3]
+Aes.mixColumns = function(s, Nb) {   // combine bytes of each col of state S [Â¤5.1.3]
   for (var c=0; c<4; c++) {
     var a = new Array(4);  // 'a' is a copy of the current column from 's'
-    var b = new Array(4);  // 'b' is a¥{02} in GF(2^8)
+    var b = new Array(4);  // 'b' is aÂ¥{02} in GF(2^8)
     for (var i=0; i<4; i++) {
       a[i] = s[i][c];
       b[i] = s[i][c]&0x80 ? s[i][c]<<1 ^ 0x011b : s[i][c]<<1;
 
     }
-    // a[n] ^ b[n] is a¥{03} in GF(2^8)
+    // a[n] ^ b[n] is aÂ¥{03} in GF(2^8)
     s[0][c] = b[0] ^ a[1] ^ b[1] ^ a[2] ^ a[3]; // 2*a0 + 3*a1 + a2 + a3
     s[1][c] = a[0] ^ b[1] ^ a[2] ^ b[2] ^ a[3]; // a0 * 2*a1 + 3*a2 + a3
     s[2][c] = a[0] ^ a[1] ^ b[2] ^ a[3] ^ b[3]; // a0 + a1 + 2*a2 + 3*a3
@@ -110,7 +110,7 @@ Aes.mixColumns = function(s, Nb) {   // combine bytes of each col of state S [¤5
   return s;
 }
 
-Aes.addRoundKey = function(state, w, rnd, Nb) {  // xor Round Key into state S [¤5.1.4]
+Aes.addRoundKey = function(state, w, rnd, Nb) {  // xor Round Key into state S [Â¤5.1.4]
   for (var r=0; r<4; r++) {
     for (var c=0; c<Nb; c++) state[r][c] ^= w[rnd*4+c][r];
   }
@@ -129,7 +129,7 @@ Aes.rotWord = function(w) {    // rotate 4-byte word w left by one byte
   return w;
 }
 
-// sBox is pre-computed multiplicative inverse in GF(2^8) used in subBytes and keyExpansion [¤5.1.1]
+// sBox is pre-computed multiplicative inverse in GF(2^8) used in subBytes and keyExpansion [Â¤5.1.1]
 Aes.sBox =  [0x63,0x7c,0x77,0x7b,0xf2,0x6b,0x6f,0xc5,0x30,0x01,0x67,0x2b,0xfe,0xd7,0xab,0x76,
              0xca,0x82,0xc9,0x7d,0xfa,0x59,0x47,0xf0,0xad,0xd4,0xa2,0xaf,0x9c,0xa4,0x72,0xc0,
              0xb7,0xfd,0x93,0x26,0x36,0x3f,0xf7,0xcc,0x34,0xa5,0xe5,0xf1,0x71,0xd8,0x31,0x15,
@@ -147,7 +147,7 @@ Aes.sBox =  [0x63,0x7c,0x77,0x7b,0xf2,0x6b,0x6f,0xc5,0x30,0x01,0x67,0x2b,0xfe,0x
              0xe1,0xf8,0x98,0x11,0x69,0xd9,0x8e,0x94,0x9b,0x1e,0x87,0xe9,0xce,0x55,0x28,0xdf,
              0x8c,0xa1,0x89,0x0d,0xbf,0xe6,0x42,0x68,0x41,0x99,0x2d,0x0f,0xb0,0x54,0xbb,0x16];
 
-// rCon is Round Constant used for the Key Expansion [1st col is 2^(r-1) in GF(2^8)] [¤5.2]
+// rCon is Round Constant used for the Key Expansion [1st col is 2^(r-1) in GF(2^8)] [Â¤5.2]
 Aes.rCon = [ [0x00, 0x00, 0x00, 0x00],
              [0x01, 0x00, 0x00, 0x00],
              [0x02, 0x00, 0x00, 0x00],
@@ -195,7 +195,7 @@ Aes.Ctr.encrypt = function(plaintext, password, nBits) {
   var key = Aes.cipher(pwBytes, Aes.keyExpansion(pwBytes));  // gives us 16-byte key
   key = key.concat(key.slice(0, nBytes-16));  // expand key to 16/24/32 bytes long
 
-  // initialise 1st 8 bytes of counter block with nonce (NIST SP800-38A ¤B.2): [0-1] = millisec, 
+  // initialise 1st 8 bytes of counter block with nonce (NIST SP800-38A Â¤B.2): [0-1] = millisec, 
   // [2-3] = random, [4-7] = seconds, together giving full sub-millisec uniqueness up to Feb 2106
   var counterBlock = new Array(blockSize);
   
@@ -380,7 +380,7 @@ Base64.decode = function(str, utf8decode) {
   coded = utf8decode ? str.decodeUTF8() : str;
   
   
-  for (var c=0; c<coded.length; c+=4) {  // unpack four hexets into three octets
+  for (var c=0; c<(coded.length); c+=4) {  // unpack four hexets into three octets
     h1 = b64.indexOf(coded.charAt(c));
     h2 = b64.indexOf(coded.charAt(c+1));
     h3 = b64.indexOf(coded.charAt(c+2));
@@ -463,22 +463,18 @@ Utf8.decode = function(strUtf) {
 $(document).ready(function(){
   $("#chatButton").click(function(){
 	  var form_data = {
-		  username: Aes.Ctr.encrypt($("#chatNameText").val(), '54321', 256),
-		  password: Aes.Ctr.encrypt($("#chatPasswordText").val(), '54321', 256),
+		  username: Aes.Ctr.encrypt($("#chatNameText").val().trim(), '54321', 256),
+		  password: Aes.Ctr.encrypt($("#chatPasswordText").val().trim(), '54321', 256),
 		  is_ajax: 1
 	  }
 	  $.ajax({
 		  type: "post",
 		  url: "phone.php",
 		  data:form_data,
-		  success: function(response){
-			  (Aes.Ctr.decrypt(response.flag, '54321', 256) === "t")? alert("hola") : alert("fail");
-			  /*if( masuperlami === "t"){
-			    // alert("Nombre: "+Aes.Ctr.decrypt(response.user, '54321', 256)+" "+"Password: "+Aes.Ctr.decrypt(response.pass,'54321', 256))
-				  $(location).attr('href',"#help");
-			  }
-			  else {alert("mal");}*/
+		  dataType: "json",
+		  success: function(data){
+			(Aes.Ctr.decrypt(data.flag, '54321', 256) === "t")? $(location).attr('href',"#listman") : alert("fail");
 		  }
 	  });
-});
+  });
 });
