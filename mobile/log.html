@@ -5,41 +5,8 @@
 	<title>Mobile</title>
 	<link rel="stylesheet" href="css/jquery.mobile-1.1.1.css">
 	<script type="text/javascript" src="js/jquery-1.7.1.min.js"></script>
-	<script type="text/javascript">
-			$(document).bind("mobileinit", function() {
-			// Our initialization code here
-				}); 
-	</script>
 	<script type="text/javascript" src="js/jquery.mobile-1.1.1.min.js"></script>
-	<script type="text/javascript">
-		if (navigator.standalone!=undefined) {
-		// It's iOS
-			if (!navigator.standalone) {
-			// It's in Safari
-				$.mobile.changePage($("#loginPage"), $("#help"),{transition: "none"}); }
-		}
-		$(document).ready(function(){
-			$("#chatButton").click(function(){
-				var form_data = {
-					username: $("#chatNameText").val(),
-					password: $("#chatPasswordText").val(),
-					is_ajax:1
-				}
-				$.ajax({
-					type: "post",
-					url: "dolog.php",
-					data:form_data,
-					success: function(response){
-						if(response === 'success'){
-							$(location).attr('href',"#help");;
-						}
-						else alert("mal");
-						
-					}
-				});
-		});
-		});
-	</script>
+	<script type="text/javascript" src="js/phone.js"></script>
 	<!--
 	specify its width and height, and it can be larger or smaller than the total visible area of the screen. This is where the scale and zoom features of the mobile browser come into play. 
     -->
@@ -68,9 +35,9 @@
 		</div>
         </div>
 	<!-- Help Page -->
-	<div data-role="page" id="help" data-theme="a" data-transition="fade">
+	<div data-role="page" id="listman" data-theme="a" data-transition="fade">
 		<div data-role="header">
-			<h1>help</h1>
+				<h1>Lista de Usuarios</h1>
 		</div>
 		<div data-role="content">
 			<p>Here is there</p>
