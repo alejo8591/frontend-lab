@@ -1,5 +1,6 @@
 <?php
-//include_once "conf/config.php";
+include_once "core/conf/config.php";
+//include_once "core/aes/aes.class.php";
 
 // $timer = microtime(true);
 
