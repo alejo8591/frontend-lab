@@ -464,48 +464,20 @@ $(document).ready(function(){
    // evento iphone
   // $("#chatButton").bind( "touchstart", function(e){alert('Span Clicked!')} );
 
-  $("#chatButton").bind("click", "pageinit", function(e){
+  $("#chatButton").click(function(){
 	  var form_data = {
 		  username: Aes.Ctr.encrypt($("#chatNameText").val().trim(), '54321', 256),
 		  password: Aes.Ctr.encrypt($("#chatPasswordText").val().trim(), '54321', 256),
 		  is_ajax: 1
 	  }
-	  
 	  $.ajax({
 		  type: "post",
 		  url: "phone.php",
 		  data:form_data,
 		  dataType: "json",
 		  success: function(data){
-			(Aes.Ctr.decrypt(data.flag, '54321', 256) === "t")? $(location).attr('href',"#lista") : alert("fail");
-		  }
-	  });
-	  /*
-	   $.post("phone.php", form_data,
-	      function(data){
 			(Aes.Ctr.decrypt(data.flag, '54321', 256) === "t")? $(location).attr('href',"#listman") : alert("fail");
 		  }
-	  );*/
+	  });
   });
-  $('#lista').bind('pageinit', function(event) {
-	listaEmpleados();
-  });
-
-  function listaEmpleados() {
-	  $.ajax({
-		    type: "get",
-		    url: "list.php",
-		    // data:form_data,
-		    dataType: "json",
-		    success: function(data){
-			$.each(data, function(key, value) {
-			  $('#listaEmpleados').append('<li><a href="employeedetails.html?id=' + value.ID + '">' +
-					  //'<img src="pics/' + data.IMAGEN + '"/>' +
-					  '<h4>' + value.NOMBRE + '</h4>' +
-					  '<p>' + value.USUARIO + '</p></li>');
-			    $('#listaEmpleados').listview('refresh');
-			});
-		    }
-);
-}
 });

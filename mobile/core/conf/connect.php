@@ -1,6 +1,5 @@
 <?php
 //DRIVER DE MySQL en POO
-
 class Base {
 	private $id_conexion; //numero para la conexion con la BD
 	private $id_resultado; //cuando se ejecuta un query se obtiene un numero
@@ -10,7 +9,7 @@ class Base {
 	* de la conexion de la BD pues MySQL requiere primero conexion
 	*y despues si abrir la BD
 	*/
-	function base($server=IPSERVIDORBD,$pto=PTOBD,$user=USUARIOBD,$clave=CLAVEBD,$tipo_conexion="N") {
+	function Base($server=IPSERVIDORBD,$pto=PTOBD,$user=USUARIOBD,$clave=CLAVEBD,$tipo_conexion="N") {
 		$this->id_conexion=null;
 		$this->id_resultado=null;
 		$this->error1="Could no Connect";
@@ -72,15 +71,15 @@ class Base {
 
 }//fin de la clase
 
-class subase extends Base {
+class SuBase extends Base {
 	//metodo constructor
 
 	/* En este metodo constructor  se realizan varias tareas: inicializa las 
-	*propiedades heredadasdel padre y establece la conexion 
-	*de la BD y abre la BD.
+	*  propiedades heredadas del padre y establece la conexion 
+	*  de la BD y abre la BD.
 	*
 	*/	
-	function subase($server=IPSERVIDORBD,$pto=PTOBD,$user=USUARIOBD,$clave=CLAVEBD,$tipo_conexion="N",$basedatos=BD){
+	function SuBase($server=IPSERVIDORBD,$pto=PTOBD,$user=USUARIOBD,$clave=CLAVEBD,$tipo_conexion="N",$basedatos=BD){
 		if($this->Base($server,$pto,$user,$clave,$tipo_conexion)){
 			return($this->abrirbasedatos($basedatos));
 		}

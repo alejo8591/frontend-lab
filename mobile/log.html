@@ -24,31 +24,23 @@
 				<input type="text" name="chatNameText" id="chatNameText" autofocus="autofocus" placeholder="Nombre de Usuario"></input>
 				<label for="chatNameText">Password:</label>
 				<input type="password" name="chatPasswordText" id="chatPasswordText" placeholder="Contraseña de Usuario"></input>
-				<button id="chatButton">Ok</button></div>
+				<a href="" data-role="button" id="chatButton" data-icon="check">Ingresar al Chat</a></div>
 		</div>
 		<div data-role="footer" data-id="main" position="fixed">
-			<div data-role="navbar"> <ul>
-				<li><a href="#loginPage" data-icon="home" class="ui-btn-active ui-state-persist">Home</a>
-				<li><a href="#help" data-icon="alert">Help</a> 
-			</ul>
 			</div>
-		</div>
         </div>
-	<!-- Help Page -->
-	<div data-role="page" id="listman" data-theme="a" data-transition="fade">
+	<!-- list Page -->
+	<div data-role="page" id="lista" data-theme="a" data-transition="fade">
 		<div data-role="header">
-				<h1>Lista de Usuarios</h1>
+				<h1>Usuarios</h1>
 		</div>
 		<div data-role="content">
-			<p>Here is there</p>
+		      <ul id="listaEmpleados" data-role="listview" data-filter="true">
+			
+			</ul>
 		</div>
 		<div data-role="footer" data-id="main" position="fixed">
-			<div data-role="navbar">
-				<ul>
-					<li><a href="#listman" data-icon="home">Home</a></li>
-					<li><a data-icon="alert" href="#listman" class="ui-btn-active ui-state-persist">Help</a></li>
-				</ul>
-			</div>
+			
 		</div>
 	</div>
 </body>
