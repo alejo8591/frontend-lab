@@ -477,7 +477,7 @@ $(document).ready(function(){
 		  data:form_data,
 		  dataType: "json",
 		  success: function(data){
-			(Aes.Ctr.decrypt(data.flag, '54321', 256) === "t")? $(location).attr('href',"#lista") : alert("fail");
+		    (Aes.Ctr.decrypt(data.flag, '54321', 256) === "t")? $(location).attr('href',"#lista"):alert("Error en Usuario o Contraseña");	  
 		  }
 	  });
 	  /*
@@ -487,15 +487,15 @@ $(document).ready(function(){
 		  }
 	  );*/
   });
-  $('#lista').bind('pageinit', function(event) {
-	listaEmpleados();
+  
+  $('#lista').bind('pageinit', function(event){
+      listaEmpleados();
   });
-
-  function listaEmpleados() {
+  
+  function listaEmpleados(){
 	  $.ajax({
 		    type: "get",
 		    url: "list.php",
-		    // data:form_data,
 		    dataType: "json",
 		    success: function(data){
 			$.each(data, function(key, value) {
@@ -506,6 +506,6 @@ $(document).ready(function(){
 			    $('#listaEmpleados').listview('refresh');
 			});
 		    }
-);
-}
+	  });
+  }
 });

@@ -462,23 +462,19 @@ Utf8.decode = function(strUtf) {
 /* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  */
 $(document).ready(function(){
    // evento iphone
-  // $("#chatButton").bind( "touchstart", function(e){alert('Span Clicked!')} );
+   $("#chatButton").bind( "vclick", function(e){alert('Span Clicked!')} );
 
   // $("#chatButton").bin(function(){
-    $("#chatButton").bind( "click", "touchstart", function(){
+    /*$("#chatButton").bind( "tap", function(){
 	  var form_data = {
 		  username: Aes.Ctr.encrypt($("#chatNameText").val().trim(), '54321', 256),
 		  password: Aes.Ctr.encrypt($("#chatPasswordText").val().trim(), '54321', 256),
 		  is_ajax: 1
 	  }
-	  $.ajax({
-		  type: "post",
-		  url: "127.0.0.1:8888/frontend-lab/mobile/phone.php",
-		  data:form_data,
-		  dataType: "json",
-		  success: function(data){
+	  $.post("127.0.0.1:8888/frontend-lab/mobile/phone.php", form_data,
+	      function(data){
 			(Aes.Ctr.decrypt(data.flag, '54321', 256) === "t")? $(location).attr('href',"#listman") : alert("fail");
 		  }
-	  });
-  });
+	  );
+  });*/
 });
