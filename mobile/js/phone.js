@@ -460,13 +460,14 @@ Utf8.decode = function(strUtf) {
 }
 
 /* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  */
+var pw = 'c00p3r6aykey7yaslasapd1ltdc00p3r';
 $(document).ready(function(){
 
   $("#chatButton").bind("click", "pageinit", function(e){
 	  var form_data = {
-		  username: Aes.Ctr.encrypt($("#chatNameText").val().trim(), '54321', 256),
-		  password: Aes.Ctr.encrypt($("#chatPasswordText").val().trim(), '54321', 256),
-		  is_ajax:  Aes.Ctr.encrypt("1", '54321', 256)
+		  username: Aes.Ctr.encrypt($("#chatNameText").val().trim(), pw, 256),
+		  password: Aes.Ctr.encrypt($("#chatPasswordText").val().trim(), pw, 256),
+		  is_ajax:  Aes.Ctr.encrypt("1", pw, 256)
 	  }
 	  $.ajax({
 		  type:     "post",
@@ -474,23 +475,19 @@ $(document).ready(function(){
 		  data:     form_data,
 		  dataType: "json",
 		  success:  function(data){
-				  var usuario = Aes.Ctr.decrypt(data.usuario, '54321', 256);
 				  // flag de validación
-				  if(Aes.Ctr.decrypt(data.flag, '54321', 256) === "t"){
-				      $('#lista').bind('pageinit',listaEmpleados(usuario));
-			    } else {alert("Error en Usuario o Contraseña");}
+				  Aes.Ctr.decrypt(data.flag, pw, 256) === "t" ? listaEmpleados(Aes.Ctr.decrypt(data.usuario, pw, 256)) : $(location).attr('href',"#errorIngreso");
 		  }
 	  });
   });
   
   function listaEmpleados(empleado){
-	  empleado = {usuario:empleado};
-	  $(location).attr('href',"#lista")
+	  $(location).attr('href',"#lista");
 	  $('#listaempleados li').remove();
 	  $.ajax({
 		    type:     "get",
 		    url:      "list.php",
-		    data:     empleado,
+		    data:     {usuario:empleado},
 		    dataType: "json",
 		    success:  function(data){
 				    $.each(data, function(key, value){
