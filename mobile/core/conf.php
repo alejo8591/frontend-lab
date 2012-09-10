@@ -1,8 +1,8 @@
 <?php
 	define("IPSERVIDORBD","127.0.0.1");
-	define("PTOBD","3306");
+	define("PTOBD","8889");
 	define("USUARIOBD","root");
-	define("CLAVEBD","3193115");
+	define("CLAVEBD","root");
 	define("BD","SIGMACOREPRUE");
 	define("VERSION","3");
 	define("APLICACION","CHATCORE");
