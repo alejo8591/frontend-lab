@@ -461,49 +461,44 @@ Utf8.decode = function(strUtf) {
 
 /* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  */
 $(document).ready(function(){
-   // evento iphone
-  // $("#chatButton").bind( "touchstart", function(e){alert('Span Clicked!')} );
 
   $("#chatButton").bind("click", "pageinit", function(e){
 	  var form_data = {
 		  username: Aes.Ctr.encrypt($("#chatNameText").val().trim(), '54321', 256),
 		  password: Aes.Ctr.encrypt($("#chatPasswordText").val().trim(), '54321', 256),
-		  is_ajax: 1
+		  is_ajax:  Aes.Ctr.encrypt("1", '54321', 256)
 	  }
-	  
 	  $.ajax({
-		  type: "post",
-		  url: "phone.php",
-		  data:form_data,
+		  type:     "post",
+		  url:      "phone.php",
+		  data:     form_data,
 		  dataType: "json",
-		  success: function(data){
-		    (Aes.Ctr.decrypt(data.flag, '54321', 256) === "t")? $(location).attr('href',"#lista"):alert("Error en Usuario o Contraseña");	  
+		  success:  function(data){
+				  var usuario = Aes.Ctr.decrypt(data.usuario, '54321', 256);
+				  // flag de validación
+				  if(Aes.Ctr.decrypt(data.flag, '54321', 256) === "t"){
+				      $('#lista').bind('pageinit',listaEmpleados(usuario));
+			    } else {alert("Error en Usuario o Contraseña");}
 		  }
 	  });
-	  /*
-	   $.post("phone.php", form_data,
-	      function(data){
-			(Aes.Ctr.decrypt(data.flag, '54321', 256) === "t")? $(location).attr('href',"#listman") : alert("fail");
-		  }
-	  );*/
   });
   
-  $('#lista').bind('pageinit', function(event){
-      listaEmpleados();
-  });
-  
-  function listaEmpleados(){
+  function listaEmpleados(empleado){
+	  empleado = {usuario:empleado};
+	  $(location).attr('href',"#lista")
+	  $('#listaempleados li').remove();
 	  $.ajax({
-		    type: "get",
-		    url: "list.php",
+		    type:     "get",
+		    url:      "list.php",
+		    data:     empleado,
 		    dataType: "json",
-		    success: function(data){
-			$.each(data, function(key, value) {
-			  $('#listaEmpleados').append('<li><a href="employeedetails.html?id=' + value.ID + '">' +
-					  //'<img src="pics/' + data.IMAGEN + '"/>' +
-					  '<h4>' + value.NOMBRE + '</h4>' +
-					  '<p>' + value.USUARIO + '</p></li>');
-			    $('#listaEmpleados').listview('refresh');
+		    success:  function(data){
+				    $.each(data, function(key, value){
+					 $('#listaEmpleados').append('<li><a href="log.html?id=' + value.ID + '">' +
+						//'<img src="pics/' + data.IMAGEN + '"/>' +
+						'<h4>' + value.NOMBRE + '</h4>' +
+						'<p>' + value.USUARIO + '</p></li>');
+				    $('#listaEmpleados').listview('refresh');
 			});
 		    }
 	  });

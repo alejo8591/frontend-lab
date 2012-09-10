@@ -1,8 +1,8 @@
 <?php
-	define("IPSERVIDORBD","localhost");
-	define("PTOBD","8889");
+	define("IPSERVIDORBD","127.0.0.1");
+	define("PTOBD","3306");
 	define("USUARIOBD","root");
-	define("CLAVEBD","root");
+	define("CLAVEBD","3193115");
 	define("BD","SIGMACOREPRUE");
 	define("VERSION","3");
 	define("APLICACION","CHATCORE");
