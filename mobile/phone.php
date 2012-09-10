@@ -1,10 +1,9 @@
 <?php
 include_once(__DIR__."/core/conf.php");
 // $timer = microtime(true);
-$pw = '54321';
+$pw = "c00p3r6aykey7yaslasapd1ltdc00p3r";
 $is_ajax = (int) AesCtr::decrypt($_REQUEST['is_ajax'], $pw, 256);
 	if(isset($is_ajax) && $is_ajax == 1){
-		$pw = '54321';
 		$decrName = (string) AesCtr::decrypt($_REQUEST['username'], $pw, 256);
 		$decrPass = (string) AesCtr::decrypt($_REQUEST['password'], $pw, 256);
 		$us = $bd->sub_fila("SELECT USUARIO FROM ITR_USUARIOS WHERE USUARIO='$decrName'");
