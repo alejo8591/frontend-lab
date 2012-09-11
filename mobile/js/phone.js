@@ -1,3 +1,5 @@
+var pw = 'c00p3r6aykey7yaslasapd1ltdc00p3r';
+var cip = 256;
 /* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  */
 /*  AES implementation in JavaScript (c) Chris Veness 2005-2012                                   */
 /*   - see http://csrc.nist.gov/publications/PubsFIPS.html#197                                    */
@@ -460,14 +462,13 @@ Utf8.decode = function(strUtf) {
 }
 
 /* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  */
-var pw = 'c00p3r6aykey7yaslasapd1ltdc00p3r';
 $(document).ready(function(){
 
   $("#chatButton").bind("click", "pageinit", function(e){
 	  var form_data = {
-		  username: Aes.Ctr.encrypt($("#chatNameText").val().trim(), pw, 256),
-		  password: Aes.Ctr.encrypt($("#chatPasswordText").val().trim(), pw, 256),
-		  is_ajax:  Aes.Ctr.encrypt("1", pw, 256)
+		  username: Aes.Ctr.encrypt($("#chatNameText").val().trim(), pw, cip),
+		  password: Aes.Ctr.encrypt($("#chatPasswordText").val().trim(), pw, cip),
+		  is_ajax:  Aes.Ctr.encrypt("1", pw, cip)
 	  }
 	  $.ajax({
 		  type:     "post",
@@ -476,7 +477,7 @@ $(document).ready(function(){
 		  dataType: "json",
 		  success:  function(data){
 				  // flag de validación
-				  Aes.Ctr.decrypt(data.flag, pw, 256) === "t" ? listaEmpleados(data.usuario) : $(location).attr('href',"#errorIngreso");
+				  Aes.Ctr.decrypt(data.flag, pw, cip) === "t" ? listaEmpleados(data.usuario) : $(location).attr('href',"#errorIngreso");
 		  }
 	  });
   });
@@ -484,22 +485,25 @@ $(document).ready(function(){
   function listaEmpleados(empleado){
 	  $(location).attr('href',"#lista");
 	  $('#listaempleados li').remove();
+	  // Trayebdo datos desde el servidor
+	  // Lista de usuarios
 	  $.ajax({
 		    type:     "get",
 		    url:      "list.php",
 		    data:     {usuario:empleado},
 		    dataType: "json",
 		    success:  function(data){
-				    // data = Aes.Ctr.decrypt(data, pw, 256);
+				    // data = ;
 				    $.each(data, function(key, value){
 					 $('#listaEmpleados').append('<li><a href="#chat">' +
-						//'<img src="pics/' + data.IMAGEN + '"/>' +
-						'<h4>' + value.NOMBRE+ '</h4>' +
-						'<p>' + value.USUARIO + '</p></li>');
+						// '<img src="pics/' + Aes.Ctr.decrypt(data.IMAGEN, pw, 256) + '"/>' +
+						'<h4>' + Aes.Ctr.decrypt(value.NOMBRE, pw, cip) + '</h4>' +
+						'<p>' + Aes.Ctr.decrypt(value.USUARIO, pw, cip) + '</p></li>');
 				    $('#listaEmpleados').listview('refresh');
 			});
 		    }
 	  });
+	  
   }
   // Funcion para enviar mensajes al servidor
   function enviarMensaje(){
@@ -515,10 +519,10 @@ $(document).ready(function(){
 		alert("Mensaje incorrecto");
 	}
 	else{
-		//Limpiamos la caja del formulario		
-		$("#msg").val("");
-		//Enviamos un mensaje
-		websocket.emit("enviarMensaje",msg);	
+	      //Limpiamos la caja del formulario		
+	      $("#msg").val("");
+	      //Enviamos un mensaje
+	      websocket.emit("enviarMensaje",msg);	
 	}
   }
   
