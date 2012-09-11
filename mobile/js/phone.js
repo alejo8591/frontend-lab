@@ -476,7 +476,7 @@ $(document).ready(function(){
 		  dataType: "json",
 		  success:  function(data){
 				  // flag de validación
-				  Aes.Ctr.decrypt(data.flag, pw, 256) === "t" ? listaEmpleados(Aes.Ctr.decrypt(data.usuario, pw, 256)) : $(location).attr('href',"#errorIngreso");
+				  Aes.Ctr.decrypt(data.flag, pw, 256) === "t" ? listaEmpleados(data.usuario) : $(location).attr('href',"#errorIngreso");
 		  }
 	  });
   });
@@ -490,14 +490,40 @@ $(document).ready(function(){
 		    data:     {usuario:empleado},
 		    dataType: "json",
 		    success:  function(data){
+				    // data = Aes.Ctr.decrypt(data, pw, 256);
 				    $.each(data, function(key, value){
-					 $('#listaEmpleados').append('<li><a href="log.html?id=' + value.ID + '">' +
+					 $('#listaEmpleados').append('<li><a href="#chat">' +
 						//'<img src="pics/' + data.IMAGEN + '"/>' +
-						'<h4>' + value.NOMBRE + '</h4>' +
+						'<h4>' + value.NOMBRE+ '</h4>' +
 						'<p>' + value.USUARIO + '</p></li>');
 				    $('#listaEmpleados').listview('refresh');
 			});
 		    }
 	  });
+  }
+  // Funcion para enviar mensajes al servidor
+  function enviarMensaje(){
+	var msg = $("#msg").val();
+	//Verificamos que no tenga scripts
+	if((msg.indexOf("<") != -1)){
+		alert("Mensaje incorrecto");
+	}
+	else if((msg.indexOf(">") != -1)){
+		alert("Mensaje incorrecto");	
+	}
+	else if((msg.indexOf(";") != -1)){
+		alert("Mensaje incorrecto");
+	}
+	else{
+		//Limpiamos la caja del formulario		
+		$("#msg").val("");
+		//Enviamos un mensaje
+		websocket.emit("enviarMensaje",msg);	
+	}
+  }
+  
+  function procesarMensaje(data){
+	$('#message').append($('<li>').append($('<p>').html('<strong>'+ data[0] + " dice:</strong> " + data[1])));
+	$('#message').animate({scrollTop: $("#message")[0].scrollHeight}, 100);
   }
 });
