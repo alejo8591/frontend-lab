@@ -7,11 +7,12 @@
 	define("VERSION","3");
 	define("APLICACION","CHATCORE");
 	define("AUTOR","Alejandro Romero");
+	define("AES", __DIR__."/aes/aes.class.php");
 	define("DRIVER",__DIR__."/conf/connect.php");
-        define("AES", __DIR__."/aes/aes.class.php");
 	//llama al archivo driver de mysql
+	$pw = "c00p3r6aykey7yaslasapd1ltdc00p3r";
+	include_once(AES);
 	include_once(DRIVER);
-        include_once(AES);
 	$bd=new SuBase();
 	// optional
 	header('Cache-control: max-age=3600, public');
