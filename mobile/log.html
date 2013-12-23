@@ -3,14 +3,10 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Mobile</title>
-	<link rel="stylesheet" href="css/jquery.mobile-1.1.1.css">
 	<script type="text/javascript" src="js/jquery-1.7.1.min.js"></script>
-	<script type="text/javascript">
-			$(document).bind("mobileinit", function() {
-			// Our initialization code here
-				}); 
-	</script>
+	<link rel="stylesheet" href="css/jquery.mobile-1.1.1.css">
 	<script type="text/javascript" src="js/jquery.mobile-1.1.1.min.js"></script>
+<<<<<<< HEAD
 	<script type="text/javascript">
 		if (navigator.standalone!=undefined) {
 		// It's iOS
@@ -42,10 +38,17 @@
 	<!--
 	specify its width and height, and it can be larger or smaller than the total visible area of the screen. This is where the scale and zoom features of the mobile browser come into play. 
     -->
+=======
+	<script type="text/javascript" src="js/phone.js"></script>
+	<!-- especificar su anchura y altura, y puede ser mayor o menor que el área
+	total de la pantalla visible. Aquí es donde la magnitud y características
+	de zoom del navegador móvil entran en juego.-->
+>>>>>>> 707061b46d2f03cf1623c26ad162bff892cabf40
 	<meta name="viewport" content="width=device-width, initial-scale=1"/>
 	<meta name="apple-mobile-web-app-status-bar-style" content="black">
 </head>
 <body>
+	<!-- Pagina de aterrizaje e inicio de sesion -->	
 	<div data-role="page" id="loginPage" data-theme="a" data-transition="fade">
 		<div data-role="header" data-position="fixed">
 			<h1>Yeah! App</h1>
@@ -56,32 +59,43 @@
 				<input type="text" name="chatNameText" id="chatNameText" autofocus="autofocus" placeholder="Nombre de Usuario"></input>
 				<label for="chatNameText">Password:</label>
 				<input type="password" name="chatPasswordText" id="chatPasswordText" placeholder="Contraseña de Usuario"></input>
-				<button id="chatButton">Ok</button></div>
+				<a href="" data-role="button" id="chatButton" data-icon="check">Ingresar al Chat</a></div>
 		</div>
 		<div data-role="footer" data-id="main" position="fixed">
-			<div data-role="navbar"> <ul>
-				<li><a href="#loginPage" data-icon="home" class="ui-btn-active ui-state-persist">Home</a>
-				<li><a href="#help" data-icon="alert">Help</a> 
-			</ul>
 			</div>
-		</div>
         </div>
-	<!-- Help Page -->
-	<div data-role="page" id="help" data-theme="a" data-transition="fade">
+	<!-- Lista de empleados -->
+	<div data-role="page" id="lista" data-theme="a" data-transition="fade">
 		<div data-role="header">
-			<h1>help</h1>
+				<h1>Usuarios</h1>
 		</div>
 		<div data-role="content">
-			<p>Here is there</p>
+		      <ul id="listaEmpleados" data-role="listview" data-filter="true">
+			
+			</ul>
 		</div>
 		<div data-role="footer" data-id="main" position="fixed">
-			<div data-role="navbar">
-				<ul>
-					<li><a href="#loginPage" data-icon="home">Home</a></li>
-					<li><a data-icon="alert" class="ui-btn-active ui-state-persist">Help</a></li>
-				</ul>
-			</div>
+			
 		</div>
 	</div>
+	<!--  pagina para chatear con usuario -->
+	<div data-role="page" id="chat" data-transition="fade" data-fullscreen="true">
+		<div data-role="header" data-theme="a"><h1>Chat</h1></div>
+		<div data-role="content" data-theme="a" data-fullscreen="true">
+		    <form id="formmsg">
+		       <input type="text" name="msg" id="msg" placeholder="Tu mensaje aquí" maxlength="140" required />
+		       <input type="submit" value="Enviar" id="sendm" class="btn">
+		    </form>
+		</div>
+	</div>
+	<!--  pagina de Dialogo error en acceso-->
+	<div data-role="page" id="errorIngreso" data-transition="fade">
+		<div data-role="header" data-theme="a"><h1>Error!</h1></div>
+		<div data-role="content" data-theme="a">
+		<span>El Usuario o Contraseña no son correctos, por favor verificar</span>
+		<a href="#" data-role="button" data-theme="a" data-rel="back">Aceptar</a>
+		</div>
+	</div>
+</div>
 </body>
 </html>
