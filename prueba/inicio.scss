@@ -1,0 +1,15 @@
+$width_text: 300px;
+.boxes{
+	color: black;
+	font-color: red;
+	width: $width_text * 2;
+	> titleBox{
+		color: white;
+		font-color: yellow;
+		> boxesDos {
+			font-color: green;
+			padding: 5px;
+			width: $width_text / 4;
+		}
+	}
+}

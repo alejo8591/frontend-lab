@@ -1,0 +1,17 @@
+/* line 2, inicio.scss */
+.boxes {
+  color: black;
+  font-color: red;
+  width: 600px;
+}
+/* line 6, inicio.scss */
+.boxes > titleBox {
+  color: white;
+  font-color: yellow;
+}
+/* line 9, inicio.scss */
+.boxes > titleBox > boxesDos {
+  font-color: green;
+  padding: 5px;
+  width: 75px;
+}
