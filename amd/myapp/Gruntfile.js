@@ -203,6 +203,10 @@ module.exports = function (grunt) {
 
         // Renames files for browser caching purposes
         rev: {
+            options: {
+                algorithm: 'md5',
+                length: 8
+            },
             dist: {
                 files: {
                     src: [
@@ -315,7 +319,7 @@ module.exports = function (grunt) {
                     dest: '<%= config.dist %>',
                     src: [
                         '*.{ico,png,txt}',
-                        '.htaccess',
+                        //'.htaccess',
                         'images/{,*/}*.webp',
                         '{,*/}*.html',
                         'styles/fonts/{,*/}*.*'
