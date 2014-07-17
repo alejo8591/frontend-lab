@@ -1,5 +1,4 @@
 img
-# Created by http://www.gitignore.io
 
 ### Node ###
 # Logs
@@ -30,3 +29,7 @@ node_modules
 
 # Users Environment Variables
 .lock-wscript
+
+
+### Sass ###
+.sass-cache
