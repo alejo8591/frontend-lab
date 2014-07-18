@@ -1,0 +1,95 @@
+<DOCTYPE html>
+	<html>
+		<head>
+			<meta charset="utf-8">
+        	<meta name ="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+        	<title>{{ title }}</title>
+        	<link rel="stylesheet" type="text/css" href="css/jquery.mobile-1.4.3.min.css" />
+        	<link rel="stylesheet" type="text/css" href="css/jquery.mobile.structure-1.4.3.min.css" />
+        	<link rel="stylesheet" type="text/css" href="css/jquery.mobile.theme-1.4.3.min.css" /> 
+        	<link rel="stylesheet" type="text/css" href="css/jquery.mobile.external-png-1.4.3.min.css" />
+        	<link rel="stylesheet" type="text/css" href="css/jquery.mobile.icons-1.4.3.min.css" />
+        	<link rel="stylesheet" type="text/css" href="css/jquery.mobile.inline-png-1.4.3.min.css" />
+        	<link rel="stylesheet" type="text/css" href="css/jquery.mobile.inline-svg-1.4.3.min.css" />
+        	<link rel="stylesheet" type="text/css" href="css/styles.css" />
+		</head>
+		<body>
+			<div data-role="page" data-theme="b" id="home">
+            	<div data-role="header">
+                	<h1>{{ name }}</h1>
+            	</div>
+
+            	<div data-role="content">
+                    <!-- datos de captación previa-->
+                    <a href="#pageOne" class="ui-btn ui-icon-delete ui-btn-icon-left" data-prefetch>Pagina 1</a>
+                	<a href="#pageTwo" class="ui-btn ui-icon-delete ui-btn-icon-left">Pagina 2</a>
+                	<a href="#pageThree" class="ui-btn ui-icon-delete ui-btn-icon-left">Pagina 3</a>
+            	</div>
+
+            	<div data-role="footer" data-position="fixed">
+                	Copyrigth
+            	</div>
+        	</div>
+
+            <div data-role="page" data-theme="b" id="pageOne">
+                <div data-role="header">
+                    <h1>{{ name }}</h1>
+                </div>
+
+                <div data-role="content">
+                    <!-- datos de captación previa-->
+                    
+                </div>
+
+                <div data-role="footer" data-position="fixed">
+                    Copyrigth
+                </div>
+            </div>
+        	<!-- page two -->
+        	<div data-role="page" data-theme="a" id="pageTwo">
+            	<div data-role="header">
+                	<h1>{{ name }}</h1>
+            	</div>
+
+            	<div data-role="content">
+                	<a href="#home" class="ui-btn ui-icon-plus ui-btn-icon-left">Home</a>
+               		<button class="ui-btn" id="callInfo">Button</button>  
+                	<div id="myInfo"></div>
+                	<a href="#" class="ui-btn ui-state-disabled" id="cleanInfo">Limpiar info</a>
+            	</div>
+
+            	<div data-role="footer" data-position="fixed">
+                	Copyrigth
+            	</div>
+        	</div>
+
+
+        	<!-- **************************************************** -->
+        	<!-- Second  part of the excercise * -->
+        	<div data-role="page" data-theme="a" id="pageThree">
+            	<div data-role="header">
+                	<h1>{{ name }}</h1>
+            	</div>
+
+            	<div data-role="content">
+                	<a href="#home" class="ui-btn ui-icon-plus ui-btn-icon-left">Home</a>
+                	<form action=".">
+    					<label for="age">Ingrese su edad:</label>
+    					<input type="text" name="age" id="age" placeholder="Text input" value="">
+    					<span class="error">Ingrese una edad correcta</span>
+    					<button class="ui-btn" id="myAge">Guardar mi edad</button>
+                	</form>
+                	<a href="#" class="ui-btn ui-icon-plus ui-btn-icon-left" id="loadMyAge">Ver edad</a>
+                	<div id="myInfoAge">
+                	</div>
+            	</div>
+            	<div data-role="footer" data-position="fixed">
+                	Copyrigth
+            	</div>
+        	</div>
+        <!-- Scripts JS -->
+        <script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
+        <script type="text/javascript" src="js/jquery.mobile-1.4.3.min.js"></script>
+        <script type="text/javascript" src="js/lab3-2.js"></script>
+		</body>
+	</html>
