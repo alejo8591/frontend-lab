@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.10/angular.min.js"></script>
+</head>
+<body ng-app>
+	<script>
+		var Countries = function ($scope) {
+			$scope.population = 7000;
+			$scope.countriesList = [
+				{
+					name : 'Colombia',
+					population : 45.1
+				},
+				{
+					name : 'UK',
+					population : 65.5
+				}
+			];
+			$scope.yopo = 'yopo';
+		}
+	</script>
+	<ul ng-controller="Countries">
+		<li ng-repeat="country in countriesList">
+			{{ country.name }} populate of {{ country.population }}
+		</li>
+		world population is {{ population }} <br />
+		{{ yopo }}
+	</ul>
+</body>
+</html>
