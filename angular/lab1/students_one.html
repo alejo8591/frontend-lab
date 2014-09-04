@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html ng-app>
+<head>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.10/angular.min.js"></script>
+</head>
+<!-- Controller for App -->
+<body ng-controller="AlumnController">
+	<h2>{{ alumn.name }}</h2>
+	<h4><strong>Estudia {{ alumn.course }}</strong></h4>
+	<script>
+		/*
+		 * The $scope object: Referencia al objeto JS modelo como una propiedad
+		 *
+		*/
+		var AlumnController = function($scope){
+			$scope.alumn = {
+				name : "Alekjandro Romero",
+				course : "11 semestre Ing. Sistemas"
+			}
+		};
+	</script>
+</body>
+</html>

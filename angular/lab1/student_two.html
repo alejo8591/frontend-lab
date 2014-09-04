@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html ng-app>
+<head>
+	<meta charset="utf-8" /> 
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.10/angular.min.js"></script>
+</head>
+<!-- Controller for App -->
+<body ng-controller="AlumnController">
+	<div ng-repeat="alumn in alumns">
+		<h2>{{ alumn.name }}</h2>
+		<h4><strong>Estudia {{ alumn.course }}</strong></h4>		
+		<h4><strong>Teléfono {{ alumn.phone }}</strong></h4>		
+	</div>
+	<script>
+		/*
+		 * The $scope object: Referencia al objeto JS modelo como una propiedad
+		 *
+		*/
+		var AlumnController = function($scope){
+			$scope.alumns = [
+			{
+				name : "Alejandro Romero",
+				phone : "4494949",
+				course : "11 semestre Ing. Sistemas"
+			},
+			{
+				name : "Laura Romero",
+				phone : "343424",
+				course : "8 semestre Ing. Sistemas"
+			},
+			{
+				name : "Diego Chacin",
+				phone : "403583503",
+				course : "5 semestre Ing. Sistemas"
+			}
+			]
+		};
+	</script>
+</body>
+</html>
