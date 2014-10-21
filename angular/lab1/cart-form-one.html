@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html ng-app>
+<head>
+	<meta charset="utf-8" />
+</head>
+<!-- Controller for App -->
+<body>
+	<form ng-controller="StartUpController">
+		Starting: <input ng-change="computeNeeded()" ng-model="funding.startingEstimate">
+		Recomendation: {{ funding.needed }}
+	</form>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.23/angular.min.js"></script>
+	<script>
+		var StartUpController = function($scope){
+			$scope.funding = {
+				startingEstimate : 0
+			};
+
+			var computeNeeded = function(){
+				$scope.funding.needed = $scope.funding.startingEstimate * 12;
+			};
+
+			$scope.$watch('funding.startingEstimate', computeNeeded);
+		};
+	</script>
+</body>
+</html>
