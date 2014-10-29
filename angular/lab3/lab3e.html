@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="lab3e">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.0/angular.min.js"></script>
+
+    <style>
+        div > span{
+            width: 600px;
+            margin: 10px auto;
+            text-align: center;
+        }
+
+        .container{
+            border: solid 2px;
+            background: #000;
+            color: #fff;
+        }
+
+    </style>
+
+</head>
+<body>
+    <div ng-controller="controller_1">
+
+        <img alt="" ng-src="{{ actual_image }}">
+
+        <button ng-click="revealImage('http://dummyimage.com/200x200/000/fff')">Imagen 1</button>
+
+        <button ng-click="revealImage('http://dummyimage.com/200x200/000/ffea00')">Imagen 2</button>
+
+    </div>
+
+    <script>
+        var my_lab3e = angular.module('lab3e', []);
+
+        my_lab3e.controller('controller_1', ['$scope', function($scope){
+
+                $scope.actual_image = 'http://dummyimage.com/200x200/000/fff';
+
+                $scope.revealImage = function(_images){
+
+                    $scope.actual_image = _images;
+                };
+
+        }]);
+    </script>
+
+</body>
+</html>

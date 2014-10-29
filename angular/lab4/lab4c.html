@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<!-- Directivas en Angular ng-* y el nombre de la directiva -->
+<html lang="en" ng-app="lab4a">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.0/angular.min.js"></script>
+    <script src="https://code.angularjs.org/1.2.26/angular-route.min.js"></script>
+</head>
+<body>
+
+    <h1>Visita el Zoo - Local</h1>
+
+    <div ng-include src=" 'includes/header.html' "></div>
+
+    <div ng-include src=" 'includes/menu.html' "></div>
+
+    <div ng-view></div>
+
+    <script>
+        var my_app = angular.module('lab4a', ['ngRoute']);
+
+        my_app.config([ '$routeProvider', function($routeProvider){
+            /*
+             * `when()` cuantas veces sea necesario
+             * `otherwise()` una sola vez "OJO"
+            */
+            $routeProvider
+            .when('/message/one', {
+                templateUrl : "templates/one.html"
+            })
+            .when('/message/two', {
+                templateUrl : "templates/two.html"
+            })
+            .when('/message/three', {
+                templateUrl : "templates/three.html"
+            }).otherwise({
+                redirectTo: '/',
+                templateUrl: 'lab4b-index.html',
+            });
+
+        }]);
+    </script>
+</body>
+</html>
