@@ -15,7 +15,7 @@ describe('Controller: MainCtrl', function () {
       $scope: scope
     });
   }));
-
+  /*
   it('should attach a list of `Tasks` to the scope', function () {
     expect(scope.tasks.length).toBe(6);
   });
@@ -36,5 +36,5 @@ describe('Controller: MainCtrl', function () {
     scope.addTask();
     scope.deleteTask(1);
     expect(scope.tasks.length).toBe(6);
-  });
+  });*/
 });
