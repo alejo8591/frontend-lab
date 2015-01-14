@@ -30,4 +30,23 @@ angular.module('lab11')
       text:'¡Mantente en armonía con la naturaleza!'
     }
   ];
+
+  $scope.contents = [
+    {
+      img:baseURL+'people',
+      title:'Sobre Nosotros',
+      text:'Somos una empresa comprometida con la vida sana'
+    },
+    {
+      img:baseURL+'business',
+      title:'Nuestros Servicios',
+      text:'Ofrecemos asesoría profesional para mantenerse Sanos, buena alimentación, cuales son los mejores ejercicios para tí, etc.'
+    },
+    {
+
+      img:baseURL+'transport',
+      title:'Contáctanos',
+      text:'#333, Buena vida Online, Plaza Central, Durance, Zip-432167'
+    }
+  ];
 });
