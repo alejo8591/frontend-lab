@@ -1,0 +1,15 @@
+<div class="container">
+  <h2>Tasks</h2>
+
+  <form ng-submit="addTask()">
+    <input type="text" ng-model="task" placeholder="Que tarea guardaras" />
+    <input type="submit" value="Agregar tarea">
+  </form>
+
+  <div ui-sortable ng-model="tasks">
+    <p class="form-group" ng-repeat="task in tasks" style="padding:5px; cursor:move;">
+      <input type="text" ng-model="task" class="form-control" />
+      <button ng-click="deleteTask($index)">Eliminar</button>
+    </p>
+  </div>
+</div>
