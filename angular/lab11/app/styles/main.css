@@ -94,3 +94,16 @@ body {
 .thumbnails img{
   width:100%
 }
+
+.gridStyles{
+  width:940px;
+  height:300px;
+}
+.ngRow.even {
+  color: white;
+  background: #343434;
+}
+.ngRow.odd {
+  color: white;
+  background: #565656;
+}

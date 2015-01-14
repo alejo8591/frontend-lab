@@ -1,0 +1,7 @@
+[
+  {"id":"1", "name":"Carmen", "fidelity": 3,"registrationDate":"3/5/10", "memberType":"Free"},
+  {"id":"2", "name":"Juan", "fidelity": 5,"registrationDate":"3/5/05", "memberType":"Premium"},
+  {"id":"3", "name":"Pedro", "fidelity": 6,"registrationDate":"3/5/10", "memberType":"Free"},
+  {"id":"4", "name":"Dunia", "fidelity": 7,"registrationDate":"10/12/12", "memberType":"Premium"},
+  {"id":"5", "name":"Alberto", "fidelity": 9,"registrationDate":"22/01/08", "memberType":"Premium"}
+]
