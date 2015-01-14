@@ -19,4 +19,22 @@ describe('Controller: MainCtrl', function () {
   it('should attach a list of `Tasks` to the scope', function () {
     expect(scope.tasks.length).toBe(6);
   });
+
+  it('Add items for the list', function(){
+    scope.task = 'Task 7';
+    scope.addTask();
+    expect(scope.tasks.length).toBe(7);
+  });
+
+  it('Remove items for the list', function(){
+    scope.deleteTask(1);
+    expect(scope.tasks.length).toBe(5);
+  });
+
+  it('Add and Remove items for the list', function(){
+    scope.task = 'Task 7';
+    scope.addTask();
+    scope.deleteTask(1);
+    expect(scope.tasks.length).toBe(6);
+  });
 });
