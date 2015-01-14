@@ -33,6 +33,10 @@ angular
       templateUrl: 'views/articles.html',
       controller: 'ArticlesCtrl'
     })
+    .when('/gallery', {
+      templateUrl: 'views/gallery.html',
+      controller: 'GalleryCtrl'
+    })
     .otherwise({
       redirectTo: '/'
     });
