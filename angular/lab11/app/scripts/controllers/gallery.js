@@ -35,8 +35,8 @@ angular.module('lab11')
 
   $scope.addPictures = function(id){
     pictures.push({
-      url:baseURL+keywords[i],
-      title:titles[i],
+      url:baseURL+keywords[id],
+      title:titles[id],
       content:dummyText
     });
   };
@@ -44,5 +44,9 @@ angular.module('lab11')
   for(var i = 0; i < 5; i++){
     $scope.addPictures(i);
   }
+
+  $scope.rate = 0;
+  $scope.max = 5;
+  $scope.isReadOnly = false;
 
 });

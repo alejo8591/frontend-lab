@@ -2,6 +2,7 @@
 <div class="thumbnails">
   <div class="col-md-4" ng-repeat="picture in pictures">
     <img ng-src="{{ picture.url }}">
+    <rating ng-model="rate" max="max" readonly="isReadOnly"></rating>
     <h3>{{ picture.title }}</h3>
     <p> {{ picture.content }}</p>
   </div>
