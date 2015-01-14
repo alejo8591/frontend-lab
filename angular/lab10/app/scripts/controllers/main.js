@@ -2,8 +2,14 @@
 
 angular
 .module('lab10')
-.controller('MainCtrl', function($scope){
-  $scope.tasks = ['Tasks 1', 'Tasks 2', 'Tasks 3', 'Tasks 4', 'Tasks 5', 'Tasks 6'];
+.controller('MainCtrl', function($scope, localStorageService){
+  $scope.tasksOnStorage = localStorageService.get('tasks');
+
+  $scope.tasks = $scope.tasksOnStorage && $scope.tasksOnStorage.split('\n') || [];
+
+  $scope.$watch('tasks', function(){
+    localStorageService.add('tasks', $scope.tasks.join('\n'));
+  }, true);
 
   $scope.addTask = function(){
     $scope.tasks.push($scope.task);
