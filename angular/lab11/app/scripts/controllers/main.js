@@ -31,6 +31,8 @@ angular.module('lab11')
     }
   ];
 
+  baseURL = 'http://lorempixel.com/200/200/';
+
   $scope.contents = [
     {
       img:baseURL+'people',
