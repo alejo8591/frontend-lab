@@ -107,3 +107,7 @@ body {
   color: white;
   background: #565656;
 }
+
+.modal input{
+  display: block;
+}
