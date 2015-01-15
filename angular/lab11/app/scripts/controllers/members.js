@@ -8,7 +8,7 @@
  * Controller of the lab11App
  */
 angular.module('lab11')
-.controller('MembersCtrl', function ($scope, $http, $modal) {
+.controller('MembersCtrl', function ($scope, $http, $modal, $filter) {
   $http.get('http://localhost:9000/members.json')
   .success(function(data){
     $scope.members = data;
@@ -49,7 +49,7 @@ angular.module('lab11')
       $scope.members.push({
         id: $scope.members.length + 1,
         name: $scope.newMember.name,
-        registrationDate: $scope.newMember.registrationDate,
+        registrationDate: $filter('date')($scope.newMember.registrationDate, 'dd/MM/yy', 'UTC-5'),
         fidelity: $scope.newMember.fidelity,
         memberType: $scope.newMember.memberType
       });
