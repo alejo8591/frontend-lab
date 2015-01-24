@@ -1,0 +1,14 @@
+<ion-view view-title="Yopo">
+<ion-content class="padding">
+  <ul>
+    <li ng-repeat="a in name">
+      {{ a.Name + ' ,'+ a.Country }}
+    </li>
+  </ul>
+
+  <div ng-repeat="post in posts">
+    <h4>{{ post.title }}</h4>
+    <p>{{ post.content }}</p>
+  </div>
+</ion-content>
+</ion-view>
