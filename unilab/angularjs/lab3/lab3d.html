@@ -33,9 +33,8 @@
     </div>
 
     <script>
-        var my_lab3d = angular.module('lab3d', []);
-
-        my_lab3d.controller('controller_1', ['$scope', function($scope){
+        angular.module('lab3d', [])
+               .controller('controller_1', ['$scope', function($scope){
 
             $scope.message_visibility = false;
 

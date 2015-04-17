@@ -48,9 +48,8 @@
     </div>
 
     <script>
-        var my_lab3c = angular.module('lab3c', []);
-
-        my_lab3c.controller('controller_1', ['$scope', function($scope){
+        angular.module('lab3c', [])
+               .controller('controller_1', ['$scope', function($scope){
 
             $scope.changeProperties = function(){
 

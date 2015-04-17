@@ -31,9 +31,8 @@
     </div>
 
     <script>
-        var my_lab3e = angular.module('lab3e', []);
-
-        my_lab3e.controller('controller_1', ['$scope', function($scope){
+        angular.module('lab3e', [])
+               .controller('controller_1', ['$scope', function($scope){
 
                 $scope.actual_image = 'http://dummyimage.com/200x200/000/fff';
 

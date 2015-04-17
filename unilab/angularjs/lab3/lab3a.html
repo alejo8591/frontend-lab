@@ -19,9 +19,9 @@
     </div>
 
     <script>
-        var my_lab3a = angular.module('lab3a', []);
+        angular.module('lab3a', [])
 
-        my_lab3a.controller('controller_1', ['$scope', function($scope){
+        .controller('controller_1', ['$scope', function($scope){
 
             $scope.simple_names = ["Alejandro", "Patrick", "Bolson"];
 
