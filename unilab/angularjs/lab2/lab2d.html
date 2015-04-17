@@ -26,18 +26,18 @@
 
 
     <script>
-        var my_app = angular.module('fruitStore', []);
+        angular.module('fruitStore', [])
 
-        my_app.controller('controller_one', ['$scope', function($scope){
+       .controller('controller_one', ['$scope', function($scope){
 
             $scope.numberT = 0;
 
             $scope.numberD = 300;
 
-        }]);
+        }])
 
 
-        my_app.controller('controller_two', ['$scope', function($scope){
+        .controller('controller_two', ['$scope', function($scope){
 
             $scope.numberT = 0;
 

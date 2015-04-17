@@ -17,15 +17,14 @@
     </div>
 
     <script>
-        var my_app = angular.module('fruitStore', []);
+        angular.module('fruitStore', [])
+                .controller('controller_one', ['$scope', function($scope){
 
-        my_app.controller('controller_one', ['$scope', function($scope){
+                    $scope.numberT = 0;
 
-            $scope.numberT = 0;
+                    $scope.numberD = 300;
 
-            $scope.numberD = 300;
-
-        }]);
+                }]);
     </script>
 </body>
 </html>
