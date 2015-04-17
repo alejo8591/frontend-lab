@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="lab3b">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular.min.js"></script>
+</head>
+<body>
+    <div ng-controller="controller_1">
+
+        <button ng-click="simple_click()">Clic Sencillo</button>
+
+
+
+        <button ng-dblclick="double_click()">Doble Clic</button>
+
+        <img src="http://dummyimage.com/600x400/000/fff" alt="img" ng-mouseleave="outMouseImg()" ng-mouseenter="onMouseImg()">
+
+        <h1>{{ event_click }}</h1>
+
+    </div>
+
+    <script>
+        var my_lab3b = angular.module('lab3b', []);
+
+        my_lab3b.controller('controller_1', ['$scope', function($scope){
+
+                $scope.simple_click = function(){
+
+                    $scope.event_click = "Clic Sencillo";
+                };
+
+                $scope.double_click = function(){
+
+                    $scope.event_click = "Clic Doble";
+                };
+
+                $scope.outMouseImg = function(){
+
+                    $scope.event_click = "Cursor Fuera de la Imagen";
+                };
+
+                $scope.onMouseImg = function(){
+
+                    $scope.event_click = "Cursor Dentro de la Imagen";
+                };
+        }]);
+    </script>
+
+</body>
+</html>

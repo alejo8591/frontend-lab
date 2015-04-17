@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<!-- Directivas en Angular ng-* y el nombre de la directiva -->
+<html lang="en" ng-app>
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+  <div ng-controller="controllerOne">
+    <div ng-show="revealDiv">
+      Directivas dentro de directivas
+    </div>
+
+    <button ng-click="controlButton()" ng-show="revealButton">
+      Multiples directivas
+    </button>
+  </div>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular.min.js"></script>
+    <script>
+    function controllerOne($scope){
+      $scope.revealDiv = false;
+      $scope.revealButton = true;
+
+      $scope.controlButton = function(){
+        $scope.revealDiv = true;
+        $scope.revealButton = false;
+      };
+    }
+    </script>
+</body>
+</html>
