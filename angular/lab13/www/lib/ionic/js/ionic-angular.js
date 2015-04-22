@@ -2123,8 +2123,8 @@ function($rootScope, $state, $location, $document, $ionicPlatform, $ionicHistory
 
 /**
  * @ngdoc method
- * @name $ionicConfigProvider#templates.maxPrefetch
- * @description Sets the maximum number of templates to prefetch from the templateUrls defined in
+ * @name $ionicConfigProvider#includes.maxPrefetch
+ * @description Sets the maximum number of includes to prefetch from the templateUrls defined in
  * $stateProvider.state. If set to `0`, the user will have to wait
  * for a template to be fetched the first time when navigating to a new page. Default `30`.
  * @param {integer} value Max number of template to prefetch from the templateUrls defined in
@@ -4609,7 +4609,7 @@ IonicModule
  * @module ionic
  * @description A service that preemptively caches template files to eliminate transition flicker and boost performance.
  * @usage
- * State templates are cached automatically, but you can optionally cache other templates.
+ * State includes are cached automatically, but you can optionally cache other includes.
  *
  * ```js
  * $ionicTemplateCache('myNgIncludeTemplate.html');
@@ -4623,7 +4623,7 @@ IonicModule
  *   .config(function($stateProvider, $ionicConfigProvider) {
  *
  *     // disable preemptive template caching globally
- *     $ionicConfigProvider.templates.prefetch(false);
+ *     $ionicConfigProvider.includes.prefetch(false);
  *
  *     // disable individual states
  *     $stateProvider
@@ -4631,14 +4631,14 @@ IonicModule
  *         url: "/tab",
  *         abstract: true,
  *         prefetchTemplate: false,
- *         templateUrl: "tabs-templates/tabs.html"
+ *         templateUrl: "tabs-includes/tabs.html"
  *       })
  *       .state('tabs.home', {
  *         url: "/home",
  *         views: {
  *           'home-tab': {
  *             prefetchTemplate: false,
- *             templateUrl: "tabs-templates/home.html",
+ *             templateUrl: "tabs-includes/home.html",
  *             controller: 'HomeTabCtrl'
  *           }
  *         }
@@ -4680,11 +4680,11 @@ function($http, $templateCache, $timeout) {
 
     var i = 0;
     while (i < 4 && (template = toCache.pop())) {
-      // note that inline templates are ignored by this request
+      // note that inline includes are ignored by this request
       if (isString(template)) $http.get(template, { cache: $templateCache });
       i++;
     }
-    // only preload 3 templates a second
+    // only preload 3 includes a second
     if (toCache.length) {
       $timeout(run, 1000);
     }
@@ -9763,7 +9763,7 @@ IonicModule
  * Additionally, each state is not required to be bound to a URL, and data can
  * be pushed to each state which allows much flexibility.
  *
- * The ionNavView directive is used to render templates in your application. Each template
+ * The ionNavView directive is used to render includes in your application. Each template
  * is part of a state. States are usually mapped to a url, and are defined programatically
  * using angular-ui-router (see [their docs](https://github.com/angular-ui/ui-router/wiki),
  * and remember to replace ui-view with ion-nav-view in examples).
@@ -9794,7 +9794,7 @@ IonicModule
  * Then on app start, $stateProvider will look at the url, see it matches the index state,
  * and then try to load home.html into the `<ion-nav-view>`.
  *
- * Pages are loaded by the URLs given. One simple way to create templates in Angular is to put
+ * Pages are loaded by the URLs given. One simple way to create includes in Angular is to put
  * them directly into your HTML file and use the `<script type="text/ng-template">` syntax.
  * So here is one way to put home.html into our app:
  *

@@ -487,17 +487,17 @@ angular.module('ngAnimate', ['ng'])
       $$jqLite = $$$jqLite;
       $rootElement.data(NG_ANIMATE_STATE, rootAnimateState);
 
-      // Wait until all directive and route-related templates are downloaded and
+      // Wait until all directive and route-related includes are downloaded and
       // compiled. The $templateRequest.totalPendingRequests variable keeps track of
-      // all of the remote templates being currently downloaded. If there are no
-      // templates currently downloading then the watcher will still fire anyway.
+      // all of the remote includes being currently downloaded. If there are no
+      // includes currently downloading then the watcher will still fire anyway.
       var deregisterWatch = $rootScope.$watch(
         function() { return $templateRequest.totalPendingRequests; },
         function(val, oldVal) {
           if (val !== 0) return;
           deregisterWatch();
 
-          // Now that all templates have been downloaded, $animate will wait until
+          // Now that all includes have been downloaded, $animate will wait until
           // the post digest queue is empty before enabling animations. By having two
           // calls to $postDigest calls we can ensure that the flag is enabled at the
           // very end of the post digest queue. Since all of the animations in $animate

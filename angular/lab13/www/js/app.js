@@ -24,14 +24,14 @@ angular.module('starter', ['ionic', 'starter.controller', 'starter.services'])
   .state('tab', {
     url: '/tab',
     abstract: true,
-    templateUrl: 'templates/tabs.html'
+    templateUrl: 'includes/tabs.html'
   })
 
   .state('tab.home', {
     url: '/home',
     views: {
       'tab-home': {
-        templateUrl: 'templates/tab-home.html',
+        templateUrl: 'includes/tab-home.html',
         controller: 'HomeCtrl'
       }
     }
@@ -41,7 +41,7 @@ angular.module('starter', ['ionic', 'starter.controller', 'starter.services'])
     url: '/yopo',
     views: {
       'tab-yopo': {
-        templateUrl: 'templates/tab-yopo.html',
+        templateUrl: 'includes/tab-yopo.html',
         controller: 'YopoCtrl'
       }
     }

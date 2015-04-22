@@ -13233,7 +13233,7 @@ function $CacheFactoryProvider() {
        * @description
        * A cache object used to store and retrieve data, primarily used by
        * {@link $http $http} and the {@link ng.directive:script script} directive to cache
-       * templates and other data.
+       * includes and other data.
        *
        * ```js
        *  angular.module('superCache')
@@ -13484,7 +13484,7 @@ function $CacheFactoryProvider() {
  *
  * @description
  * The first time a template is used, it is loaded in the template cache for quick retrieval. You
- * can load templates directly into the cache in a `script` tag, or by consuming the
+ * can load includes directly into the cache in a `script` tag, or by consuming the
  * `$templateCache` service directly.
  *
  * Adding via the `script` tag:
@@ -13672,7 +13672,7 @@ function $TemplateCacheProvider() {
  *
  * The 'isolate' scope takes an object hash which defines a set of local scope properties
  * derived from the parent scope. These local properties are useful for aliasing values for
- * templates. Locals definition is a hash of local scope property to its source:
+ * includes. Locals definition is a hash of local scope property to its source:
  *
  * * `@` or `@attr` - bind a local scope property to the value of DOM attribute. The result is
  *   always a string since DOM attributes are strings. If no `attr` name is specified  then the
@@ -13798,8 +13798,8 @@ function $TemplateCacheProvider() {
  * for later when the template has been resolved.  In the meantime it will continue to compile and link
  * sibling and parent elements as though this element had not contained any directives.
  *
- * The compiler does not suspend the entire compilation to wait for templates to be loaded because this
- * would result in the whole app "stalling" until all templates are loaded asynchronously - even in the
+ * The compiler does not suspend the entire compilation to wait for includes to be loaded because this
+ * would result in the whole app "stalling" until all includes are loaded asynchronously - even in the
  * case when only one deeply nested directive has `templateUrl`.
  *
  * Template loading is asynchronous even if the template has been preloaded into the {@link $templateCache}
@@ -13864,7 +13864,7 @@ function $TemplateCacheProvider() {
 
  * <div class="alert alert-warning">
  * **Note:** The compile function cannot handle directives that recursively use themselves in their
- * own templates or compile functions. Compiling these directives results in an infinite loop and a
+ * own includes or compile functions. Compiling these directives results in an infinite loop and a
  * stack overflow errors.
  *
  * This can be avoided by manually using $compile in the postLink function to imperatively compile
@@ -13932,7 +13932,7 @@ function $TemplateCacheProvider() {
  * compilation and linking has been suspended until that occurs.
  *
  * It is safe to do DOM transformation in the post-linking function on elements that are not waiting
- * for their async templates to be resolved.
+ * for their async includes to be resolved.
  *
  *
  * ### Transclusion
@@ -15057,7 +15057,7 @@ function $CompileProvider($provide, $$sanitizeUriProvider) {
 
     /**
      * Once the directives have been collected, their compile functions are executed. This method
-     * is responsible for inlining directive templates as well as terminating the application
+     * is responsible for inlining directive includes as well as terminating the application
      * of the directives if the terminal directive has been reached.
      *
      * @param {Array} directives Array of collected directives to execute their compile function.
@@ -15120,7 +15120,7 @@ function $CompileProvider($provide, $$sanitizeUriProvider) {
 
         if (directiveValue = directive.scope) {
 
-          // skip the check for directives with async templates, we'll check the derived sync
+          // skip the check for directives with async includes, we'll check the derived sync
           // directive when the template arrives
           if (!directive.templateUrl) {
             if (isObject(directiveValue)) {
@@ -15175,7 +15175,7 @@ function $CompileProvider($provide, $$sanitizeUriProvider) {
                                         replaceDirective && replaceDirective.name, {
                                           // Don't pass in:
                                           // - controllerDirectives - otherwise we'll create duplicates controllers
-                                          // - newIsolateScopeDirective or templateDirective - combining templates with
+                                          // - newIsolateScopeDirective or templateDirective - combining includes with
                                           //   element transclusion doesn't make sense.
                                           //
                                           // We need only nonTlbTranscludeDirective so that we prevent putting transclusion
@@ -22721,7 +22721,7 @@ function adjustMatchers(matchers) {
  * can override it completely to change the behavior of `$sce`, the common case would
  * involve configuring the {@link ng.$sceDelegateProvider $sceDelegateProvider} instead by setting
  * your own whitelists and blacklists for trusting URLs used for loading AngularJS resources such as
- * templates.  Refer {@link ng.$sceDelegateProvider#resourceUrlWhitelist
+ * includes.  Refer {@link ng.$sceDelegateProvider#resourceUrlWhitelist
  * $sceDelegateProvider.resourceUrlWhitelist} and {@link
  * ng.$sceDelegateProvider#resourceUrlBlacklist $sceDelegateProvider.resourceUrlBlacklist}
  */
@@ -22733,7 +22733,7 @@ function adjustMatchers(matchers) {
  *
  * The `$sceDelegateProvider` provider allows developers to configure the {@link ng.$sceDelegate
  * $sceDelegate} service.  This allows one to get/set the whitelists and blacklists used to ensure
- * that the URLs used for sourcing Angular templates are safe.  Refer {@link
+ * that the URLs used for sourcing Angular includes are safe.  Refer {@link
  * ng.$sceDelegateProvider#resourceUrlWhitelist $sceDelegateProvider.resourceUrlWhitelist} and
  * {@link ng.$sceDelegateProvider#resourceUrlBlacklist $sceDelegateProvider.resourceUrlBlacklist}
  *
@@ -22743,7 +22743,7 @@ function adjustMatchers(matchers) {
  * **Example**:  Consider the following case. <a name="example"></a>
  *
  * - your app is hosted at url `http://myapp.example.com/`
- * - but some of your templates are hosted on other domains you control such as
+ * - but some of your includes are hosted on other domains you control such as
  *   `http://srv01.assets.example.com/`,  `http://srv02.assets.example.com/`, etc.
  * - and you have an open redirect at `http://myapp.example.com/clickThru?...`.
  *
@@ -23111,14 +23111,14 @@ function $SceDelegateProvider() {
  * }];
  * ```
  *
- * ## Impact on loading templates
+ * ## Impact on loading includes
  *
  * This applies both to the {@link ng.directive:ngInclude `ng-include`} directive as well as
  * `templateUrl`'s specified by {@link guide/directive directives}.
  *
- * By default, Angular only loads templates from the same domain and protocol as the application
+ * By default, Angular only loads includes from the same domain and protocol as the application
  * document.  This is done by calling {@link ng.$sce#getTrustedResourceUrl
- * $sce.getTrustedResourceUrl} on the template URL.  To load templates from other domains and/or
+ * $sce.getTrustedResourceUrl} on the template URL.  To load includes from other domains and/or
  * protocols, you may either either {@link ng.$sceDelegateProvider#resourceUrlWhitelist whitelist
  * them} or {@link ng.$sce#trustAsResourceUrl wrap it} into a trusted value.
  *
@@ -23127,8 +23127,8 @@ function $SceDelegateProvider() {
  * [Same Origin Policy](https://code.google.com/p/browsersec/wiki/Part2#Same-origin_policy_for_XMLHttpRequest)
  * and [Cross-Origin Resource Sharing (CORS)](http://www.w3.org/TR/cors/)
  * policy apply in addition to this and may further restrict whether the template is successfully
- * loaded.  This means that without the right CORS policy, loading templates from a different domain
- * won't work on all browsers.  Also, loading templates from `file://` URL does not work on some
+ * loaded.  This means that without the right CORS policy, loading includes from a different domain
+ * won't work on all browsers.  Also, loading includes from `file://` URL does not work on some
  * browsers.
  *
  * ## This feels like too much overhead
@@ -23143,8 +23143,8 @@ function $SceDelegateProvider() {
  * through {@link ng.$sce#getTrusted $sce.getTrusted}.  SCE doesn't play a role here.
  *
  * The included {@link ng.$sceDelegate $sceDelegate} comes with sane defaults to allow you to load
- * templates in `ng-include` from your application's domain without having to even know about SCE.
- * It blocks loading templates from other domains or loading templates over http from an https
+ * includes in `ng-include` from your application's domain without having to even know about SCE.
+ * It blocks loading includes from other domains or loading includes over http from an https
  * served document.  You can change these by setting your own custom {@link
  * ng.$sceDelegateProvider#resourceUrlWhitelist whitelists} and {@link
  * ng.$sceDelegateProvider#resourceUrlBlacklist blacklists} for matching such URLs.
@@ -23183,7 +23183,7 @@ function $SceDelegateProvider() {
  *      not appropriate to use in for a scheme, domain, etc. as it would match too much.  (e.g.
  *      http://**.example.com/ would match http://evil.com/?ignore=.example.com/ and that might
  *      not have been the intention.)  Its usage at the very end of the path is ok.  (e.g.
- *      http://foo.example.com/templates/**).
+ *      http://foo.example.com/includes/**).
  *  - **RegExp** (*see caveat below*)
  *    - *Caveat*:  While regular expressions are powerful and offer great flexibility,  their syntax
  *      (and all the inevitable escaping) makes them *harder to maintain*.  It's easy to
@@ -24256,7 +24256,7 @@ function $WindowProvider() {
  * @description
  * Filters are used for formatting data displayed to the user.
  *
- * The general syntax in templates is as follows:
+ * The general syntax in includes is as follows:
  *
  *         {{ expression [| filter_name[:parameter_value] ... ] }}
  *
@@ -31282,7 +31282,7 @@ var ngIfDirective = ['$animate', function($animate) {
  *
  * By default, the template URL is restricted to the same domain and protocol as the
  * application document. This is done by calling {@link $sce#getTrustedResourceUrl
- * $sce.getTrustedResourceUrl} on it. To load templates from other domains or protocols
+ * $sce.getTrustedResourceUrl} on it. To load includes from other domains or protocols
  * you may either {@link ng.$sceDelegateProvider#resourceUrlWhitelist whitelist them} or
  * {@link $sce#trustAsResourceUrl wrap them} as trusted values. Refer to Angular's {@link
  * ng.$sce Strict Contextual Escaping}.
@@ -31318,7 +31318,7 @@ var ngIfDirective = ['$animate', function($animate) {
   <example module="includeExample" deps="angular-animate.js" animations="true">
     <file name="index.html">
      <div ng-controller="ExampleController">
-       <select ng-model="template" ng-options="t.name for t in templates">
+       <select ng-model="template" ng-options="t.name for t in includes">
         <option value="">(blank)</option>
        </select>
        url of the template: <tt>{{template.url}}</tt>
@@ -31331,10 +31331,10 @@ var ngIfDirective = ['$animate', function($animate) {
     <file name="script.js">
       angular.module('includeExample', ['ngAnimate'])
         .controller('ExampleController', ['$scope', function($scope) {
-          $scope.templates =
+          $scope.includes =
             [ { name: 'template1.html', url: 'template1.html'},
               { name: 'template2.html', url: 'template2.html'} ];
-          $scope.template = $scope.templates[0];
+          $scope.template = $scope.includes[0];
         }]);
      </file>
     <file name="template1.html">
@@ -34319,17 +34319,17 @@ angular.module('ngAnimate', ['ng'])
       $$jqLite = $$$jqLite;
       $rootElement.data(NG_ANIMATE_STATE, rootAnimateState);
 
-      // Wait until all directive and route-related templates are downloaded and
+      // Wait until all directive and route-related includes are downloaded and
       // compiled. The $templateRequest.totalPendingRequests variable keeps track of
-      // all of the remote templates being currently downloaded. If there are no
-      // templates currently downloading then the watcher will still fire anyway.
+      // all of the remote includes being currently downloaded. If there are no
+      // includes currently downloading then the watcher will still fire anyway.
       var deregisterWatch = $rootScope.$watch(
         function() { return $templateRequest.totalPendingRequests; },
         function(val, oldVal) {
           if (val !== 0) return;
           deregisterWatch();
 
-          // Now that all templates have been downloaded, $animate will wait until
+          // Now that all includes have been downloaded, $animate will wait until
           // the post digest queue is empty before enabling animations. By having two
           // calls to $postDigest calls we can ensure that the flag is enabled at the
           // very end of the post digest queue. Since all of the animations in $animate
@@ -37231,7 +37231,7 @@ angular.module('ui.router.util').service('$resolve', $Resolve);
  * @requires $injector
  *
  * @description
- * Service. Manages loading of templates.
+ * Service. Manages loading of includes.
  */
 $TemplateFactory.$inject = ['$http', '$templateCache', '$injector'];
 function $TemplateFactory(  $http,   $templateCache,   $injector) {
@@ -40297,7 +40297,7 @@ angular.module('ui.router.state').provider('$uiViewScroll', $ViewScrollProvider)
  * @restrict ECA
  *
  * @description
- * The ui-view directive tells $state where to place your templates.
+ * The ui-view directive tells $state where to place your includes.
  *
  * @param {string=} name A view name. The name should be unique amongst the other views in the
  * same state. You can have views of the same name that live in different states.
@@ -43027,8 +43027,8 @@ function($rootScope, $state, $location, $document, $ionicPlatform, $ionicHistory
 
 /**
  * @ngdoc method
- * @name $ionicConfigProvider#templates.maxPrefetch
- * @description Sets the maximum number of templates to prefetch from the templateUrls defined in
+ * @name $ionicConfigProvider#includes.maxPrefetch
+ * @description Sets the maximum number of includes to prefetch from the templateUrls defined in
  * $stateProvider.state. If set to `0`, the user will have to wait
  * for a template to be fetched the first time when navigating to a new page. Default `30`.
  * @param {integer} value Max number of template to prefetch from the templateUrls defined in
@@ -45513,7 +45513,7 @@ IonicModule
  * @module ionic
  * @description A service that preemptively caches template files to eliminate transition flicker and boost performance.
  * @usage
- * State templates are cached automatically, but you can optionally cache other templates.
+ * State includes are cached automatically, but you can optionally cache other includes.
  *
  * ```js
  * $ionicTemplateCache('myNgIncludeTemplate.html');
@@ -45527,7 +45527,7 @@ IonicModule
  *   .config(function($stateProvider, $ionicConfigProvider) {
  *
  *     // disable preemptive template caching globally
- *     $ionicConfigProvider.templates.prefetch(false);
+ *     $ionicConfigProvider.includes.prefetch(false);
  *
  *     // disable individual states
  *     $stateProvider
@@ -45535,14 +45535,14 @@ IonicModule
  *         url: "/tab",
  *         abstract: true,
  *         prefetchTemplate: false,
- *         templateUrl: "tabs-templates/tabs.html"
+ *         templateUrl: "tabs-includes/tabs.html"
  *       })
  *       .state('tabs.home', {
  *         url: "/home",
  *         views: {
  *           'home-tab': {
  *             prefetchTemplate: false,
- *             templateUrl: "tabs-templates/home.html",
+ *             templateUrl: "tabs-includes/home.html",
  *             controller: 'HomeTabCtrl'
  *           }
  *         }
@@ -45584,11 +45584,11 @@ function($http, $templateCache, $timeout) {
 
     var i = 0;
     while (i < 4 && (template = toCache.pop())) {
-      // note that inline templates are ignored by this request
+      // note that inline includes are ignored by this request
       if (isString(template)) $http.get(template, { cache: $templateCache });
       i++;
     }
-    // only preload 3 templates a second
+    // only preload 3 includes a second
     if (toCache.length) {
       $timeout(run, 1000);
     }
@@ -50667,7 +50667,7 @@ IonicModule
  * Additionally, each state is not required to be bound to a URL, and data can
  * be pushed to each state which allows much flexibility.
  *
- * The ionNavView directive is used to render templates in your application. Each template
+ * The ionNavView directive is used to render includes in your application. Each template
  * is part of a state. States are usually mapped to a url, and are defined programatically
  * using angular-ui-router (see [their docs](https://github.com/angular-ui/ui-router/wiki),
  * and remember to replace ui-view with ion-nav-view in examples).
@@ -50698,7 +50698,7 @@ IonicModule
  * Then on app start, $stateProvider will look at the url, see it matches the index state,
  * and then try to load home.html into the `<ion-nav-view>`.
  *
- * Pages are loaded by the URLs given. One simple way to create templates in Angular is to put
+ * Pages are loaded by the URLs given. One simple way to create includes in Angular is to put
  * them directly into your HTML file and use the `<script type="text/ng-template">` syntax.
  * So here is one way to put home.html into our app:
  *
