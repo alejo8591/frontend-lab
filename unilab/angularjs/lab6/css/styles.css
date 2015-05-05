@@ -35,7 +35,7 @@ h1{
 
 button{
   background: #080;
-  color; #fff;
+  color: #fff;
   padding: 5px 15px;
   border-radius: 5px;
   border: thin solid #060;
@@ -43,5 +43,5 @@ button{
 }
 
 button:hover{
-  backgroud: #0A0; 
+  backgroud: #0A0;
 }

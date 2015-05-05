@@ -1,0 +1,15 @@
+<div class="wrapper">
+    <div class="contact-item" ng-repeat="student in students | orderBy:'name'">
+      <div class="name">{{ student.name }}</div>
+      <span class="course">Estudia {{ student.course }} y su número es {{ student.phone }}</span>
+    </div>
+</div>
+<br />
+<button ng-click="ShowForm()" ng-hide="formVisibility">Añadir contacto</button>
+<div class="wrapper" ng-show="formVisibility">
+    <h2>Añadir Información</h2>
+    Nombre: <input type="text" ng-model="newStudent.name">
+    Curso: <input type="text" ng-model="newStudent.course">
+    Teléfono: <input type="text" ng-model="newStudent.phone">
+    <button ng-click="SaveStudent()">Guardar</button>
+</div>

@@ -1778,12 +1778,12 @@ angular.module('ngMockE2E', ['ng']).config(['$provide', function($provide) {
  * This implementation can be used to respond with static or dynamic responses via the `when` api
  * and its shortcuts (`whenGET`, `whenPOST`, etc) and optionally pass through requests to the
  * real $httpBackend for specific requests (e.g. to interact with certain remote apis or to fetch
- * templates from a webserver).
+ * includes from a webserver).
  *
  * As opposed to unit-testing, in an end-to-end testing scenario or in scenario when an application
  * is being developed with the real backend api replaced with a mock, it is often desirable for
  * certain category of requests to bypass the mock and issue a real http request (e.g. to fetch
- * templates or static files from the webserver). To configure the backend with this behavior
+ * includes or static files from the webserver). To configure the backend with this behavior
  * use the `passThrough` request handler of `when` instead of `respond`.
  *
  * Additionally, we don't want to manually have to flush mocked out requests like we do during unit
@@ -1805,7 +1805,7 @@ angular.module('ngMockE2E', ['ng']).config(['$provide', function($provide) {
  *     $httpBackend.whenPOST('/phones').respond(function(method, url, data) {
  *       phones.push(angular.fromJson(data));
  *     });
- *     $httpBackend.whenGET(/^\/templates\//).passThrough();
+ *     $httpBackend.whenGET(/^\/includes\//).passThrough();
  *     //...
  *   });
  * </pre>
