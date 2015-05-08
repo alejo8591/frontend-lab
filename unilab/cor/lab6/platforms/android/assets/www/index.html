@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <meta charset="utf-8"/>
         <meta name="format-detection" content="telephone=no">
         <meta name="msapplication-tap-highlight" content="no">
         <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
@@ -8,15 +9,14 @@
         <title>Hello World</title>
     </head>
     <body>
-        <p>
-            Utilizando el API de Cordova device-orientation
-        </p>
-        <br />
-        <div id="heading-info"></div>
+        <img src="img/compass.png" id="compass" align="middle" width="195px" height="195px" />
+        <div id="heading-info">
+        </div>
 
-        <input type="button" value="obtener información" onclick="getHeading();" />
         <script type="text/javascript" src="cordova.js"></script>
         <script type="text/javascript" src="js/index.js"></script>
-        <script type="text/javascript" src="js/lab5.js"></script>
+        <script type="text/javascript" src="js/jquery-1.11.3.min.js"></script>
+        <script type="text/javascript" src="js/jQueryRotateCompressed.js"></script>
+        <script type="text/javascript" src="js/lab6.js"></script>
     </body>
 </html>
