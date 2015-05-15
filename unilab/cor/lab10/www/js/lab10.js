@@ -2,7 +2,7 @@ $(document).on('pageinit', '#add-contact', function(){
 
 	console.log('Evento delegado `#add-contact`');
 
-	$('#save-contact').on('click', function(event){
+	$('#save-contact').on('click', function(){
 
 		console.log('click en `#save-contact`');
 
