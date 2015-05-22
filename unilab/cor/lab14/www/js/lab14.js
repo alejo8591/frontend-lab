@@ -1,6 +1,6 @@
 var the_entry;
 var the_entries;
-var theFileSystem;
+var the_file_system;
 var br = '<br />';
 var hr = '<hr />';
 var start_p = '<p>';
@@ -14,34 +14,34 @@ function createRandomStory(num_words) {
   return tmp_str;
 }
 
-function createRandomString(numChars) {
+function createRandomString(num_chars) {
   var chars = "abcdefghiklmnopqrstuvwxyz";
   var tmp_str = "";
-  for(var i = 0; i < numChars; i++) {
+  for(var i = 0; i < num_chars; i++) {
     var rnum = Math.floor(Math.random() * chars.length);
     tmp_str += chars.substring(rnum, rnum + 1);
   }
   return tmp_str;
 }
 
-function processDir(fileSystemType) {
-  alert("processDir: " + fileSystemType);
-  window.requestFileSystem(fileSystemType, 1024 * 1024, onGetFileSystemSuccess, onFileError);
+function processDir(fyle_system_type) {
+  alert("processDir: " + fyle_system_type);
+  window.requestFileSystem(fyle_system_type, 1024 * 1024, onGetFileSystemSuccess, onFileError);
 }
 
 function onGetFileSystemSuccess(fs) {
   alert("onGetFileSystemSuccess: " + fs.name);
-  theFileSystem = fs;
+  the_file_system = fs;
   var dr = fs.root.createReader();
   dr.readEntries(onDirReaderSuccess, onFileError);
 }
 
-function onDirReaderSuccess(dirEntries) {
-  alert("onDirReaderSuccess (" + dirEntries.length + ")");
+function onDirReaderSuccess(dir_entries) {
+  alert("onDirReaderSuccess (" + dir_entries.length + ")");
 
   $('#dirEntries').empty();
 
-  the_entries = dirEntries;
+  the_entries = dir_entries;
   var i, fl, len;
   len = the_entries.length;
   if(len > 0) {
@@ -68,11 +68,11 @@ function onDirReaderSuccess(dirEntries) {
   $.mobile.changePage("#dirList", "slide", false, true);
 }
 
-function processEntry(entryIndex) {
+function processEntry(entry_index) {
 
   $('#writeInfo').empty();
 
-  the_entry = the_entries[entryIndex];
+  the_entry = the_entries[entry_index];
 
   var fi = "";
   fi += start_p + '<b>Name</b>: ' + the_entry.name + end_p;
@@ -91,11 +91,11 @@ function processEntry(entryIndex) {
   the_entry.getMetadata(onGetMetadataSuccess, onFileError);
 }
 
-function onGetMetadataSuccess(metadata) {
+function onGetMetadataSuccess(meta_data) {
   // alert("onGetMetadataSuccess");
   var md = '';
-  for(aKey in metadata) {
-    md += '<b>' + aKey + '</b>: ' + metadata[aKey] + br;
+  for(aKey in meta_data) {
+    md += '<b>' + aKey + '</b>: ' + meta_data[aKey] + br;
   }
   md += hr;
 
@@ -104,16 +104,16 @@ function onGetMetadataSuccess(metadata) {
 
 function writeFile() {
 
-  var theFileName = createRandomString(8) + '.txt';
-  alert("writeFile: " + theFileName);
-  theFileSystem.root.getFile(theFileName, {
+  var the_file_name = createRandomString(8) + '.txt';
+  alert("writeFile: " + the_file_name);
+  the_file_system.root.getFile(the_file_name, {
     create : true
   }, onGetFileSuccess, onFileError);
 }
 
-function onGetFileSuccess(theFile) {
-  alert("onGetFileSuccess: " + theFile.name);
-  theFile.createWriter(onCreateWriterSuccess, onFileError);
+function onGetFileSuccess(the_file) {
+  alert("onGetFileSuccess: " + the_file.name);
+  the_file.createWriter(onCreateWriterSuccess, onFileError);
 }
 
 function onCreateWriterSuccess(writer) {
