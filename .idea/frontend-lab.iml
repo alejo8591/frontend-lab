@@ -1,7 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <module type="PYTHON_MODULE" version="4">
-  <component name="NewModuleRootManager">
-    <content url="file://$MODULE_DIR$" />
+  <component name="NewModuleRootManager" inherit-compiler-output="false">
+    <content url="file://$MODULE_DIR$">
+      <excludeFolder url="file://$MODULE_DIR$/ExApp/platforms" />
+      <excludeFolder url="file://$MODULE_DIR$/unilab/cor/lab1/platforms" />
+      <excludeFolder url="file://$MODULE_DIR$/unilab/cor/lab10/platforms" />
+      <excludeFolder url="file://$MODULE_DIR$/unilab/cor/lab11/platforms" />
+      <excludeFolder url="file://$MODULE_DIR$/unilab/cor/lab12/platforms" />
+      <excludeFolder url="file://$MODULE_DIR$/unilab/cor/lab13/platforms" />
+      <excludeFolder url="file://$MODULE_DIR$/unilab/cor/lab14/platforms" />
+      <excludeFolder url="file://$MODULE_DIR$/unilab/cor/lab2/platforms" />
+      <excludeFolder url="file://$MODULE_DIR$/unilab/cor/lab3/platforms" />
+      <excludeFolder url="file://$MODULE_DIR$/unilab/cor/lab4/platforms" />
+      <excludeFolder url="file://$MODULE_DIR$/unilab/cor/lab5/platforms" />
+      <excludeFolder url="file://$MODULE_DIR$/unilab/cor/lab6/platforms" />
+      <excludeFolder url="file://$MODULE_DIR$/unilab/cor/lab7/platforms" />
+      <excludeFolder url="file://$MODULE_DIR$/unilab/cor/lab8/platforms" />
+      <excludeFolder url="file://$MODULE_DIR$/unilab/cor/lab9NO/platforms" />
+      <excludeFolder url="file://$MODULE_DIR$/unilab/ion/lab3M/platforms" />
+    </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
   </component>
