@@ -17,15 +17,19 @@ angular.module('starter', ['ionic'])
     }
   });
 })
-.controller('AnimatedListCtrl', function($scope, $timeout) {
-  var nextItem = 0;
+.controller('AnimatedListController', function($scope) {
+
+  var next_item = 0;
+
   $scope.items = [];
+
   for (var i=0; i < 5; i++) {
-    $scope.items.push('Item ' + (nextItem++));
+    $scope.items.push('Item ' + (next_item++));
   }
 
-  $scope.addItem = function(atIndex) {
-    $scope.items.splice(atIndex + 1, 0, 'Item ' + nextItem);
-    nextItem++;
+  $scope.addItem = function(at_index) {
+    $scope.items.splice(at_index + 1, 0, 'Item ' + next_item);
+    next_item++;
   };
+
 });

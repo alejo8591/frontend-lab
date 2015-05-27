@@ -23,6 +23,7 @@
     {
       "platform": "android",
       "locator": "browser"
-    }
+    },
+    "android"
   ]
 }
