@@ -29,12 +29,12 @@
   <ion-content>
     <ion-list>
       <ion-item class="animated-item" ng-repeat="item in items">
-        {{item}}
+        {{ item }}
         <div class="item-note">
-          <a class="button button-small" ng-click="addItem($index)">
+          <a class="button button-positive button-small" ng-click="addItem($index)">
              Add
           </a>
-          <a class="button button-small" ng-click="items.splice($index, 1)">
+          <a class="button button-clear button-small" ng-click="items.splice($index, 1)">
             Remove
           </a>
         </div>
