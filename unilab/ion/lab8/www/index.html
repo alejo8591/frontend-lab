@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <title></title>
+
+    <link href="lib/ionic/css/ionic.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+
+    <!-- IF using Sass (run gulp sass first), then uncomment below and remove the CSS includes above
+    <link href="css/ionic.app.css" rel="stylesheet">
+    -->
+
+    <!-- ionic/angularjs js -->
+    <script src="lib/ionic/js/ionic.bundle.js"></script>
+
+    <!-- cordova script (this will be a 404 during development) -->
+    <script src="cordova.js"></script>
+
+    <!-- your app's js -->
+    <script src="js/app.js"></script>
+    <script src="js/controllers.js"></script>
+  </head>
+  <body ng-app="lab8">
+
+      <ion-nav-bar class="bar-positive">
+          <ion-nav-back-button class="button-clear">
+              <i class="ion-arrow-left-c"></i> Back
+          </ion-nav-back-button>
+      </ion-nav-bar>
+
+      <ion-nav-view></ion-nav-view>
+
+      <ion-footer-bar align-title="left" class="bar-assertive">
+
+          <div class="buttons">
+
+              <button class="button">Left Button</button>
+
+          </div>
+
+          <h1 class="title">Footer!</h1>
+
+          <div class="buttons" ng-click="doSomething()">
+
+              <button class="button">Right Button</button>
+
+          </div>
+
+      </ion-footer-bar>
+
+      <script id="list.html" type="text/ng-template">
+
+          <ion-view view-title="First page">
+
+            <ion-content class="padding">
+
+                <h1 style="text-align: center;">Elementos Ionic</h1><br/>
+
+                <a nav-transition="none" href="#/page/1">
+
+                    <button class="button button-positive">
+
+                        Elemento 'Radio Button' de Ionic
+
+                    </button>
+
+                </a><br/><br/>
+
+                <a nav-transition="android" href="#/page/2">
+
+                    <button class="button button-positive">
+
+                        Elemento 'Select' de Ionic
+
+                    </button>
+
+                </a><br/><br/>
+
+                <a nav-transition="android" href="#/page/3">
+
+                    <button class="button button-positive">
+
+                        Elemento 'Form Floating Labels'
+
+                    </button>
+
+                </a><br/><br/>
+
+                <button class="button button-positive" ng-click="changePage()">
+
+                    Elemento 'Grid'
+
+                </button>
+
+            </ion-content>
+
+          </ion-view>
+
+      </script>
+
+
+      <script id="view.html" type="text/ng-template">
+
+          <ion-view view-title="Second page">
+
+              <ion-content class="padding">
+
+                  <div id="elements" data-ng-model="elements_ionic">
+                  </div>
+                  <br/><br/>
+
+                  <button class="button icon ion-ios-arrow-back" ng-click="goBack()" nav-direction="back">Go Back</button>
+
+              </ion-content>
+
+          </ion-view>
+
+      </script>
+  </body>
+
+</html>
