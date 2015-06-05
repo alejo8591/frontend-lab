@@ -130,7 +130,6 @@ angular.module('lab8.Controllers', [])
         }
 
 
-
         $scope.goBack = function(){
 
             $ionicHistory.goBack();

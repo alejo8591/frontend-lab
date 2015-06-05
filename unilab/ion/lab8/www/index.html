@@ -24,7 +24,7 @@
   </head>
   <body ng-app="lab8">
 
-      <ion-nav-bar class="bar-positive">
+      <ion-nav-bar class="bar-royal">
           <ion-nav-back-button class="button-clear">
               <i class="ion-arrow-left-c"></i> Back
           </ion-nav-back-button>
@@ -32,7 +32,7 @@
 
       <ion-nav-view></ion-nav-view>
 
-      <ion-footer-bar align-title="left" class="bar-assertive">
+      <ion-footer-bar align-title="left" class="bar-calm">
 
           <div class="buttons">
 
@@ -42,7 +42,7 @@
 
           <h1 class="title">Footer!</h1>
 
-          <div class="buttons" ng-click="doSomething()">
+          <div class="buttons">
 
               <button class="button">Right Button</button>
 
@@ -52,7 +52,7 @@
 
       <script id="list.html" type="text/ng-template">
 
-          <ion-view view-title="First page">
+          <ion-view view-title="Lista de Elementos">
 
             <ion-content class="padding">
 
@@ -60,7 +60,7 @@
 
                 <a nav-transition="none" href="#/page/1">
 
-                    <button class="button button-positive">
+                    <button class="button button-dark">
 
                         Elemento 'Radio Button' de Ionic
 
@@ -70,7 +70,7 @@
 
                 <a nav-transition="android" href="#/page/2">
 
-                    <button class="button button-positive">
+                    <button class="button button-assertive">
 
                         Elemento 'Select' de Ionic
 
@@ -80,7 +80,7 @@
 
                 <a nav-transition="android" href="#/page/3">
 
-                    <button class="button button-positive">
+                    <button class="button button-energized">
 
                         Elemento 'Form Floating Labels'
 
@@ -88,7 +88,7 @@
 
                 </a><br/><br/>
 
-                <button class="button button-positive" ng-click="changePage()">
+                <button class="button button-balanced" ng-click="changePage()">
 
                     Elemento 'Grid'
 
@@ -103,7 +103,7 @@
 
       <script id="view.html" type="text/ng-template">
 
-          <ion-view view-title="Second page">
+          <ion-view view-title="Elemento">
 
               <ion-content class="padding">
 
