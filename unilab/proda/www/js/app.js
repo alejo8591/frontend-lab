@@ -6,8 +6,10 @@
 angular.module('prodapp',
     [
         'ionic',
+        'prodapp.cookie.provider',
         'prodapp.controller.index'
-    ])
+    ]
+)
 
 .run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
@@ -22,32 +24,40 @@ angular.module('prodapp',
   });
 })
 
-    .config(function($stateProvider, $urlRouterProvider) {
-      $stateProvider
 
-          .state('home', {
-            url: '/',
-            templateUrl: 'views/home.html',
-            controller: 'index'
-          })
+.config(function($stateProvider, $urlRouterProvider) {
+  $stateProvider
 
-          .state('options', {
-              url: '/options',
-              templateUrl: 'views/options.html',
-              controller: 'options'
-          })
+      .state('home', {
+        url: '/',
+        templateUrl: 'views/home.html',
+        controller: 'index'
+      })
 
-          .state('login', {
-              url: '/login',
-              templateUrl: 'views/login.html',
-              controller: 'login'
-          })
+      .state('options', {
+          url: '/options',
+          templateUrl: 'views/options.html',
+          controller: 'options'
+      })
 
-          .state('register', {
-              url: '/register',
-              templateUrl: 'views/register.html',
-              controller: 'register'
-          });
-      // if none of the above states are matched, use this as the fallback
-      $urlRouterProvider.otherwise('/');
-    })
+      .state('login', {
+          url: '/login',
+          templateUrl: 'views/login.html',
+          controller: 'login'
+      })
+
+      .state('register', {
+          url: '/register',
+          templateUrl: 'views/register.html',
+          controller: 'register'
+      });
+  // if none of the above states are matched, use this as the fallback
+  $urlRouterProvider.otherwise('/');
+})
+
+
+.run(function( cookieProvider ) {
+
+    cookieProvider.cookie = window.localStorage.getItem('cookie');
+
+});
