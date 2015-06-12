@@ -71,4 +71,17 @@ angular.module('prodapp.controller.index',
 
 
     }
+})
+
+.controller('reset', function($scope, $state, cookieProvider) {
+
+    if( cookieProvider.flagCookie() === true ) {
+
+        console.log( 'reset password' );
+
+    } else {
+
+        $state.transitionTo('options');
+
+    }
 });

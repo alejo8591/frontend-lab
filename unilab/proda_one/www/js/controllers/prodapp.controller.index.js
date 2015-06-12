@@ -51,7 +51,7 @@ angular.module('prodapp.controller.index',
 
 .controller('login', function($scope, $state, cookieProvider) {
 
-    if( cookieProvider.flagCookie() ) {
+    if( cookieProvider.flagCookie() === true ) {
 
         $state.transitionTo('index');
 
@@ -63,7 +63,7 @@ angular.module('prodapp.controller.index',
 
 .controller('register', function($scope, $state, cookieProvider) {
 
-    if( cookieProvider.flagCookie() ) {
+    if( cookieProvider.flagCookie() === true ) {
 
         $state.transitionTo('index');
 

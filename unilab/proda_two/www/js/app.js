@@ -7,7 +7,8 @@ angular.module('prodapp',
     [
         'ionic',
         'prodapp.cookie.provider',
-        'prodapp.controller.index'
+        'prodapp.controller.index',
+        'prodapp.product.controller'
     ]
 )
 
@@ -24,33 +25,58 @@ angular.module('prodapp',
   });
 })
 
-
 .config(function($stateProvider, $urlRouterProvider) {
   $stateProvider
 
       .state('index', {
         url: '/',
-        templateUrl: 'views/home.html',
+        templateUrl: 'views/profile/home.html',
         controller: 'index'
       })
 
       .state('options', {
           url: '/options',
-          templateUrl: 'views/options.html',
+          templateUrl: 'views/profile/options.html',
           controller: 'options'
       })
 
       .state('login', {
           url: '/login',
-          templateUrl: 'views/login.html',
+          templateUrl: 'views/profile/login.html',
           controller: 'login'
       })
 
       .state('register', {
           url: '/register',
-          templateUrl: 'views/register.html',
+          templateUrl: 'views/profile/register.html',
           controller: 'register'
+      })
+
+      .state('reset', {
+          url: '/reset',
+          templateUrl: 'views/profile/reset_password.html',
+          controller: 'reset'
+      })
+
+      .state('add', {
+          url: '/add',
+          templateUrl: 'views/product/add_product.html',
+          controller: 'add'
+      })
+
+      .state('list', {
+          url: '/list',
+          templateUrl: 'views/product/products.html',
+          controller: 'list'
+      })
+
+      .state('product', {
+          url: '/product/:id',
+          templateUrl: 'views/product/product.html',
+          controller: 'product'
       });
+
+
   // if none of the above states are matched, use this as the fallback
   $urlRouterProvider.otherwise('/');
 })
