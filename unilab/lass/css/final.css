@@ -1,0 +1,174 @@
+header, section, aside, hgroup, footer, nav {
+  display: block; }
+
+#container {
+  margin: 0 auto;
+  overflow: hidden;
+  width: 980px; }
+
+body {
+  background: #CCC;
+  color: #FFF;
+  font-family: Helvetica;
+  font-size: 14px; }
+
+a {
+  color: #CCC;
+  text-decoration: none; }
+
+a:hover {
+  color: #FFF; }
+
+ul {
+  list-style: none;
+  padding: 0; }
+
+header {
+  height: auto; }
+
+#social {
+  background: #333;
+  height: 50px;
+  overflow: hidden; }
+  #social p {
+    margin: 10px 10px; }
+
+#logo {
+  background: #FFF;
+  height: 200px;
+  overflow: hidden;
+  text-align: center; }
+
+nav {
+  background-image: -webkit-linear-gradient(bottom, #660000 0%, #FF0011 81%);
+  background-image: -moz-linear-gradient(bottom, #660000 0%, #FF0011 81%);
+  height: 50px;
+  overflow: hidden; }
+  nav ul {
+    text-align: center; }
+    nav ul li {
+      display: inline-block;
+      vertical-align: top; }
+      nav ul li a {
+        display: block;
+        color: #FFF;
+        font-size: 1.2em;
+        margin: 0 10px;
+        width: 160px; }
+      nav ul li a:hover {
+        background: red; }
+
+#slider {
+  height: 350px; }
+  #slider ul {
+    height: 340px;
+    margin: 10 auto; }
+    #slider ul li {
+      margin: 0 auto;
+      width: 960px; }
+      #slider ul li h3 {
+        font-size: 1.5em;
+        margin: 5px 0 10px 0; }
+      #slider ul li a {
+        background: #8A2908;
+        cursor: #FFF;
+        display: block;
+        padding: 5px;
+        width: 80px; }
+      #slider ul li img {
+        display: inline-block;
+        margin: 0; }
+      #slider ul li .caption {
+        background: #999;
+        display: inline-block;
+        height: 310px;
+        margin-left: -5px;
+        padding: 10px;
+        overflow: hidden;
+        vertical-align: top;
+        width: 280px; }
+
+#content {
+  background: #979c9f;
+  overflow: hidden;
+  padding: 10px; }
+  #content #cont {
+    display: inline-block;
+    overflow: hidden;
+    width: 610px; }
+    #content #cont #welcome {
+      background-image: -webkit-linear-gradient(bottom, #FF0000 0%, #FF545F 81%);
+      background-image: -moz-linear-gradient(bottom, #FF0000 0%, #FF545F 81%);
+      border: 2px solid #FFF;
+      border-radius: 5px;
+      color: #FFF;
+      display: inline-block;
+      padding: 15px;
+      width: 570px; }
+    #content #cont #posts {
+      display: inline-block;
+      margin: 10px auto; }
+    #content #cont article {
+      display: inline-block;
+      margin-bottom: 10px;
+      text-align: center;
+      vertical-align: top;
+      width: 200px; }
+    #content #cont img {
+      border: 3px solid orange;
+      border-radius: 5px; }
+    #content #cont article h2, #content #cont article p, #content #cont article small {
+      display: block;
+      margin: 0 auto 5px auto;
+      text-align: left; }
+    #content #cont article h2 {
+      font-size: 1.1em; }
+    #content #cont article small {
+      color: red; }
+  #content aside {
+    background: #0778d8;
+    border-radius: 5px;
+    display: inline-block;
+    margin-left: 10px;
+    padding: 10px;
+    overflow: hidden;
+    vertical-align: top;
+    width: 310px; }
+    #content aside .block {
+      margin-bottom: 10px; }
+      #content aside .block label {
+        display: block;
+        margin-bottom: 5px; }
+      #content aside .block h3 {
+        margin: 5px; }
+      #content aside .block input[type="search"], #content aside .block input[type="text"] {
+        border: 1px solid #CCC;
+        border-radius: 5px;
+        height: 20px;
+        margin-bottom: 5px;
+        width: 300px; }
+
+footer {
+  background: #073861;
+  overflow: hidden;
+  text-align: center; }
+  footer .block {
+    display: inline-block;
+    margin-bottom: 10px;
+    text-align: left;
+    vertical-align: top;
+    width: 280px; }
+    footer .block h4 {
+      margin-bottom: 5px; }
+    footer .block a {
+      color: #CCC; }
+    footer .block input[type="text"] {
+      border: 1px solid #CCC;
+      border-radius: 5px;
+      margin-right: 5px;
+      margin-bottom: 5px;
+      width: 150px; }
+    footer .block textarea {
+      border-radius: 5px;
+      height: 100px;
+      width: 250px; }
