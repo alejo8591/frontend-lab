@@ -11,21 +11,21 @@ angular.module('prodapp.controller.index',
 
 .controller('index', function($scope, $state, cookieProvider) {
 
-        console.log( cookieProvider.flagCookie() );
+    console.log( 'index: ' + cookieProvider.flagCookie() );
 
-        if( cookieProvider.flagCookie() ) {
+    if( cookieProvider.flagCookie() ) {
 
+    } else {
 
-        } else {
+        $state.transitionTo('options');
 
-            $state.transitionTo('options');
-
-        }
+    }
 })
 
 
 .controller('options', function($scope, $state, cookieProvider) {
 
+    console.log( 'options: ' + cookieProvider.flagCookie() );
 
     if( cookieProvider.flagCookie() ) {
 
@@ -51,6 +51,8 @@ angular.module('prodapp.controller.index',
 
 .controller('login', function($scope, $state, cookieProvider) {
 
+    console.log( 'login: ' + cookieProvider.flagCookie() );
+
     if( cookieProvider.flagCookie() ) {
 
         $state.transitionTo('index');
@@ -63,6 +65,8 @@ angular.module('prodapp.controller.index',
 
 .controller('register', function($scope, $state, cookieProvider) {
 
+    console.log( 'register: ' + cookieProvider.flagCookie() );
+
     if( cookieProvider.flagCookie() ) {
 
         $state.transitionTo('index');
@@ -74,6 +78,8 @@ angular.module('prodapp.controller.index',
 })
 
 .controller('reset', function($scope, $state, cookieProvider) {
+
+        console.log( 'reset: ' + cookieProvider.flagCookie() );
 
     if( cookieProvider.flagCookie() === true ) {
 
