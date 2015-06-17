@@ -2,10 +2,11 @@
 
 'use strict';
 
-angular.module('prodapp.controller.index',
+angular.module('prodapp.profile.controller',
     [
         'ionic',
-        'prodapp.cookie.provider'
+        'prodapp.cookie.provider',
+        'prodappProfileServices'
     ]
 )
 
@@ -49,7 +50,7 @@ angular.module('prodapp.controller.index',
 })
 
 
-.controller('login', function($scope, $state, cookieProvider) {
+.controller('login', function($scope, $state, cookieProvider, access) {
 
     console.log( 'login: ' + cookieProvider.flagCookie() );
 
@@ -59,6 +60,22 @@ angular.module('prodapp.controller.index',
 
     } else {
 
+        $scope.login_email = '';
+        $scope.login_password = '';
+
+        $scope.singIn = function() {
+
+            access.login.signin(
+                {
+                    email: $scope.login_email,
+                    password: $scope.login_password
+
+                }, function(data){
+
+                    console.log(data);
+
+            });
+        }
 
     }
 })

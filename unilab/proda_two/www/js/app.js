@@ -7,8 +7,9 @@ angular.module('prodapp',
     [
         'ionic',
         'prodapp.cookie.provider',
-        'prodapp.controller.index',
-        'prodapp.product.controller'
+        'prodapp.profile.controller',
+        'prodapp.product.controller',
+        'prodappProfileServices'
     ]
 )
 

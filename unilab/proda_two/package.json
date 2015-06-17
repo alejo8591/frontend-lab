@@ -26,6 +26,10 @@
     {
       "platform": "android",
       "locator": "browser"
+    },
+    {
+      "platform": "android",
+      "locator": "firefoxos"
     }
   ]
 }

@@ -1,4 +1,14 @@
 {
   "name": "proda",
-  "app_id": ""
+  "app_id": "",
+  "proxies": [
+      {
+        "path": "/api/v1/user/list",
+        "proxyUrl": "http://127.0.0.1:7070/api/v1/user/list"
+      },
+      {
+        "path": "/api/v1/user/login",
+        "proxyUrl": "http://127.0.0.1:7070/api/v1/user/login"
+      }
+  ]
 }

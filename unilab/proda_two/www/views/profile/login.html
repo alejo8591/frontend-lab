@@ -9,17 +9,17 @@
 
             <label class="item item-input">
 
-                <input type="email" placeholder="email">
+                <input type="email" placeholder="email" ng-model="login_email" />
             </label>
 
             <label class="item item-input">
 
-                <input type="password" placeholder="password">
+                <input type="password" placeholder="password" ng-model="login_password" />
             </label>
 
             <div class="padding">
 
-                <button class="button button-block button-dark" ng-click="loadLogin()">
+                <button class="button button-block button-dark" ng-click="singIn()">
                     Ingresar
                 </button>
             </div>
