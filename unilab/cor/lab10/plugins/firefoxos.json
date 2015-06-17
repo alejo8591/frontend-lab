@@ -1,0 +1,43 @@
+{
+    "prepare_queue": {
+        "installed": [],
+        "uninstalled": []
+    },
+    "config_munge": {
+        "files": {
+            "config.xml": {
+                "parents": {
+                    "/*": [
+                        {
+                            "xml": "<permission access=\"readwrite\" description=\"Required for accessing address book.\" name=\"contacts\" privileged=\"true\" />",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"Device\"><param name=\"firefoxos-package\" value=\"Device\" /></feature>",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"Notification\"><param name=\"firefoxos-package\" value=\"Notification\" /></feature>",
+                            "count": 1
+                        }
+                    ]
+                }
+            }
+        }
+    },
+    "installed_plugins": {
+        "cordova-plugin-whitelist": {
+            "PACKAGE_NAME": "com.app.lab10"
+        },
+        "cordova-plugin-contacts": {
+            "PACKAGE_NAME": "com.app.lab10"
+        },
+        "cordova-plugin-device": {
+            "PACKAGE_NAME": "com.app.lab10"
+        },
+        "cordova-plugin-dialogs": {
+            "PACKAGE_NAME": "com.app.lab10"
+        }
+    },
+    "dependent_plugins": {}
+}
