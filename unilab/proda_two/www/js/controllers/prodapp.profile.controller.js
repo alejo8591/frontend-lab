@@ -6,7 +6,8 @@ angular.module('prodapp.profile.controller',
     [
         'ionic',
         'prodapp.cookie.provider',
-        'prodappProfileServices'
+        'prodappProfileServices',
+        'ProdappProductServices'
     ]
 )
 
@@ -15,6 +16,8 @@ angular.module('prodapp.profile.controller',
     console.log( 'index: ' + cookieProvider.flagCookie() );
 
     if( cookieProvider.flagCookie() ) {
+
+        $state.transitionTo('list');
 
     } else {
 

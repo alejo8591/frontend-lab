@@ -9,6 +9,10 @@
       {
         "path": "/api/v1/user/login",
         "proxyUrl": "http://127.0.0.1:7070/api/v1/user/login"
+      },
+      {
+        "path": "/api/v1",
+        "proxyUrl": "http://127.0.0.1:7070/api/v1"
       }
   ]
 }

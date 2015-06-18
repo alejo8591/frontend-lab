@@ -30,6 +30,10 @@
     {
       "platform": "android",
       "locator": "firefoxos"
+    },
+    {
+      "platform": "android",
+      "locator": "firefoxos"
     }
   ]
 }

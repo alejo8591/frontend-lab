@@ -28,7 +28,7 @@ angular.module('lab9', ['ionic'])
           })
 
 
-            .state('music', {
+            .state('second', {
                 url: '/second',
                 templateUrl: 'second.html'
 

@@ -17,7 +17,7 @@ angular.module('lab13.Controllers',
 
         $scope.getList = function() {
 
-            $state.transitionTo('userList');
+            $state.transitionTo('list');
 
         };
 })
