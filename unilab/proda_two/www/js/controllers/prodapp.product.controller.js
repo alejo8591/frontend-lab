@@ -23,11 +23,15 @@ angular.module('prodapp.product.controller',
 })
 
 
-.controller('list', function($scope, $state, cookieProvider, ProductListService) {
+.controller('list', function($scope, $state, $ionicSideMenuDelegate, cookieProvider, ProductListService) {
 
     console.log( cookieProvider.flagCookie() );
 
     if( cookieProvider.flagCookie() ) {
+
+        $scope.toggleLeft = function() {
+            $ionicSideMenuDelegate.toggleLeft();
+        };
 
         ProductListService.product_list.query(function(data){
             $scope.products = data;
@@ -40,7 +44,7 @@ angular.module('prodapp.product.controller',
     }
 })
 
-.controller('product', function($scope, $state, $stateParams, cookieProvider, ProductDeatilService) {
+.controller('product', function($scope, $state, $stateParams, $window, cookieProvider, ProductDetailService) {
 
     console.log( cookieProvider.flagCookie() );
 
@@ -51,7 +55,7 @@ angular.module('prodapp.product.controller',
         $scope.product_edit_button = true;
         $scope.product_update_button = true;
 
-        $scope.product_edit = ProductDeatilService.product_detail.get(
+        $scope.product_edit = ProductDetailService.product_detail.get(
 
             { id: $stateParams.id, action: 'find' },
 
@@ -72,36 +76,29 @@ angular.module('prodapp.product.controller',
 
         $scope.productUpdate = function() {
 
-            ProductDeatilService.product_detail.update(
+            ProductDetailService.product_detail.update(
                 {
                     id: $stateParams.id,
                     action: 'update'
                 },
                 {
-                    name: $scope.product.name,
-                    type: $scope.product.type,
-                    quantity: $scope.product.quantity,
-                    price: $scope.product.price
-                });
+                    "name": $scope.product.name,
+                    "type": $scope.product.type,
+                    "quantity": $scope.product.quantity,
+                    "price": $scope.product.price
+                },
 
-            /*ProductDeatilService.product_detail.get(
+                function( data ) {
 
-                { id: $stateParams.id, action: 'update' },
+                    console.log( data );
 
-                function(data){
+                    $scope.product_update_button = $scope.product_edit_button = $scope.product_delete_button = $scope.product_delete_button = $scope.product_edit_field = true;
 
-                    console.log( data, getResponseHeaders );
+                    //$window.location.reload(true);
+                }
 
-                    data.name = $scope.product.name;
-                    data.type = $scope.product.type;
-                    data.quantity = $scope.product.quantity;
-                    data.price = $scope.product.price;
+            );
 
-                    data.$save(function( data ) {
-
-                        console.log( data );
-                    });
-                });*/
         };
 
 

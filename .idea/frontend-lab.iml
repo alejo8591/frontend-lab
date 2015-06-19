@@ -38,6 +38,7 @@
       <excludeFolder url="file://$MODULE_DIR$/unilab/ion/lab9/platforms" />
       <excludeFolder url="file://$MODULE_DIR$/unilab/proda_one/platforms" />
       <excludeFolder url="file://$MODULE_DIR$/unilab/proda_two/platforms" />
+      <excludeFolder url="file://$MODULE_DIR$/unilab/prodap_three/platforms" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />

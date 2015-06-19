@@ -17,7 +17,7 @@ angular.module('prodapp.profile.controller',
 
     if( cookieProvider.flagCookie() ) {
 
-        $state.transitionTo('list');
+        $state.transitionTo('prodapp.list');
 
     } else {
 

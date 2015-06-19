@@ -35,9 +35,10 @@ angular.module('prodapp',
 .config(function($stateProvider, $urlRouterProvider) {
   $stateProvider
 
-      .state('index', {
+      .state('prodapp', {
         url: '/',
-        templateUrl: 'views/profile/home.html',
+        abstract: true,
+        templateUrl: 'views/general/menu.html',
         controller: 'index'
       })
 
@@ -71,10 +72,14 @@ angular.module('prodapp',
           controller: 'add'
       })
 
-      .state('list', {
+      .state('prodapp.list', {
           url: '/list',
-          templateUrl: 'views/product/products.html',
-          controller: 'list'
+          views: {
+              'menuContent': {
+                  templateUrl: 'views/product/products.html',
+                  controller: 'list'
+              }
+          }
       })
 
       .state('product', {
