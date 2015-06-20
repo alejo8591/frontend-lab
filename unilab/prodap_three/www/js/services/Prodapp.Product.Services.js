@@ -21,4 +21,19 @@ angular.module('ProdappProductServices', ['ngResource'])
             }
         }
     );
+})
+
+.service('ProductCreateService', function($resource){
+
+    this.product_create = $resource('http://localhost:7070/api/v1/product/create', null,
+        {
+            save: {
+                method: 'POST',
+                isArray: false,
+                headers: {
+                    'Content-Type': 'application/json'
+                }
+            }
+        });
+
 });

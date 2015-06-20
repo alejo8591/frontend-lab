@@ -4,8 +4,8 @@ angular.module('prodapp',
     [
       'ionic',
       'prodapp.cookie.provider',
-      'prodapp.profile.controllers',
       'prodapp.product.controllers',
+      'prodapp.profile.controllers',
       'prodappProfileServices'
     ]
 )
@@ -16,6 +16,8 @@ angular.module('prodapp',
     // for form inputs)
     if (window.cordova && window.cordova.plugins.Keyboard) {
       cordova.plugins.Keyboard.hideKeyboardAccessoryBar(true);
+
+      $cordovaPlugin.someFunction().then(success, error);
     }
     if (window.StatusBar) {
       // org.apache.cordova.statusbar required
@@ -34,7 +36,7 @@ angular.module('prodapp',
   .state('app', {
     url: "/app",
     abstract: true,
-    templateUrl: "templates/menu.html",
+    templateUrl: "templates/general/menu.html",
     controller: 'index'
   })
 
@@ -43,7 +45,8 @@ angular.module('prodapp',
     views: {
       'menuContent': {
         templateUrl: "templates/product/products.html",
-        controller: 'list'
+        controller: 'list',
+        cache: false
       }
     }
   })
@@ -53,12 +56,54 @@ angular.module('prodapp',
     views: {
       'menuContent': {
         templateUrl: "templates/product/product.html",
-        controller: 'product'
+        controller: 'product',
+        cache: false
+      }
+    }
+  })
+
+  .state('app.add', {
+    url: "/add",
+    views: {
+      'menuContent': {
+        templateUrl: "templates/product/add_product.html",
+        controller: 'add'
+      }
+    }
+  })
+
+  .state('app.login', {
+    url: "/login",
+    views: {
+      'menuContent': {
+        templateUrl: "templates/profile/login.html",
+        controller: 'login'
+      }
+    }
+  })
+
+  .state('app.options', {
+    url: "/options",
+    views: {
+      'menuContent': {
+        templateUrl: "templates/profile/options.html",
+        controller: 'options'
+      }
+    }
+  })
+
+
+  .state('app.register', {
+    url: "/register",
+    views: {
+      'menuContent': {
+        templateUrl: "templates/profile/register.html",
+        controller: 'register'
       }
     }
   });
   // if none of the above states are matched, use this as the fallback
-  $urlRouterProvider.otherwise('/app/list');
+  $urlRouterProvider.otherwise('/app/home');
 })
 
 .run(function( cookieProvider, $http ) {

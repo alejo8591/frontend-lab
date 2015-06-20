@@ -6,6 +6,7 @@ angular.module('prodapp.profile.controllers',
     [
         'ionic',
         'prodapp.cookie.provider',
+        'prodapp.constants',
         'prodappProfileServices',
         'ProdappProductServices'
     ]
@@ -21,7 +22,7 @@ angular.module('prodapp.profile.controllers',
 
     } else {
 
-        $state.transitionTo('options');
+        $state.transitionTo('app.options');
 
     }
 })
@@ -33,19 +34,19 @@ angular.module('prodapp.profile.controllers',
 
     if( cookieProvider.flagCookie() ) {
 
-        $state.transitionTo('index');
+        $state.transitionTo('app.list');
 
     } else {
 
         $scope.loadLogin = function() {
 
-            $state.transitionTo('login');
+            $state.transitionTo('app.login');
 
         };
 
         $scope.loadRegister = function() {
 
-            $state.transitionTo('register');
+            $state.transitionTo('app.register');
 
         };
 
@@ -53,31 +54,40 @@ angular.module('prodapp.profile.controllers',
 })
 
 
-.controller('login', function($scope, $state, cookieProvider, access) {
+.controller('login', function($scope, $state, $rootScope, cookieProvider, access, COOKIE_VALUE) {
 
     console.log( 'login: ' + cookieProvider.flagCookie() );
 
+        $scope.login_data = {};
+
     if( cookieProvider.flagCookie() ) {
 
-        $state.transitionTo('index');
+        $state.transitionTo('app.list');
 
     } else {
 
-        $scope.login_email = '';
-        $scope.login_password = '';
+        console.log($scope.login_data.password, $scope.login_data.email);
 
-        $scope.singIn = function() {
+        $scope.signIn = function() {
+
+            console.log($scope.login_data.password, $scope.login_data.email);
 
             access.login.signin(
                 {
-                    email: $scope.login_email,
-                    password: $scope.login_password
+                    "email": $scope.login_data.email,
+                    "password": $scope.login_data.password
+                },
 
-                }, function(data){
+                function( data ){
 
-                    console.log(data);
+                    console.log( data );
+
+                    window.localStorage.setItem('cookie', COOKIE_VALUE);
 
                 });
+
+
+            $state.transitionTo('app.list', {}, { reload: true, inherit: false, notify: true });
         }
 
     }
@@ -89,7 +99,7 @@ angular.module('prodapp.profile.controllers',
 
     if( cookieProvider.flagCookie() ) {
 
-        $state.transitionTo('index');
+        $state.transitionTo('app.list');
 
     } else {
 
@@ -107,7 +117,7 @@ angular.module('prodapp.profile.controllers',
 
     } else {
 
-        $state.transitionTo('options');
+        $state.transitionTo('app.options');
 
     }
 });

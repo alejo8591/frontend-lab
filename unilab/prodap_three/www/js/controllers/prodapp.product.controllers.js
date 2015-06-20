@@ -8,30 +8,46 @@ angular.module('prodapp.product.controllers',
     ]
 )
 
-.controller('add', function($scope, $state, cookieProvider) {
+.controller('add', function($scope, $state, cookieProvider, ProductCreateService) {
 
     console.log( cookieProvider.flagCookie() );
 
     if( cookieProvider.flagCookie() ) {
 
+        $scope.product = {};
+
+        $scope.productCreate = function() {
+
+            ProductCreateService.product_create.save(
+                {
+                    "name": $scope.product.name,
+                    "type": $scope.product.type,
+                    "quantity": $scope.product.quantity,
+                    "price": $scope.product.price
+            },
+            function( data ){
+
+                console.log( data );
+
+                $state.go('app.list');
+
+            });
+
+        };
 
     } else {
 
-        $state.transitionTo('options');
+        $state.transitionTo('app.options');
 
     }
 })
 
 
-.controller('list', function($scope, $state, $ionicSideMenuDelegate, cookieProvider, ProductListService) {
+.controller('list', function($scope, $state, cookieProvider, ProductListService) {
 
-    console.log( cookieProvider.flagCookie() );
+    console.log( 'list: ' + cookieProvider.flagCookie() );
 
     if( cookieProvider.flagCookie() ) {
-
-        $scope.toggleLeft = function() {
-            $ionicSideMenuDelegate.toggleLeft();
-        };
 
         ProductListService.product_list.query(function(data){
             $scope.products = data;
@@ -39,7 +55,7 @@ angular.module('prodapp.product.controllers',
 
     } else {
 
-        $state.transitionTo('options');
+        $state.transitionTo('app.options');
 
     }
 })
@@ -94,6 +110,8 @@ angular.module('prodapp.product.controllers',
 
                     $scope.product_update_button = $scope.product_edit_button = $scope.product_delete_button = $scope.product_delete_button = $scope.product_edit_field = true;
 
+                    $state.go('app.list');
+
                     //$window.location.reload(true);
                 }
 
@@ -104,7 +122,7 @@ angular.module('prodapp.product.controllers',
 
     } else {
 
-        $state.transitionTo('options');
+        $state.transitionTo('app.options');
 
     }
 });
