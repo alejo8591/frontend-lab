@@ -21,7 +21,7 @@ angular.module('TestaProductControllers', ['TestaProductServices'])
 
 })
 
-.controller('product', function($scope, ProductOptionsService, $stateParams) {
+.controller('product', function($scope, $ionicModal, $state, ProductOptionsService, $stateParams) {
 
     $scope.product_edit_field = true;
     $scope.product_delete_button = true;
@@ -48,6 +48,7 @@ angular.module('TestaProductControllers', ['TestaProductServices'])
         $scope.product_update_button = false;
     };
 
+
     $scope.productUpdate = function() {
 
         ProductOptionsService.product.update(
@@ -71,6 +72,50 @@ angular.module('TestaProductControllers', ['TestaProductServices'])
             }
 
         );
+    };
 
+    /*
+    * Modal
+    * */
+
+    $ionicModal.fromTemplateUrl('templates/product/modal_delete_product.html', {
+        scope: $scope,
+        animation: 'slide-in-up'
+    }).then(function(modal) {
+        $scope.modal = modal;
+    });
+
+    $scope.openModal = function() {
+        $scope.modal.show();
+    };
+
+    $scope.closeModal = function() {
+        $scope.modal.hide();
+    };
+
+    $scope.productDelete = function() {
+
+        ProductOptionsService.product.delete(
+            {
+                id: $stateParams.id,
+                action: 'delete'
+            },
+            {
+            },
+
+            function( data ) {
+
+                console.log( data );
+
+                $scope.$on('$destroy', function() {
+                    $scope.modal.remove();
+                });
+
+                $state.go('app.list');
+
+
+            }
+
+        );
     };
 });

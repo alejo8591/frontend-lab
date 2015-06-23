@@ -1,0 +1,50 @@
+<ion-modal-view>
+    <ion-header-bar class="bar bar-header bar-assertive">
+        <h1 class="title">Eliminar Producto</h1>
+    </ion-header-bar>
+    <ion-content>
+
+        <div class="list card">
+
+            <div class="item item-divider">
+                <span class="icon ion-alert-circled"> Eliminar Producto:</span>
+            </div>
+            <div class="item item-text-wrap">
+
+                <div class="item item-icon-left">
+                    <i class="icon ion-information"></i>
+                    Nombre del Producto: {{ product.name }}
+                </div>
+
+                <div class="item item-icon-left">
+                    <i class="icon ion-iphone"></i>
+                    Tipo de Producto: {{ product.type }}
+                </div>
+
+                <div class="item item-icon-left">
+                    <i class="icon ion-ios-albums"></i>
+                    Cantidad del Producto: {{ product.quantity }}
+                </div>
+
+                <div class="item item-icon-left">
+                    <i class="icon ion-social-usd"></i>
+                    Costo Producto: {{ product.price }}
+                </div>
+            </div>
+        </div>
+        <div class="buttons">
+            <div class="row">
+                <div class="col col-50">
+                    <button class="button button-block button-assertive" ng-click="productDelete()">
+                        Aceptar
+                    </button>
+                </div>
+                <div class="col col-50">
+                    <button class="button button-block button-dark" ng-click="closeModal()">
+                        Cancelar
+                    </button>
+                </div>
+            </div>
+        </div>
+    </ion-content>
+</ion-modal-view>
