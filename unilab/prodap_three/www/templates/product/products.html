@@ -2,11 +2,13 @@
 
     <ion-content>
 
-        <div class="list">
-            <a href="#/app/product/{{ product.id }}/find" class="item" ng-repeat="product in products">
-                    {{ product.name }}
+        <ion-refresher pulling-text="Pull to refresh" on-refresh="doRefresh()">
+        </ion-refresher>
+        <ion-list>
+            <a href="#/app/product/{{ product.id }}/find" collection-repeat="product in products" class="item">
+                {{ product.name }}
             </a>
-        </div>
+        </ion-list>
 
     </ion-content>
 

@@ -8,121 +8,126 @@ angular.module('prodapp.product.controllers',
     ]
 )
 
-.controller('add', function($scope, $state, cookieProvider, ProductCreateService) {
+    .controller('add', function($scope, $state, cookieProvider, ProductCreateService) {
 
-    console.log( cookieProvider.flagCookie() );
+        console.log( cookieProvider.flagCookie() );
 
-    if( cookieProvider.flagCookie() ) {
+        if( cookieProvider.flagCookie() ) {
 
-        $scope.product = {};
+            $scope.product = {};
 
-        $scope.productCreate = function() {
+            $scope.productCreate = function() {
 
-            ProductCreateService.product_create.save(
-                {
-                    "name": $scope.product.name,
-                    "type": $scope.product.type,
-                    "quantity": $scope.product.quantity,
-                    "price": $scope.product.price
-            },
-            function( data ){
+                ProductCreateService.product_create.save(
+                    {
+                        "name": $scope.product.name,
+                        "type": $scope.product.type,
+                        "quantity": $scope.product.quantity,
+                        "price": $scope.product.price
+                    },
+                    function( data ){
 
-                console.log( data );
+                        console.log( data );
 
-                $state.go('app.list');
+                        $state.go('app.list');
 
+                    });
+
+            };
+
+        } else {
+
+            $state.transitionTo('app.options');
+
+        }
+    })
+
+
+    .controller('list', function($scope, $state, cookieProvider, ProductListService) {
+
+        console.log( 'list: ' + cookieProvider.flagCookie() );
+
+        if( cookieProvider.flagCookie() ) {
+
+            ProductListService.product_list.query(function(data){
+                $scope.products = data;
             });
 
-        };
+            $scope.doRefresh = function() {
+                ProductListService.product_list.query(function(data){
+                    $scope.products = data;
+                });
+                $scope.$broadcast('scroll.refreshComplete');
+                $scope.$apply();
+            };
 
-    } else {
+        } else {
 
-        $state.transitionTo('app.options');
+            $state.transitionTo('app.options');
 
-    }
-})
+        }
+    })
 
+    .controller('product', function($scope, $state, $stateParams, $ionicModal, cookieProvider, ProductDetailService, ProductDeleteService) {
 
-.controller('list', function($scope, $state, cookieProvider, ProductListService) {
+        console.log( cookieProvider.flagCookie() );
 
-    console.log( 'list: ' + cookieProvider.flagCookie() );
+        if( cookieProvider.flagCookie() ) {
 
-    if( cookieProvider.flagCookie() ) {
+            $scope.product_edit_field = true;
+            $scope.product_delete_button = true;
+            $scope.product_edit_button = true;
+            $scope.product_update_button = true;
 
-        ProductListService.product_list.query(function(data){
-            $scope.products = data;
-        });
+            $scope.product_edit = ProductDetailService.product_detail.get(
 
-    } else {
+                { id: $stateParams.id, action: 'find' },
 
-        $state.transitionTo('app.options');
-
-    }
-})
-
-.controller('product', function($scope, $state, $stateParams, $window, cookieProvider, ProductDetailService) {
-
-    console.log( cookieProvider.flagCookie() );
-
-    if( cookieProvider.flagCookie() ) {
-
-        $scope.product_edit_field = true;
-        $scope.product_delete_button = true;
-        $scope.product_edit_button = true;
-        $scope.product_update_button = true;
-
-        $scope.product_edit = ProductDetailService.product_detail.get(
-
-            { id: $stateParams.id, action: 'find' },
-
-            function(data){
-
-                console.log( data );
-
-                $scope.product = data;
-            });
-
-        $scope.productEdit = function() {
-
-            $scope.product_edit_field = false;
-            $scope.product_delete_button = false;
-            $scope.product_edit_button = false;
-            $scope.product_update_button = false;
-        };
-
-        $scope.productUpdate = function() {
-
-            ProductDetailService.product_detail.update(
-                {
-                    id: $stateParams.id,
-                    action: 'update'
-                },
-                {
-                    "name": $scope.product.name,
-                    "type": $scope.product.type,
-                    "quantity": $scope.product.quantity,
-                    "price": $scope.product.price
-                },
-
-                function( data ) {
+                function(data){
 
                     console.log( data );
 
-                    $scope.product_update_button = $scope.product_edit_button = $scope.product_delete_button = $scope.product_delete_button = $scope.product_edit_field = true;
+                    $scope.product = data;
+                });
 
-                    $state.go('app.list');
+            $scope.productEdit = function() {
 
-                    //$window.location.reload(true);
-                }
+                $scope.product_edit_field = false;
+                $scope.product_delete_button = false;
+                $scope.product_edit_button = false;
+                $scope.product_update_button = false;
+            };
 
-            );
+            $scope.productUpdate = function() {
 
-        };
+                ProductDetailService.product_detail.update(
+                    {
+                        id: $stateParams.id,
+                        action: 'update'
+                    },
+                    {
+                        "name": $scope.product.name,
+                        "type": $scope.product.type,
+                        "quantity": $scope.product.quantity,
+                        "price": $scope.product.price
+                    },
+
+                    function( data ) {
+
+                        console.log( data );
+
+                        $scope.product_update_button = $scope.product_edit_button = $scope.product_delete_button = $scope.product_delete_button = $scope.product_edit_field = true;
+
+                    }
+
+                );
+
+            };
 
 
-    } else {
+        } else {
 
-        $state.transitionTo('app.options');
+            $state.transitionTo('app.options');
 
-    }
-});
+        }
+    });

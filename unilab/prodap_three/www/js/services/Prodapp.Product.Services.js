@@ -36,4 +36,23 @@ angular.module('ProdappProductServices', ['ngResource'])
             }
         });
 
+})
+
+.service('ProductDeleteService', function($resource){
+
+    this.product_option = $resource('http://localhost:7070/api/v1/product/:id/delete',
+
+        {
+            id: '@id'
+        },
+        {
+            delete: {
+                method: 'POST',
+                isArray: false,
+                headers: {
+                    'Content-Type': 'application/json'
+                }
+            }
+        });
+
 });
