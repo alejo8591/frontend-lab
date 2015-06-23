@@ -106,11 +106,10 @@ angular.module('TestaProductControllers', ['TestaProductServices'])
 
                 console.log( data );
 
-                $scope.$on('$destroy', function() {
-                    $scope.modal.remove();
-                });
+                $scope.closeModal();
 
-                $state.go('app.list');
+                $state.go('app.list', null,
+                    { location: true, inherit: true, relative: $state.$current, notify: true });
 
 
             }
@@ -153,13 +152,12 @@ angular.module('TestaProductControllers', ['TestaProductServices'])
 
                     console.log( data );
 
-                    $scope.modal.hide();
-
-
                     $scope.product = {};
 
-                    $state.go('app.product', { id: data.id });
+                    $scope.closeModalCreate();
 
+                    $state.go('app.product', { id: data.id },
+                        { location: true, inherit: true, relative: $state.$current, notify: true });
 
                 }
 
