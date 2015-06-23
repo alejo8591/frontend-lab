@@ -4,7 +4,9 @@ angular.module('testa',
     [
       'ionic',
       'TestaProductControllers',
-      'TestaProductServices'
+      'TestaProductServices',
+      'TestaProfileControllers',
+      'TestaProfileServices'
     ]
 )
 
@@ -57,6 +59,46 @@ angular.module('testa',
       'menuContent': {
         templateUrl: "templates/product/add_product.html",
         controller: 'add'
+      }
+    }
+  })
+
+  .state('app.profile', {
+    url: "/profile",
+    views: {
+      'menuContent': {
+        templateUrl: "templates/profile/profile.html",
+        controller: 'profile'
+      }
+    }
+  })
+
+  .state('app.options', {
+    url: "/options",
+    views: {
+      'menuContent': {
+        templateUrl: "templates/general/options.html",
+        controller: 'options'
+      }
+    }
+  })
+
+  .state('app.login', {
+    url: "/login",
+    views: {
+      'menuContent': {
+        templateUrl: "templates/general/login.html",
+        controller: 'login'
+      }
+    }
+  })
+
+  .state('app.register', {
+    url: "/register",
+    views: {
+      'menuContent': {
+        templateUrl: "templates/general/register.html",
+        controller: 'register'
       }
     }
   });
