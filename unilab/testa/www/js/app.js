@@ -64,7 +64,7 @@ angular.module('testa',
   })
 
   .state('app.profile', {
-    url: "/profile",
+    url: "/profile/:email",
     views: {
       'menuContent': {
         templateUrl: "templates/profile/profile.html",

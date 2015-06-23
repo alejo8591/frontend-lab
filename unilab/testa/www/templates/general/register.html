@@ -21,12 +21,12 @@
             </label>
             <label class="item item-input item-stacked-label">
                 <span class="input-label">Password</span>
-                <input type="text" placeholder="{{ user.password }}" ng-model="user.password" />
+                <input type="password" placeholder="{{ user.password }}" ng-model="user.password" />
             </label>
         </div>
 
         <div class="buttons">
-                <button class="button button-block button-positive" ng-click="profileCreate()">
+                <button class="button button-block button-positive" ng-click="openModalProfileCreate()">
                     ¡Registrarme!
                 </button>
         </div>

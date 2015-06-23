@@ -62,7 +62,6 @@ angular.module('TestaProductControllers', ['TestaProductServices'])
                 "quantity": $scope.product.quantity,
                 "price": $scope.product.price
             },
-
             function( data ) {
 
                 console.log( data );
@@ -154,10 +153,11 @@ angular.module('TestaProductControllers', ['TestaProductServices'])
 
                     $scope.product = {};
 
-                    $scope.closeModalCreate();
+                    $scope.closeModalCreate()
 
                     $state.go('app.product', { id: data.id },
                         { location: true, inherit: true, relative: $state.$current, notify: true });
+
 
                 }
 
