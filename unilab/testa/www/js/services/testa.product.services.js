@@ -4,13 +4,13 @@ angular.module('TestaProductServices', ['ngResource'])
 
 .service('ProductListService', function( $resource ) {
 
-        this.products = $resource('http://localhost:7070/api/v1/product/list');
+        this.products = $resource('http://10.0.2.2:7070/api/v1/product/list');
 
 })
 
 .service('ProductOptionsService', function($resource){
 
-    this.product = $resource('http://localhost:7070/api/v1/product/:id/:action',
+    this.product = $resource('http://10.0.2.2:7070/api/v1/product/:id/:action',
         { id: '@id', action: '@action' },
         {
             update: {
@@ -34,7 +34,7 @@ angular.module('TestaProductServices', ['ngResource'])
 
 .service('ProductCreateService', function( $resource ) {
 
-    this.product = $resource('http://localhost:7070/api/v1/product/create', null,
+    this.product = $resource('http://10.0.2.2:7070/api/v1/product/create', null,
         {
             save: {
                 method: 'POST',

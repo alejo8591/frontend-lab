@@ -4,7 +4,7 @@ angular.module('TestaProfileServices', ['ngResource'])
 
 .service('ProfileService', function( $resource ) {
 
-    this.profile = $resource('http://localhost:7070/api/v1/user/:email/find',
+    this.profile = $resource('http://10.0.2.2:7070/api/v1/user/:email/:action',
 
         { email: '@email', action: '@action' },
         {
@@ -29,9 +29,24 @@ angular.module('TestaProfileServices', ['ngResource'])
 
 .service('ProfileCreateService', function( $resource ) {
 
-    this.profile = $resource('http://localhost:7070/api/v1/user/create', null,
+    this.profile = $resource('http://10.0.2.2:7070/api/v1/user/create', null,
         {
             save: {
+                method: 'POST',
+                headers:{
+                    'Content-Type': 'application/json'
+                }
+            }
+        });
+
+})
+
+
+.service('ProfileLoginService', function( $resource ) {
+
+    this.profile = $resource('http://10.0.2.2:7070/api/v1/user/login', null,
+        {
+            login: {
                 method: 'POST',
                 headers:{
                     'Content-Type': 'application/json'

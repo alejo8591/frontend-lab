@@ -1,0 +1,47 @@
+<ion-modal-view>
+    <ion-content>
+
+        <div class="list card">
+
+            <div class="item item-divider">
+                <span class="icon ion-alert-circled"> Eliminar Perfil:</span>
+            </div>
+            <div class="item item-text-wrap">
+
+                <div class="item item-icon-left">
+                    <i class="icon ion-information"></i>
+                    Nombre(s) del Usuario: {{ user.firstname }}
+                </div>
+
+                <div class="item item-icon-left">
+                    <i class="icon ion-iphone"></i>
+                    Apellido(s) del Usuario: {{ user.lastname }}
+                </div>
+
+                <div class="item item-icon-left">
+                    <i class="icon ion-ios-albums"></i>
+                    Email del Usuario: {{ user.email }}
+                </div>
+
+                <div class="item item-icon-left">
+                    <i class="icon ion-social-usd"></i>
+                    Télefono del Usuario: {{ user.phone }}
+                </div>
+            </div>
+        </div>
+        <div class="buttons">
+            <div class="row">
+                <div class="col col-50">
+                    <button class="button button-block button-assertive" ng-click="profileDelete()">
+                        Aceptar
+                    </button>
+                </div>
+                <div class="col col-50">
+                    <button class="button button-block button-dark" ng-click="closeModalProfileDelete()">
+                        Cancelar
+                    </button>
+                </div>
+            </div>
+        </div>
+    </ion-content>
+</ion-modal-view>
