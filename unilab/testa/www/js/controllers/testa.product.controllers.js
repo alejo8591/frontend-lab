@@ -100,8 +100,7 @@ angular.module('TestaProductControllers', ['TestaProductServices'])
                 id: $stateParams.id,
                 action: 'delete'
             },
-            {
-            },
+            null,
 
             function( data ) {
 
@@ -118,4 +117,53 @@ angular.module('TestaProductControllers', ['TestaProductServices'])
 
         );
     };
+})
+
+.controller('add', function($scope, $ionicModal, $state, ProductCreateService) {
+
+        $scope.product = {};
+
+        $ionicModal.fromTemplateUrl('templates/product/modal_create_product.html', {
+            scope: $scope,
+            animation: 'slide-in-up'
+        }).then(function(modal) {
+            $scope.modal = modal;
+        });
+
+        $scope.openModalCreate = function() {
+            $scope.modal.show();
+        };
+
+        $scope.closeModalCreate = function() {
+            $scope.modal.hide();
+        };
+
+        $scope.productCreate = function() {
+
+            ProductCreateService.product.save(
+                null,
+                {
+                    "name": $scope.product.name,
+                    "type": $scope.product.type,
+                    "quantity": $scope.product.quantity,
+                    "price": $scope.product.price
+                },
+
+                function( data ) {
+
+                    console.log( data );
+
+                    $scope.modal.hide();
+
+
+                    $scope.product = {};
+
+                    $state.go('app.product', { id: data.id });
+
+
+                }
+
+            );
+        };
+
 });

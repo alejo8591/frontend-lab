@@ -49,6 +49,16 @@ angular.module('testa',
         controller: 'product'
       }
     }
+  })
+
+  .state('app.add', {
+    url: "/add",
+    views: {
+      'menuContent': {
+        templateUrl: "templates/product/add_product.html",
+        controller: 'add'
+      }
+    }
   });
   // if none of the above states are matched, use this as the fallback
   $urlRouterProvider.otherwise('/app/list');

@@ -31,3 +31,17 @@ angular.module('TestaProductServices', ['ngResource'])
         }
     );
 })
+
+.service('ProductCreateService', function( $resource ) {
+
+    this.product = $resource('http://localhost:7070/api/v1/product/create', null,
+        {
+            save: {
+                method: 'POST',
+                headers:{
+                    'Content-Type': 'application/json'
+                }
+            }
+        });
+
+});
