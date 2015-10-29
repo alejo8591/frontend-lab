@@ -6,7 +6,8 @@ angular.module('prodapp.profile.controller',
     [
         'ionic',
         'prodapp.cookie.provider',
-        'prodappProfileServices'
+        'prodappProfileServices',
+        'ProdappProductServices'
     ]
 )
 
@@ -16,9 +17,11 @@ angular.module('prodapp.profile.controller',
 
     if( cookieProvider.flagCookie() ) {
 
+        $state.transitionTo('app.list');
+
     } else {
 
-        $state.transitionTo('options');
+        $state.transitionTo('app.options');
 
     }
 })
@@ -36,13 +39,13 @@ angular.module('prodapp.profile.controller',
 
         $scope.loadLogin = function() {
 
-            $state.transitionTo('login');
+            $state.transitionTo('app.login');
 
         };
 
         $scope.loadRegister = function() {
 
-            $state.transitionTo('register');
+            $state.transitionTo('app.register');
 
         };
 
@@ -70,9 +73,9 @@ angular.module('prodapp.profile.controller',
                     email: $scope.login_email,
                     password: $scope.login_password
 
-                }, function(data){
+                }, function( data ){
 
-                    console.log(data);
+                    console.log( data );
 
             });
         }
@@ -104,7 +107,7 @@ angular.module('prodapp.profile.controller',
 
     } else {
 
-        $state.transitionTo('options');
+        $state.transitionTo('app.options');
 
     }
 });

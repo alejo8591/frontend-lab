@@ -1,0 +1,33 @@
+<ion-view view-title="Crear Producto">
+
+    <ion-content>
+
+        <div class="list">
+            <label class="item item-input item-stacked-label">
+                <span class="input-label">Nombre del Producto</span>
+                <input type="text" placeholder="{{ product.name }}" ng-model="product.name" ng-readonly="product_edit_field" />
+            </label>
+            <label class="item item-input item-stacked-label">
+                <span class="input-label">Tipo de Producto</span>
+                <input type="text" placeholder="{{ product.type }}" ng-model="product.type" ng-readonly="product_edit_field" />
+            </label>
+            <label class="item item-input item-stacked-label">
+                <span class="input-label">Cantidad del Producto</span>
+                <input type="text" placeholder="{{ product.quantity }}" ng-model="product.quantity" ng-readonly="product_edit_field" />
+            </label>
+            <label class="item item-input item-stacked-label">
+                <span class="input-label">Precio Unitario del Product</span>
+                <input type="text" placeholder="{{ product.price }}" ng-model="product.price" ng-readonly="product_edit_field" />
+            </label>
+        </div>
+
+        <div class="buttons">
+            <div>
+                <button class="button button-block button-positive" ng-click="productCreate()">
+                    Crear Producto
+                </button>
+            </div>
+        </div>
+    </ion-content>
+
+</ion-view>

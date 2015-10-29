@@ -1,0 +1,43 @@
+<ion-view view-title="Perfil">
+
+    <ion-content>
+
+        <div class="list">
+            <label class="item item-input item-stacked-label">
+                <span class="input-label">Nombre(s)</span>
+                <input type="text" placeholder="{{ user.firstname }}" ng-model="user.firstname" ng-readonly="profile_edit_field" />
+            </label>
+            <label class="item item-input item-stacked-label">
+                <span class="input-label">Apellido(s)</span>
+                <input type="text" placeholder="{{ user.lastname }}" ng-model="user.lastname" ng-readonly="profile_edit_field" />
+            </label>
+            <label class="item item-input item-stacked-label">
+                <span class="input-label">Email</span>
+                <input type="text" placeholder="{{ user.email }}" ng-model="user.email" ng-readonly="profile_edit_field" />
+            </label>
+            <label class="item item-input item-stacked-label">
+                <span class="input-label">Télefono</span>
+                <input type="text" placeholder="{{ user.phone }}" ng-model="user.phone" ng-readonly="profile_edit_field" />
+            </label>
+        </div>
+
+        <div class="buttons">
+            <div ng-show="profile_edit_button">
+                <button class="button button-block button-positive" ng-click="profileEdit()">
+                    Editar
+                </button>
+            </div>
+            <div ng-hide="profile_update_button">
+                <button class="button button-block button-calm" ng-click="profileUpdate()">
+                    Actualizar Información
+                </button>
+            </div>
+            <div ng-hide="profile_delete_button">
+                <button class="button button-block button-assertive" ng-click="openModalProfileDelete()">
+                    Eliminar Perfil
+                </button>
+            </div>
+        </div>
+    </ion-content>
+
+</ion-view>

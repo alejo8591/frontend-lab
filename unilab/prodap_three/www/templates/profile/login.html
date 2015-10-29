@@ -1,0 +1,27 @@
+<ion-view view-title="Login">
+
+    <ion-nav-bar class="bar-header bar-royal">
+
+    </ion-nav-bar>
+
+    <ion-content>
+
+        <form ng-submit="signIn()">
+            <div class="list">
+                <label class="item item-input">
+                    <span class="input-label">Email</span>
+                    <input type="text" ng-model="login_data.email">
+                </label>
+                <label class="item item-input">
+                    <span class="input-label">Password</span>
+                    <input type="password" ng-model="login_data.password">
+                </label>
+                <label class="item">
+                    <button class="button button-block button-positive" type="submit">Log In</button>
+                </label>
+            </div>
+        </form>
+
+    </ion-content>
+
+</ion-view>

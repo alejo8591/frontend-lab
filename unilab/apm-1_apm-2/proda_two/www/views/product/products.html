@@ -1,21 +1,13 @@
 <ion-view view-title="Lista de Productos">
 
-    <ion-nav-bar class="bar-header bar-royal">
-
-    </ion-nav-bar>
-
     <ion-content>
+
         <div class="list">
-
-            <div class="item item-divider">
-                Candy Bars
-            </div>
-
-            <a class="item" href="#">
-                Butterfinger
+            <a href="#/product/{{ product.id }}/find" class="item" ng-repeat="product in products">
+                    {{ product.name }}
             </a>
-
         </div>
+
     </ion-content>
 
 </ion-view>

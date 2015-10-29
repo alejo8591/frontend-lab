@@ -14,7 +14,8 @@
 
     <!-- ionic/angularjs js -->
     <script src="lib/ionic/js/ionic.bundle.js"></script>
-      <script src="lib/angular-resource/angular-resource.min.js"></script>
+    <script src="lib/angular-resource/angular-resource.min.js"></script>
+
 
     <!-- cordova script (this will be a 404 during development) -->
     <script src="cordova.js"></script>
@@ -25,27 +26,18 @@
     <script src="js/providers/prodapp.cookie.provider.js"></script>
     <script src="js/controllers/prodapp.profile.controller.js"></script>
     <script src="js/controllers/prodapp.product.controller.js"></script>
-    <script src="js/services/prodapp.Profile.Services.js"></script>
+    <script src="js/services/Prodapp.Profile.Services.js"></script>
+    <script src="js/services/Prodapp.Product.Services.js"></script>
   </head>
   <body ng-app="prodapp">
 
-      <ion-nav-bar class="bar-header bar-royal">
-
-          <ion-nav-back-button class="button-clear">
-
-              <i class="ion-arrow-left-c"></i> Átras
-
-          </ion-nav-back-button>
-
-      </ion-nav-bar>
-
       <ion-nav-view></ion-nav-view>
 
-      <ion-footer-bar align-title="left" class="bar-royal">
+      <!-- <ion-footer-bar align-title="left" class="bar-royal">
 
           <h1 class="title">ProductApp</h1>
 
-      </ion-footer-bar>
+      </ion-footer-bar> -->
 
   </body>
 </html>

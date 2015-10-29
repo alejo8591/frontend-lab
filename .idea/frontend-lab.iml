@@ -4,6 +4,10 @@
     <exclude-output />
     <content url="file://$MODULE_DIR$">
       <excludeFolder url="file://$MODULE_DIR$/ExApp/platforms" />
+      <excludeFolder url="file://$MODULE_DIR$/angular/lab10/node_modules/grunt-contrib-jshint/node_modules/jshint/src/platforms" />
+      <excludeFolder url="file://$MODULE_DIR$/angular/lab11/node_modules/grunt-contrib-jshint/node_modules/jshint/src/platforms" />
+      <excludeFolder url="file://$MODULE_DIR$/angular/lab13/platforms" />
+      <excludeFolder url="file://$MODULE_DIR$/angular/lab9/node_modules/grunt-contrib-jshint/node_modules/jshint/src/platforms" />
       <excludeFolder url="file://$MODULE_DIR$/unilab/cor/lab1/platforms" />
       <excludeFolder url="file://$MODULE_DIR$/unilab/cor/lab10/platforms" />
       <excludeFolder url="file://$MODULE_DIR$/unilab/cor/lab11/platforms" />
@@ -18,7 +22,24 @@
       <excludeFolder url="file://$MODULE_DIR$/unilab/cor/lab7/platforms" />
       <excludeFolder url="file://$MODULE_DIR$/unilab/cor/lab8/platforms" />
       <excludeFolder url="file://$MODULE_DIR$/unilab/cor/lab9NO/platforms" />
+      <excludeFolder url="file://$MODULE_DIR$/unilab/ion/lab1/platforms" />
+      <excludeFolder url="file://$MODULE_DIR$/unilab/ion/lab10/platforms" />
+      <excludeFolder url="file://$MODULE_DIR$/unilab/ion/lab11/platforms" />
+      <excludeFolder url="file://$MODULE_DIR$/unilab/ion/lab12/platforms" />
+      <excludeFolder url="file://$MODULE_DIR$/unilab/ion/lab13/platforms" />
+      <excludeFolder url="file://$MODULE_DIR$/unilab/ion/lab14/platforms" />
+      <excludeFolder url="file://$MODULE_DIR$/unilab/ion/lab2/platforms" />
+      <excludeFolder url="file://$MODULE_DIR$/unilab/ion/lab3/platforms" />
+      <excludeFolder url="file://$MODULE_DIR$/unilab/ion/lab4/platforms" />
+      <excludeFolder url="file://$MODULE_DIR$/unilab/ion/lab5/platforms" />
+      <excludeFolder url="file://$MODULE_DIR$/unilab/ion/lab6/platforms" />
+      <excludeFolder url="file://$MODULE_DIR$/unilab/ion/lab7/platforms" />
+      <excludeFolder url="file://$MODULE_DIR$/unilab/ion/lab8/platforms" />
+      <excludeFolder url="file://$MODULE_DIR$/unilab/ion/lab9/platforms" />
+      <excludeFolder url="file://$MODULE_DIR$/unilab/proda_one/platforms" />
       <excludeFolder url="file://$MODULE_DIR$/unilab/proda_two/platforms" />
+      <excludeFolder url="file://$MODULE_DIR$/unilab/prodap_three/platforms" />
+      <excludeFolder url="file://$MODULE_DIR$/unilab/testa/platforms" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />

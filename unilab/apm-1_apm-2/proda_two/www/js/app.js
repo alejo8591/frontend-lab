@@ -3,6 +3,8 @@
 // angular.module is a global place for creating, registering and retrieving Angular modules
 // 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
 // the 2nd parameter is an array of 'requires'
+
+/* http://stackoverflow.com/questions/28659521/angular-ui-router-does-not-work-for-firefox-os-packaged-apps */
 angular.module('prodapp',
     [
         'ionic',
@@ -26,12 +28,17 @@ angular.module('prodapp',
   });
 })
 
+.config(['$compileProvider', function ($compileProvider) {
+    $compileProvider.aHrefSanitizationWhitelist(/^\s*(file|http|https?|ftp|mailto|app):/);
+}])
+
 .config(function($stateProvider, $urlRouterProvider) {
   $stateProvider
 
-      .state('index', {
+      .state('prodapp', {
         url: '/',
-        templateUrl: 'views/profile/home.html',
+        abstract: true,
+        templateUrl: 'views/general/menu.html',
         controller: 'index'
       })
 
@@ -65,14 +72,18 @@ angular.module('prodapp',
           controller: 'add'
       })
 
-      .state('list', {
+      .state('prodapp.list', {
           url: '/list',
-          templateUrl: 'views/product/products.html',
-          controller: 'list'
+          views: {
+              'menuContent': {
+                  templateUrl: 'views/product/products.html',
+                  controller: 'list'
+              }
+          }
       })
 
       .state('product', {
-          url: '/product/:id',
+          url: '/product/:id/find',
           templateUrl: 'views/product/product.html',
           controller: 'product'
       });
@@ -83,7 +94,9 @@ angular.module('prodapp',
 })
 
 
-.run(function( cookieProvider ) {
+.run(function( cookieProvider, $http ) {
+
+    $http.defaults.headers.post["Content-Type"] = "application/json";
 
     cookieProvider.setCookie();
     console.log('set cookie ' + cookieProvider.getCookie());

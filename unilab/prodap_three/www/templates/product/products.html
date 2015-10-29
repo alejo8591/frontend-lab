@@ -1,0 +1,21 @@
+<ion-view view-title="Lista de Productos">
+
+    <ion-content>
+
+        <ion-refresher pulling-text="Pull to refresh" on-refresh="doRefresh()">
+        </ion-refresher>
+        <ion-list>
+            <a href="#/app/product/{{ product.id }}/find" collection-repeat="product in products" class="item">
+                {{ product.name }}
+            </a>
+        </ion-list>
+
+    </ion-content>
+
+    <ion-footer-bar align-title="left" class="bar-royal">
+
+        <h1 class="title">ProductApp</h1>
+
+    </ion-footer-bar>
+
+</ion-view>
