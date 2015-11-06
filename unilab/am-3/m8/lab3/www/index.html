@@ -17,19 +17,15 @@
         <link rel="stylesheet" type="text/css" href="css/index.css">
         <title>Hello World</title>
     </head>
-    <body ng-app="lab1">
-        <div class="app" ng-controller="lab1Controller">
-            <h1>Device Motion</h1>
-            <h3>{{ x }}</h3>
-
-            <h3>{{ y }}</h3>
-
-            <h3>{{ z }}</h3>
-
-            <h3{{ time_stamp }}></h3>
+    <body ng-app="lab3">
+        <div class="app" ng-controller="lab3Controller">
+            <input type="button" ng-click="allInfo()" value="All Info">
+            <h3>{{ type }}</h3>
+            <h3>{{ is_online }}</h3>
+            <h3>{{ is_offline }}</h3>
         </div>
         <script type="text/javascript" src="js/angular-ngcordova.min.js"></script>
         <script type="text/javascript" src="cordova.js"></script>
-        <script type="text/javascript" src="js/lab1.js"></script>
+        <script type="text/javascript" src="js/lab3.js"></script>
     </body>
 </html>
