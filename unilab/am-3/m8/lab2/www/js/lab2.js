@@ -1,6 +1,6 @@
 angular.module('lab2', ['ngCordova'])
 
-    .controller('lab1Controller', function($scope, $cordovaDeviceMotion){
+    .controller('lab2Controller', function($scope, $cordovaDeviceMotion){
 
         document.addEventListener("deviceready", function() {
 
