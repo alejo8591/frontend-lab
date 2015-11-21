@@ -1,0 +1,22 @@
+{
+  "name": "lab11",
+  "homepage": "https://github.com/alejo8591/frontend-lab",
+  "authors": [
+    "Alejandro Romero <alejo8591@gmail.com>"
+  ],
+  "description": "Lab11",
+  "main": "",
+  "moduleType": [],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "ngCordova": "~0.1.20-alpha"
+  }
+}
