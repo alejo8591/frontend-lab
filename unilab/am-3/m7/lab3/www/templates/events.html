@@ -1,3 +1,11 @@
 <ion-view title="Events">
-    <ion-content padding="'true'" class="has-header"></ion-content>
+    <ion-content padding="'true'" class="has-header">
+      <button class="button button-positive" on-hold="showAlert()">
+        On Hold
+      </button>
+
+      <button on-release="showAlert()" class="button">
+        On Release
+      </button>
+    </ion-content>
 </ion-view>

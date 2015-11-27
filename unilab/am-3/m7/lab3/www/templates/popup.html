@@ -1,3 +1,17 @@
 <ion-view title="Popup">
-    <ion-content padding="'true'" class="has-header"></ion-content>
+    <ion-content padding="'true'" class="has-header">
+      <button class="button button-dark" ng-click="showPopup()">
+      show
+      </button>
+      <button class="button button-primary" ng-click="showConfirm()">
+        Confirm
+      </button>
+      <button class="button button-positive" ng-click="showAlert()">
+        Alert
+      </button>
+
+      <script id="popup-template.html" type="text/ng-template">
+        <input ng-model="data.name" type="text" placeholder="Nombre">
+      </script>
+    </ion-content>
 </ion-view>
