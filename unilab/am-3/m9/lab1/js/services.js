@@ -4,4 +4,5 @@ angular.module('app.services', ['ngResource'])
 
     this.item_list = $resource('http://private-bcbaa-productapp.apiary-mock.com/products/list');
     this.item_create = $resource('http://private-bcbaa-productapp.apiary-mock.com/products/create');
+    this.item_detail = $resource('http://private-bcbaa-productapp.apiary-mock.com/products/detail/:id');
 });

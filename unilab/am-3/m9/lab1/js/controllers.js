@@ -36,4 +36,15 @@ angular.module('app.controllers', ['ui.router', 'app.services'])
         console.log($scope.data);
     });
 
+})
+
+.controller('PageOneCtrl', function ($scope, Products) {
+
+    Products.item_detail.get({id: 7}, function(data){
+
+        $scope.detail = data;
+
+        console.log($scope.detail);
+    });
+
 });

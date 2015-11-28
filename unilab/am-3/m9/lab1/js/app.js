@@ -14,7 +14,8 @@ angular.module('app', ['ui.router', 'app.controllers', 'app.services'])
             name: 'page-one',
             url: '/page-one',
             parent: 'home',
-            templateUrl: 'content.page-one.html'
+            templateUrl: 'content.page-one.html',
+            controller: 'PageOneCtrl'
         })
         .state({
             name: 'page-two',

@@ -36,7 +36,13 @@
     <!-- CACHE FILE: list.html -->
     <script type="text/ng-template" id="content.page-one.html">
         <div>
-            page one
+            {{ detail.name }}
+            <ul>
+                <li>id: {{ detail.id }}</li>
+                <li>type: {{ detail.type }}</li>
+                <li>quantity: {{ detail.quantity }}</li>
+                <li>price: {{ detail.price | currency }}</li>
+            </ul>
         </div>
     </script>
 
