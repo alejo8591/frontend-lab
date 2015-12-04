@@ -1,0 +1,7 @@
+<ion-view title="Home">
+    <ion-content padding="'true'" class="has-header has-footer">
+        <ion-list>
+            <a class="item" ng-repeat="product in list" href="#/product-detail/{{ product.id }}">{{ product.name }}</a>
+        </ion-list>
+    </ion-content>
+</ion-view>

@@ -1,0 +1,22 @@
+<ion-view title="Product Create">
+    <ion-content padding="'true'" class="has-header">
+        <form class="list">
+            <label class="item item-input" name="product_name">
+                <span class="input-label">Name</span>
+                <input type="text" placeholder="Product name">
+            </label>
+            <label class="item item-input" name="type product">
+                <span class="input-label">Type</span>
+                <input type="text" placeholder="Type product">
+            </label>
+            <ion-item class="range range-positive">Quantity
+                <input type="range" value="20" min="0" max="1000" name="quantity_product">
+            </ion-item>
+            <label class="item item-input" name="price_product">
+                <span class="input-label">Price</span>
+                <input type="text" placeholder="USD">
+            </label>
+        </form>
+        <a menu-close="" href="#/product-detail" class="button button-dark button-block ">Create</a>
+    </ion-content>
+</ion-view>

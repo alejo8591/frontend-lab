@@ -8,6 +8,7 @@
       <excludeFolder url="file://$MODULE_DIR$/angular/lab11/node_modules/grunt-contrib-jshint/node_modules/jshint/src/platforms" />
       <excludeFolder url="file://$MODULE_DIR$/angular/lab13/platforms" />
       <excludeFolder url="file://$MODULE_DIR$/angular/lab9/node_modules/grunt-contrib-jshint/node_modules/jshint/src/platforms" />
+      <excludeFolder url="file://$MODULE_DIR$/pa/platforms" />
       <excludeFolder url="file://$MODULE_DIR$/unilab/am-3/m6/lab2/platforms" />
       <excludeFolder url="file://$MODULE_DIR$/unilab/am-3/m7/lab3/platforms" />
       <excludeFolder url="file://$MODULE_DIR$/unilab/am-3/m7/lab4/platforms" />
