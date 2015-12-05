@@ -12,7 +12,10 @@ angular.module('app.routes', [])
     .state('menu', {
       url: '/menu',
       abstract:true,
-      templateUrl: 'templates/menu.html'
+      templateUrl: 'templates/menu.html',
+      data: {
+          requireLogin: true
+      }
     })
 
 
@@ -25,27 +28,30 @@ angular.module('app.routes', [])
           templateUrl: 'templates/home.html',
           controller: 'homeCtrl'
         }
+      },
+      data: {
+        requireLogin: true
       }
     })
-
-
-
 
 
     .state('options', {
       url: '/options',
       templateUrl: 'templates/options.html',
-      controller: 'optionsCtrl'
+      controller: 'optionsCtrl',
+      data: {
+        requireLogin: false
+      }
     })
-
-
-
 
 
     .state('signIn', {
       url: '/sign-in',
       templateUrl: 'templates/signIn.html',
-      controller: 'signInCtrl'
+      controller: 'signInCtrl',
+      data: {
+        requireLogin: false
+      }
     })
 
 
@@ -55,7 +61,10 @@ angular.module('app.routes', [])
     .state('signUp', {
       url: '/sign-up',
       templateUrl: 'templates/signUp.html',
-      controller: 'signUpCtrl'
+      controller: 'signUpCtrl',
+      data: {
+        requireLogin: false
+      }
     })
 
 
@@ -65,31 +74,32 @@ angular.module('app.routes', [])
     .state('productDetail', {
       url: '/product-detail/:id',
       templateUrl: 'templates/productDetail.html',
-      controller: 'productDetailCtrl'
+      controller: 'productDetailCtrl',
+      data: {
+        requireLogin: true
+      }
     })
-
-
-
 
 
     .state('productEdit', {
       url: '/product-edit/:id',
       templateUrl: 'templates/productEdit.html',
-      controller: 'productEditCtrl'
+      controller: 'productEditCtrl',
+      data: {
+        requireLogin: true
+      }
     })
-
-
 
 
 
     .state('productCreate', {
       url: '/product-create',
       templateUrl: 'templates/productCreate.html',
-      controller: 'productCreateCtrl'
+      controller: 'productCreateCtrl',
+      data: {
+        requireLogin: true
+      }
     })
-
-
-
 
 
     .state('menu.profile', {
@@ -97,32 +107,33 @@ angular.module('app.routes', [])
       views: {
         'side-menu21': {
           templateUrl: 'templates/profile.html',
-          controller: 'profileCtrl'
+          controller: 'profileCtrl',
+          data: {
+            requireLogin: true
+          }
         }
       }
     })
 
 
-
-
-
     .state('profileEdit', {
       url: '/profile-edit',
       templateUrl: 'templates/profileEdit.html',
-      controller: 'profileEditCtrl'
+      controller: 'profileEditCtrl',
+      data: {
+        requireLogin: true
+      }
     })
-
-
-
 
 
     .state('forgotPassword', {
       url: '/forgot-password',
       templateUrl: 'templates/forgotPassword.html',
-      controller: 'forgotPasswordCtrl'
+      controller: 'forgotPasswordCtrl',
+      data: {
+        requireLogin: true
+      }
     })
-
-
 
 
 
@@ -131,15 +142,20 @@ angular.module('app.routes', [])
       views: {
         'side-menu21': {
           templateUrl: 'templates/signOut.html',
-          controller: 'signOutCtrl'
+          controller: 'signOutCtrl',
+          data: {
+            requireLogin: false
+          }
         }
       }
-    })
-
-
-    ;
+    });
 
   // if none of the above states are matched, use this as the fallback
-  $urlRouterProvider.otherwise('/menu/home');
+  // $urlRouterProvider.otherwise('/menu/home');
+
+  $urlRouterProvider.otherwise(function($injector, $location){
+    var $state = $injector.get("$state");
+    $state.go('menu.home');
+  });
 
 });

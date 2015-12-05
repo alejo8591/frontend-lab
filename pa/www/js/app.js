@@ -20,3 +20,19 @@ angular.module('app', ['ionic', 'app.controllers', 'app.routes', 'app.services',
     }
   });
 })
+
+.run(function ($rootScope, $state, $window) {
+
+  $rootScope.$on('$stateChangeStart', function(event, toState, toParams) {
+
+    var requireLogin = toState.data.requireLogin;
+
+    // console.log($window.sessionStorage.token);
+
+    if (requireLogin && typeof $window.sessionStorage.token === 'undefined') {
+      event.preventDefault();
+      $state.go('options');
+    }
+  });
+
+});
