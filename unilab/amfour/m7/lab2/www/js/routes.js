@@ -10,43 +10,13 @@ angular.module('app.routes', [])
     
   
 
-      .state('menu.home', {
+      .state('devicePlugin', {
     url: '/page1',
-    views: {
-      'side-menu21': {
-        templateUrl: 'templates/home.html',
-        controller: 'homeCtrl'
-      }
-    }
+    templateUrl: 'templates/devicePlugin.html',
+    controller: 'devicePluginCtrl'
   })
 
-  .state('menu.cart', {
-    url: '/page2',
-    views: {
-      'side-menu21': {
-        templateUrl: 'templates/cart.html',
-        controller: 'cartCtrl'
-      }
-    }
-  })
-
-  .state('menu.cloud', {
-    url: '/page3',
-    views: {
-      'side-menu21': {
-        templateUrl: 'templates/cloud.html',
-        controller: 'cloudCtrl'
-      }
-    }
-  })
-
-  .state('menu', {
-    url: '/side-menu21',
-    templateUrl: 'templates/menu.html',
-    abstract:true
-  })
-
-$urlRouterProvider.otherwise('/side-menu21/page1')
+$urlRouterProvider.otherwise('/page1')
 
   
 

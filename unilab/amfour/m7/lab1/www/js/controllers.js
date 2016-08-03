@@ -1,34 +1,23 @@
-angular.module('app.controllers', [])
-  
-.controller('buttonsCtrl', function($scope) {
+angular.module('app.controllers', ['ngCordova'])
 
-})
-   
-.controller('listCtrl', function($scope) {
+.controller('devicePluginCtrl', ['$scope', '$stateParams', '$cordovaDevice',// TIP: Access Route Parameters for your page via $stateParams.parameterName
+function ($scope, $stateParams, $cordovaDevice) {
 
-})
-   
-.controller('cardsCtrl', function($scope) {
+  $scope.getDeviceInfo = function(){
+    $scope.items =[
+      {name: $cordovaDevice.getDevice()},
 
-})
-   
-.controller('formCtrl', function($scope) {
+      {name: $cordovaDevice.getCordova()},
 
-})
-   
-.controller('toggleCtrl', function($scope) {
+      {name: $cordovaDevice.getModel()},
 
-})
-   
-.controller('checkboxCtrl', function($scope) {
+      {name: $cordovaDevice.getPlatform()},
 
-})
-   
-.controller('radioButtonCtrl', function($scope) {
+      {name:$cordovaDevice.getUUID()},
 
-})
-   
-.controller('rangeCtrl', function($scope) {
+      {name: $cordovaDevice.getVersion()}
+    ];
+  };
 
-})
- 
+
+}]);

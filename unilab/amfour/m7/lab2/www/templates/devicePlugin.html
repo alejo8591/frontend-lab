@@ -1,0 +1,15 @@
+<ion-view title="Device Plugin" id="page1" class=" ">
+    <ion-content padding="true" class="has-header">
+        <button id="devicePlugin-button1" class=" button button-positive  button-block " ng-click="getNetworkInformation()">Cargar información</button>
+        <ion-list id="devicePlugin-list4" class=" ">
+            <ion-item class="item-icon-left  " id="devicePlugin-list-item1">
+                <i class="icon ion-ionic"></i>{{ type }}</ion-item>
+
+            <ion-item class="item-icon-left  " id="devicePlugin-list-item2">
+                <i class="icon ion-ionic"></i>{{ isOnline }}</ion-item>
+
+            <ion-item class="item-icon-left  " id="devicePlugin-list-item3">
+              <i class="icon ion-ionic"></i>{{ isOffline }}</ion-item>
+        </ion-list>
+    </ion-content>
+</ion-view>

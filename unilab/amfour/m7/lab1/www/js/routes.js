@@ -10,52 +10,10 @@ angular.module('app.routes', [])
     
   
 
-      .state('buttons', {
+      .state('devicePlugin', {
     url: '/page1',
-    templateUrl: 'templates/buttons.html',
-    controller: 'buttonsCtrl'
-  })
-
-  .state('list', {
-    url: '/page2',
-    templateUrl: 'templates/list.html',
-    controller: 'listCtrl'
-  })
-
-  .state('cards', {
-    url: '/page3',
-    templateUrl: 'templates/cards.html',
-    controller: 'cardsCtrl'
-  })
-
-  .state('form', {
-    url: '/page4',
-    templateUrl: 'templates/form.html',
-    controller: 'formCtrl'
-  })
-
-  .state('toggle', {
-    url: '/page5',
-    templateUrl: 'templates/toggle.html',
-    controller: 'toggleCtrl'
-  })
-
-  .state('checkbox', {
-    url: '/page6',
-    templateUrl: 'templates/checkbox.html',
-    controller: 'checkboxCtrl'
-  })
-
-  .state('radioButton', {
-    url: '/page7',
-    templateUrl: 'templates/radioButton.html',
-    controller: 'radioButtonCtrl'
-  })
-
-  .state('range', {
-    url: '/page8',
-    templateUrl: 'templates/range.html',
-    controller: 'rangeCtrl'
+    templateUrl: 'templates/devicePlugin.html',
+    controller: 'devicePluginCtrl'
   })
 
 $urlRouterProvider.otherwise('/page1')
