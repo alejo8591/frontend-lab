@@ -1,0 +1,12 @@
+<ion-view title="Page" id="page1" class=" ">
+    <ion-content padding="true" class="has-header">
+        <button id="page-button1" class=" button button-positive  button-block " ng-click="getAlert()">show Alert</button>
+      <button id="page-button2" class=" button button-positive  button-block " ng-click="getConfirm()">show Confirm</button>
+      <button id="page-button3" class=" button button-positive  button-block " ng-click="getPrompt()">show Prompt</button>
+        <ion-list id="page-list1" class=" ">
+            <ion-item id="page-list-item1" class="  ">{{cordova_alert}}</ion-item>
+            <ion-item id="page-list-item2" class="  ">{{ cordova_confirm }}</ion-item>
+            <ion-item id="page-list-item3" class="  ">{{ cordova_prompt_1 }} \ {{ cordova_prompt_2 }}</ion-item>
+        </ion-list>
+    </ion-content>
+</ion-view>

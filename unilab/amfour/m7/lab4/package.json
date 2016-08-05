@@ -1,7 +1,7 @@
 {
-  "name": "lab1",
+  "name": "lab4",
   "version": "1.1.1",
-  "description": "lab1: An Ionic project",
+  "description": "lab4: An Ionic project",
   "dependencies": {
     "gulp": "^3.5.6",
     "gulp-sass": "^2.0.4",
@@ -15,18 +15,10 @@
     "shelljs": "^0.3.0"
   },
   "cordovaPlugins": [
-    "cordova-plugin-device",
-    "cordova-plugin-console",
-    "cordova-plugin-whitelist",
-    "cordova-plugin-splashscreen",
-    "cordova-plugin-statusbar",
-    "ionic-plugin-keyboard"
+    "cordova-plugin-dialogs"
   ],
   "cordovaPlatforms": [
-    {
-      "platform": "ios",
-      "version": "",
-      "locator": "ios"
-    }
+    "ios",
+    "android"
   ]
 }
