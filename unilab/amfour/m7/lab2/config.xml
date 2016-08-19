@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<<<<<<< HEAD
 <widget id="com.ionicframework.lab2427934" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+=======
+<widget id="com.ionicframework.lab2673988" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+>>>>>>> 8b82fde1145ab97df3069a9346141014637cd28e
   <name>lab2</name>
   <description>
         An Ionic Framework and Cordova project.
