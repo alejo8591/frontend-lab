@@ -20,7 +20,7 @@ var ProductDetailComponent = (function () {
     ProductDetailComponent = __decorate([
         core_1.Component({
             selector: 'product-detail',
-            templateUrl: 'app/templates/product-detail.html'
+            templateUrl: 'app/templates/page-one.html'
         }), 
         __metadata('design:paramtypes', [])
     ], ProductDetailComponent);

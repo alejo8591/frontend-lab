@@ -9,22 +9,18 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var product_1 = require('../model/product');
-var ProductDetailComponent = (function () {
-    function ProductDetailComponent() {
+var HomeComponent = (function () {
+    function HomeComponent() {
+        this.title = 'Home Page';
     }
-    __decorate([
-        core_1.Input(), 
-        __metadata('design:type', product_1.Product)
-    ], ProductDetailComponent.prototype, "product", void 0);
-    ProductDetailComponent = __decorate([
+    HomeComponent = __decorate([
         core_1.Component({
-            selector: 'product-detail',
-            templateUrl: 'app/templates/page-one.html'
+            selector: 'home-app',
+            templateUrl: 'app/templates/home.html'
         }), 
         __metadata('design:paramtypes', [])
-    ], ProductDetailComponent);
-    return ProductDetailComponent;
+    ], HomeComponent);
+    return HomeComponent;
 }());
-exports.ProductDetailComponent = ProductDetailComponent;
-//# sourceMappingURL=product-detail.component.js.map
+exports.HomeComponent = HomeComponent;
+//# sourceMappingURL=home.component.js.map

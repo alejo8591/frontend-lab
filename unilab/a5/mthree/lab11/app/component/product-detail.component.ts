@@ -3,7 +3,7 @@ import { Product } from '../model/product';
 
 @Component({
     selector: 'product-detail',
-    templateUrl: 'app/templates/product-detail.html'
+    templateUrl: 'app/templates/page-one.html'
 })
 
 export class ProductDetailComponent {

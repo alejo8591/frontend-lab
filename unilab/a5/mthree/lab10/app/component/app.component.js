@@ -9,54 +9,18 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var Product = (function () {
-    function Product() {
-    }
-    return Product;
-}());
-exports.Product = Product;
 var AppComponent = (function () {
     function AppComponent() {
-        this.title = "los productos del Año";
-        this.products = PRODUCTS;
+        this.title = "Componente padre";
     }
-    AppComponent.prototype.onSelect = function (product) {
-        this.selected = product;
-    };
     AppComponent = __decorate([
         core_1.Component({
             selector: 'my-app',
-            templateUrl: 'app/templates/page-one.html'
+            templateUrl: 'app/templates/app-component.html',
         }), 
         __metadata('design:paramtypes', [])
     ], AppComponent);
     return AppComponent;
 }());
 exports.AppComponent = AppComponent;
-var PRODUCTS = [
-    {
-        id: 1,
-        name: "Samsung galaxy 8",
-        description: "telefono que explota",
-        type: "smartphone",
-        price: 1500000,
-        quantity: 20
-    },
-    {
-        id: 2,
-        name: "Samsung galaxy 10",
-        description: "telefono que explota",
-        type: "smartphone",
-        price: 1500000,
-        quantity: 20
-    },
-    {
-        id: 3,
-        name: "Samsung galaxy 20",
-        description: "telefono que explota",
-        type: "smartphone",
-        price: 1500000,
-        quantity: 20
-    }
-];
 //# sourceMappingURL=app.component.js.map

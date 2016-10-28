@@ -5,7 +5,7 @@ import {ActivatedRoute, Params} from "@angular/router";
 
 @Component({
     selector: 'product-detail-app',
-    templateUrl: 'app/templates/product-detail.html',
+    templateUrl: 'app/templates/page-one.html',
     providers: [ProductService]
 })
 

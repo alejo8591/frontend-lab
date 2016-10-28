@@ -9,22 +9,18 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var product_1 = require('../model/product');
-var ProductDetailComponent = (function () {
-    function ProductDetailComponent() {
+var PageTwoComponent = (function () {
+    function PageTwoComponent() {
+        this.title = "Page Two";
     }
-    __decorate([
-        core_1.Input(), 
-        __metadata('design:type', product_1.Product)
-    ], ProductDetailComponent.prototype, "product", void 0);
-    ProductDetailComponent = __decorate([
+    PageTwoComponent = __decorate([
         core_1.Component({
-            selector: 'product-detail',
-            templateUrl: 'app/templates/page-one.html'
+            selector: 'product-list-app',
+            templateUrl: 'app/templates/page-two.html'
         }), 
         __metadata('design:paramtypes', [])
-    ], ProductDetailComponent);
-    return ProductDetailComponent;
+    ], PageTwoComponent);
+    return PageTwoComponent;
 }());
-exports.ProductDetailComponent = ProductDetailComponent;
-//# sourceMappingURL=product-detail.component.js.map
+exports.PageTwoComponent = PageTwoComponent;
+//# sourceMappingURL=page-two.component.js.map

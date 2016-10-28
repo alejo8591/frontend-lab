@@ -27,7 +27,7 @@ var ProductDetailComponent = (function () {
     ProductDetailComponent = __decorate([
         core_1.Component({
             selector: 'product-detail-app',
-            templateUrl: 'app/templates/product-detail.html',
+            templateUrl: 'app/templates/page-one.html',
             providers: [product_service_1.ProductService]
         }), 
         __metadata('design:paramtypes', [product_service_1.ProductService, router_1.ActivatedRoute])
@@ -35,4 +35,4 @@ var ProductDetailComponent = (function () {
     return ProductDetailComponent;
 }());
 exports.ProductDetailComponent = ProductDetailComponent;
-//# sourceMappingURL=product-detail.component.js.map
+//# sourceMappingURL=page-one.component.js.map

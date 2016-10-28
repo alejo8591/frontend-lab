@@ -11,7 +11,7 @@ export class Product {
 
 @Component({
   selector: 'my-app',
-  templateUrl: 'app/templates/product-detail.html'
+  templateUrl: 'app/templates/page-one.html'
 })
 export class AppComponent {
 	title: string = "los productos del Año";
