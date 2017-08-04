@@ -9,6 +9,7 @@
       <excludeFolder url="file://$MODULE_DIR$/angular/lab9/node_modules/grunt-contrib-jshint/node_modules/jshint/src/platforms" />
       <excludeFolder url="file://$MODULE_DIR$/pa/platforms" />
       <excludeFolder url="file://$MODULE_DIR$/unilab/a5/te/testi/platforms" />
+      <excludeFolder url="file://$MODULE_DIR$/unilab/a5/te/testi/www" />
       <excludeFolder url="file://$MODULE_DIR$/unilab/am-3/m6/lab2/platforms" />
       <excludeFolder url="file://$MODULE_DIR$/unilab/am-3/m7/lab3/platforms" />
       <excludeFolder url="file://$MODULE_DIR$/unilab/am-3/m7/lab4/platforms" />
@@ -34,6 +35,11 @@
       <excludeFolder url="file://$MODULE_DIR$/unilab/amfour/m7/lab3/platforms" />
       <excludeFolder url="file://$MODULE_DIR$/unilab/amfour/m7/lab4/platforms" />
       <excludeFolder url="file://$MODULE_DIR$/unilab/amfour/m7/lab88/platforms" />
+      <excludeFolder url="file://$MODULE_DIR$/unilab/amfour/m7/lab88/www" />
+      <excludeFolder url="file://$MODULE_DIR$/unilab/amfour/m8/lab2-geo/www" />
+      <excludeFolder url="file://$MODULE_DIR$/unilab/amfour/m8/lab2/www" />
+      <excludeFolder url="file://$MODULE_DIR$/unilab/amfour/m8/lab22/www" />
+      <excludeFolder url="file://$MODULE_DIR$/unilab/amfour/m8/lab44/www" />
       <excludeFolder url="file://$MODULE_DIR$/unilab/apm-1_apm-2/cor/lab1/platforms" />
       <excludeFolder url="file://$MODULE_DIR$/unilab/apm-1_apm-2/cor/lab10/platforms" />
       <excludeFolder url="file://$MODULE_DIR$/unilab/apm-1_apm-2/cor/lab11/platforms" />
