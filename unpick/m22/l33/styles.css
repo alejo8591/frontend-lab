@@ -1,0 +1,37 @@
+body {
+    font-family: Arial, "Arial Black", sans-serif;
+    background-color: #FFFFFF;
+    color: black;
+    margin: 0 auto;
+    width: 100%;
+    max-width: 650px;
+}
+
+.first-color-font {
+    color: #1b6777;
+}
+
+.second-color-font {
+    color: #5d2a2a;
+}
+
+.third-color-font {
+    color: #ffb515;
+}
+
+h1, p{
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+#details{
+    margin-left: 50px;
+}
+
+.show{
+    visibility: visible;
+}
+
+.hide{
+    visibility: hidden;
+}

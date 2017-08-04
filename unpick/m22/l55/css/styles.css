@@ -1,0 +1,72 @@
+@import url('https://fonts.googleapis.com/css?family=Fjalla+One');
+
+body{
+    color: #333;
+    font-family: "Fjalla One", Arial, "Monaco", sans-serif;
+    font-size: 16px;
+}
+
+#container{
+    margin: 0 auto;
+    max-width: 960px;
+}
+
+header{
+    background: #808080;
+    border-bottom: 1px solid;
+}
+
+#container header{
+    background: #af9f6d;
+    border-bottom: 1px solid;
+}
+
+#container header h1{
+    font-size: 4em;
+    margin: 1em;
+}
+
+#container header p{
+    font-size: 2em;
+    margin: 1em;
+}
+
+#container #content{
+    background: #dedede;
+    padding: 10px;
+}
+
+#container #content article{
+    background: #FFF;
+    border-bottom: 2px solid #3117ff;
+}
+
+#container footer{
+    background: #af9f6d;
+}
+
+@media screen and (min-width: 768px) and (max-width: 991px) {
+
+}
+
+@media screen and (max-width: 767px){
+    #container header{
+        background: #dd2120;
+        border-bottom: 1px solid;
+        padding: 8px;
+        text-align: center;
+    }
+
+    #container header h1{
+        font-size: 4em;
+        margin: 1px;
+        color: #ffa1aa;
+
+    }
+
+    #container header p{
+        color: #087aff;
+        font-size: 2em;
+        margin: 1em;
+    }
+}
