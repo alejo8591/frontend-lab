@@ -1,20 +1,13 @@
-<h1>{{ title }}</h1>
-
-<div>
-  <label>Product name:</label> <input #productName />
-  <button (click)="add(productName.value); productName.value=''">
-    Add
-  </button>
-</div>
-
-
+<h1>Test</h1>
+<input type="text" #firstName placeholder="Firstname" />
+<input type="text" #lastName placeholder="Lastname" />
+<br />
+<button (click)="saveFirstName(firstName.value)">Firstname</button>
+<button (click)="saveLastName(lastName.value)">Lastname</button>
+<button (click)="delete()">Delete</button>
 <hr />
 <ul>
-  <li *ngFor="let product of products"
-      [class.pepito]="product === selected"
-      (click)="onSelect(product)">
-    <span>{{product.id}}</span> {{product.name}}
+  <li class="text" *ngFor="let item of items | async">
+    {{item.$value}}
   </li>
 </ul>
-
-<product-detail [product]="selected"></product-detail>
