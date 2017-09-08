@@ -15,7 +15,6 @@ export class AppComponent {
     this.item = db.object('/item');
 
   }
-
   saveFirstName(firstName: string) {
     this.item.set({ firstname: firstName });
   }
