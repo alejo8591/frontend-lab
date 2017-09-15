@@ -11,8 +11,7 @@ export class AppComponent {
   constructor(private auth: AuthService) { }
 
   ngOnInit() {
-    this.auth.getAuthState().subscribe(
-      user => this.user = user);
+    this.auth.getAuthState().subscribe(user => this.user = user);
   }
 
   loginWithGoogle() {

@@ -86,6 +86,7 @@
       <excludeFolder url="file://$MODULE_DIR$/unilab/proda_two/platforms" />
       <excludeFolder url="file://$MODULE_DIR$/unilab/prodap_three/platforms" />
       <excludeFolder url="file://$MODULE_DIR$/unilab/testa/platforms" />
+      <excludeFolder url="file://$MODULE_DIR$/unpick/m77/m771/platforms" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
