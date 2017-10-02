@@ -1,6 +1,12 @@
+<<<<<<< HEAD
 # M446
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.3.1.
+=======
+# M446a
+
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.3.0.
+>>>>>>> e60bdf74bc08c784383856b05244b7962ced7c31
 
 ## Development server
 

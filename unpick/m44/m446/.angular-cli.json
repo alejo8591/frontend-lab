@@ -1,7 +1,11 @@
 {
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
   "project": {
+<<<<<<< HEAD
     "name": "m446"
+=======
+    "name": "m446a"
+>>>>>>> e60bdf74bc08c784383856b05244b7962ced7c31
   },
   "apps": [
     {

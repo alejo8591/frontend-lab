@@ -1,4 +1,5 @@
 <h1>{{ title }}</h1>
+<<<<<<< HEAD
 <ul>
   <li *ngFor="let product of products"
       (click)="onSelect(product)">
@@ -20,3 +21,10 @@
   <input [(ngModel)]="selected.quantity" placeholder="cantidad"><br />
 </div>
 
+=======
+<nav>
+  <a routerLink="/home" routerLinkActive="active">Home</a>
+  <a routerLink="/products" routerLinkActive="active">Products</a>
+</nav>
+<router-outlet></router-outlet>
+>>>>>>> e60bdf74bc08c784383856b05244b7962ced7c31

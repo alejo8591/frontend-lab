@@ -1,6 +1,9 @@
 import { Component } from '@angular/core';
+<<<<<<< HEAD
 import {ProductsService} from "../services/products.service";
 import {Product} from "../model/product";
+=======
+>>>>>>> e60bdf74bc08c784383856b05244b7962ced7c31
 
 @Component({
   selector: 'app-root',
@@ -8,6 +11,7 @@ import {Product} from "../model/product";
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+<<<<<<< HEAD
   title = 'productos';
 
   selected: Product;
@@ -27,4 +31,7 @@ export class AppComponent {
   onSelect(product: Product){
     this.selected = product;
   }
+=======
+  title = 'app';
+>>>>>>> e60bdf74bc08c784383856b05244b7962ced7c31
 }
